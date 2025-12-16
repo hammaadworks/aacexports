@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
-2:I[42307,["/_next/static/chunks/8f942d1dd8cc0a37.js","/_next/static/chunks/c750ffb4643d7042.js"],"ViewportBoundary"]
-4:I[42307,["/_next/static/chunks/8f942d1dd8cc0a37.js","/_next/static/chunks/c750ffb4643d7042.js"],"MetadataBoundary"]
+2:I[42307,["/aacexports/_next/static/chunks/8f942d1dd8cc0a37.js","/aacexports/_next/static/chunks/c750ffb4643d7042.js"],"ViewportBoundary"]
+4:I[42307,["/aacexports/_next/static/chunks/8f942d1dd8cc0a37.js","/aacexports/_next/static/chunks/c750ffb4643d7042.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
-7:I[99651,["/_next/static/chunks/8f942d1dd8cc0a37.js","/_next/static/chunks/c750ffb4643d7042.js"],"IconMark"]
-0:{"buildId":"DXfRFBI2cgvOQIruc9HQj","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+7:I[99651,["/aacexports/_next/static/chunks/8f942d1dd8cc0a37.js","/aacexports/_next/static/chunks/c750ffb4643d7042.js"],"IconMark"]
+0:{"buildId":"5zAm7db7kJ482RL9cgdXn","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:[["$","title","0",{"children":"Al Ahmed Continental | Global Merchandise Exports"}],["$","meta","1",{"name":"description","content":"Established in 1996. Premier exporter of Natural Stones, Fresh Produce, Food Ingredients, and Iron & Steel. Delivering trust and quality globally."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L7","3",{}]]
+6:[["$","title","0",{"children":"Al Ahmed Continental | Global Merchandise Exports"}],["$","meta","1",{"name":"description","content":"Established in 1996. Premier exporter of Natural Stones, Fresh Produce, Food Ingredients, and Iron & Steel. Delivering trust and quality globally."}],["$","link","2",{"rel":"icon","href":"/aacexports/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L7","3",{}]]
