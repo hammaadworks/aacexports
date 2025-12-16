@@ -9,7 +9,16 @@ import { WordRotate } from "@/components/ui/word-rotate"
 import { BorderBeam } from "@/components/ui/border-beam"
 import { cn } from "@/lib/utils"
 import { CheckCircle2, Globe2, Truck, ShieldCheck } from "lucide-react"
-import { HeroActions, StatItem, VerticalCard, FaqItem } from "@/components/landing-client"
+import { HeroActions, StatItem, FaqItem } from "@/components/landing-client"
+import GlassSurface from "@/components/GlassSurface"
+import Aurora from "@/components/Aurora"
+import BlurText from "@/components/BlurText"
+import SplitText from "@/components/SplitText"
+import ScrollReveal from "@/components/ScrollReveal"
+import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars"
+import { GradientBackground } from "@/components/animate-ui/components/backgrounds/gradient"
+import MagicBento from "@/components/MagicBento"
+import LogoLoop from "@/components/LogoLoop"
 
 export default function Home() {
   return (
@@ -20,14 +29,9 @@ export default function Home() {
         <main className="flex flex-col">
           {/* HERO SECTION */}
           <section className="relative flex flex-col items-center justify-center min-h-[90vh] pt-20 overflow-hidden bg-background">
-            <DotPattern
-              width={32}
-              height={32}
-              cx={1}
-              cy={1}
-              cr={1}
-              className={cn("opacity-15 fill-muted-foreground/40")}
-            />
+            <div className="absolute inset-0 z-0 opacity-50">
+               <Aurora colorStops={["#00d2ff", "#3a7bd5", "#00d2ff"]} speed={0.5} />
+            </div>
             
             <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center space-y-8">
               <BlurFade delay={0.2} inView>
@@ -38,21 +42,24 @@ export default function Home() {
               </BlurFade>
 
               <div className="max-w-5xl space-y-6">
-                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground font-serif leading-[1.1]">
-                  Global Merchandise Exports, <br />
-                  <span className="text-primary italic">Built on Trust.</span>
-                </h1>
+                 <BlurText 
+                   text="Global Merchandise Exports, Built on Trust." 
+                   className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground font-serif leading-[1.1] justify-center text-center"
+                   delay={50}
+                   animateBy="words"
+                   direction="top"
+                 />
                 
                 <BlurFade delay={0.4} inView>
                   <div className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-                    Premier exporter of 
-                    <WordRotate 
-                      words={["Natural Stones & Granite", "Fresh Produce & Spices", "Dehydrated Powders", "Iron & Steel Materials"]} 
-                      className="inline-flex px-2 font-medium text-foreground"
-                      duration={2500}
+                    <SplitText 
+                       text="Premier exporter of Natural Stones & Granite, Fresh Produce & Spices, Dehydrated Powders, Iron & Steel Materials."
+                       className="inline font-medium text-foreground"
+                       delay={30}
+                       duration={0.5}
                     />
-                    <br className="hidden md:block" />
-                    Delivered with consistency, compliance, and scale.
+                    <br className="hidden md:block mt-4" />
+                    <span className="block mt-2">Delivered with consistency, compliance, and scale.</span>
                   </div>
                 </BlurFade>
               </div>
@@ -63,21 +70,36 @@ export default function Home() {
             </div>
             
             {/* Stats */}
-            <div className="absolute bottom-0 w-full border-t border-border/40 bg-background/50 backdrop-blur-sm py-8">
+            <GlassSurface 
+               width="100%" 
+               height="auto" 
+               borderRadius={0} 
+               className="absolute bottom-0 border-t border-border/40"
+               innerClassName="py-8"
+               blur={8}
+            >
                <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
                   <StatItem value={30} label="Years Experience" />
                   <StatItem value={25} label="Countries Served" />
                   <StatItem value={500} label="Happy Clients" suffix="+" />
                   <StatItem value={100} label="Quality Checks" suffix="%" />
                </div>
-            </div>
+            </GlassSurface>
           </section>
 
           {/* TRUST BAR / ABOUT */}
           <section id="about" className="py-24 bg-muted/30">
              <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
-                   <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-serif text-foreground">Three Decades of Uncompromising Quality</h2>
+                   <ScrollReveal 
+                      baseOpacity={0.2} 
+                      enableBlur={true} 
+                      containerClassName="mb-8"
+                      textClassName="text-3xl md:text-4xl font-bold tracking-tight font-serif text-foreground"
+                   >
+                      Three Decades of Uncompromising Quality
+                   </ScrollReveal>
+                   
                    <div className="w-20 h-1 bg-primary rounded-full"></div>
                    <p className="text-muted-foreground text-lg leading-relaxed">
                      Al Ahmed Continental has been a pillar in the export industry since 1996. 
@@ -95,6 +117,26 @@ export default function Home() {
                       <TrustItem text="End-to-End Logistics" />
                       <TrustItem text="24/7 Client Support" />
                    </ul>
+                   
+                   <div className="pt-8">
+                      <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider font-semibold">Trusted by Global Partners</p>
+                      <LogoLoop 
+                        logos={[
+                          { src: "/file.svg", alt: "Partner 1" },
+                          { src: "/globe.svg", alt: "Partner 2" },
+                          { src: "/window.svg", alt: "Partner 3" },
+                          { src: "/next.svg", alt: "Partner 4" },
+                          { src: "/vercel.svg", alt: "Partner 5" },
+                        ]} 
+                        speed={50} 
+                        direction="left" 
+                        logoHeight={40} 
+                        gap={40}
+                        pauseOnHover={true}
+                        width="100%"
+                        className="opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
+                      />
+                   </div>
                 </div>
                 <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-background group">
                     <BorderBeam size={300} duration={12} delay={9} />
@@ -119,55 +161,23 @@ export default function Home() {
                    <p className="text-muted-foreground text-xl font-light">Diverse product lines, unified by a single standard of excellence.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                   {/* Stones */}
-                   <VerticalCard 
-                     id="stones"
-                     title="Natural Stones & Granite"
-                     description="Premium Indian granite, marble, and sandstone for architectural marvels."
-                     features={["Makrana White, Ketan Green", "Slabs, Tiles, & Blocks", "FOB Mundra Port"]}
-                     gradient="bg-stone-50"
-                     icon={<span className="text-3xl">🪨</span>}
-                   />
-                   
-                   {/* Produce */}
-                   <VerticalCard 
-                     id="produce"
-                     title="Fresh Produce (DAARAAB)"
-                     description="Farm-fresh vegetables and fruits, packed for freshness and longevity."
-                     features={["G4 Green Chilli Specialists", "Export-Grade Packaging", "UAE & Gulf Compliance"]}
-                     gradient="bg-green-50"
-                     icon={<span className="text-3xl">🌶️</span>}
-                   />
-
-                   {/* Powders */}
-                   <VerticalCard 
-                     id="powders"
-                     title="Dehydrated Powders"
-                     description="High-quality food ingredients for industrial and culinary applications."
-                     features={["Onion, Garlic, Red Chilli", "Banana & Moringa Powder", "Bulk & Private Label"]}
-                     gradient="bg-orange-50"
-                     icon={<span className="text-3xl">🧂</span>}
-                   />
-
-                   {/* Steel */}
-                   <VerticalCard 
-                     id="steel"
-                     title="Iron & Steel"
-                     description="Construction-grade steel delivered with precision and structural integrity."
-                     features={["Fe500 / Fe550 TMT Bars", "IS Standards Compliant", "Project-Based Supply"]}
-                     gradient="bg-slate-50"
-                     icon={<span className="text-3xl">🏗️</span>}
-                   />
-                </div>
+                <MagicBento 
+                  textAutoHide={false}
+                  enableStars={true}
+                  enableSpotlight={true}
+                  enableBorderGlow={true}
+                  spotlightRadius={300}
+                  particleCount={15}
+                  glowColor="132, 0, 255"
+                />
              </div>
           </section>
 
           {/* QUALITY & COMPLIANCE */}
           <section id="quality" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
              {/* Background decorative elements */}
-             <div className="absolute inset-0 opacity-10 mix-blend-soft-light">
-                <DotPattern width={40} height={40} className="fill-white" />
+             <div className="absolute inset-0 z-0">
+                <GravityStarsBackground starsCount={100} starsSize={2} movementSpeed={0.5} starsOpacity={0.3} className="w-full h-full" />
              </div>
              
              <div className="container mx-auto px-4 md:px-6 relative z-10 grid md:grid-cols-2 gap-16 items-center">
@@ -193,7 +203,7 @@ export default function Home() {
                       </div>
                    </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-xl p-10 rounded-2xl border border-white/20 shadow-2xl">
+                <GlassSurface width="100%" height="100%" borderRadius={20} innerClassName="p-10" blur={5}>
                    <h3 className="text-2xl font-bold mb-6 font-serif">Documentation Support</h3>
                    <ul className="space-y-4 text-lg">
                       <li className="flex items-center gap-4">
@@ -213,7 +223,7 @@ export default function Home() {
                         Commercial Invoice & Packing List
                       </li>
                    </ul>
-                </div>
+                </GlassSurface>
              </div>
           </section>
 
@@ -251,15 +261,16 @@ export default function Home() {
                    We bridge the distance with reliability.
                 </p>
                 
-                <div className="p-10 bg-background rounded-3xl border border-border shadow-2xl max-w-5xl mx-auto">
-                   <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-                      <div className="text-left">
+                <GlassSurface width="100%" height="auto" borderRadius={24} className="max-w-5xl mx-auto shadow-2xl relative overflow-hidden" innerClassName="p-10 flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+                   <div className="absolute inset-0 z-0 opacity-20">
+                      <GradientBackground />
+                   </div>
+                   <div className="text-left relative z-10">
                          <h3 className="text-3xl font-bold mb-3 font-serif">Ready to Source?</h3>
                          <p className="text-muted-foreground text-lg">Send us your detailed requirement and get a quote within 24 hours.</p>
                       </div>
                       <HeroActions text="Get A Quote Now" />
-                   </div>
-                </div>
+                </GlassSurface>
              </div>
           </section>
 

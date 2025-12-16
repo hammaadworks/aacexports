@@ -6,9 +6,11 @@ import { EnquiryModal } from "@/components/enquiry-modal"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
+import { Lens } from "@/components/ui/lens"
 import { cn } from "@/lib/utils"
 import { Download, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ProducePage() {
   return (
@@ -32,6 +34,26 @@ export default function ProducePage() {
                    </p>
                 </BlurFade>
              </div>
+          </section>
+
+          {/* Fresh Gallery with Lens */}
+          <section className="py-12 bg-background border-b border-border/50">
+            <div className="container mx-auto px-4 md:px-6">
+              <h2 className="text-2xl font-bold font-serif mb-8 text-center">Fresh From Farms</h2>
+              <div className="max-w-2xl mx-auto">
+                <Lens zoomFactor={2} lensSize={150}>
+                  <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg border border-border">
+                    <Image 
+                      src="/assets/img/features-1.png" 
+                      alt="Fresh Produce Assortment"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </Lens>
+                <p className="text-center text-sm font-medium text-muted-foreground mt-4">Hand-picked Quality</p>
+              </div>
+            </div>
           </section>
 
           <section className="py-16 bg-muted/20">

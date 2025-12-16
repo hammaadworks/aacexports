@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useModal } from "@/lib/modal-context"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
-import { MagicCard } from "@/components/ui/magic-card"
+import GlassSurface from "@/components/GlassSurface"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"
@@ -61,12 +61,16 @@ export function VerticalCard({
     return (
         <div className="h-full">
             <Link href={route} className="block h-full group">
-                <MagicCard 
-                    className="h-full p-8 flex flex-col justify-between border border-border/50 group-hover:border-primary/50 transition-colors"
-                    gradientColor="#9b2c2c20" 
+                <GlassSurface 
+                    width="100%" 
+                    height="100%"
+                    borderRadius={20}
+                    className="h-full group-hover:border-primary/50 transition-colors overflow-hidden"
+                    innerClassName="p-8 flex flex-col justify-between h-full"
+                    opacity={0.6}
                 >
                     <div>
-                       <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-background border border-border shadow-sm text-primary", gradient)}>
+                       <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-background/50 border border-border shadow-sm text-primary backdrop-blur-sm", gradient)}>
                           {icon}
                        </div>
                        <h3 className="text-2xl font-bold mb-3 font-serif tracking-tight group-hover:text-primary transition-colors">{title}</h3>
@@ -83,11 +87,11 @@ export function VerticalCard({
                        </ul>
                     </div>
                     <div 
-                      className="w-full py-3 rounded-lg border border-border bg-background group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 font-medium text-sm mt-auto shadow-sm flex items-center justify-center gap-2"
+                      className="w-full py-3 rounded-lg border border-border bg-background/50 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 font-medium text-sm mt-auto shadow-sm flex items-center justify-center gap-2 backdrop-blur-md"
                     >
                         Explore Details <ArrowRight className="w-4 h-4" />
                     </div>
-                </MagicCard>
+                </GlassSurface>
             </Link>
         </div>
     )

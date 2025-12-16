@@ -18,12 +18,6 @@
     },
     "useFullWidth": true
   },
-  "mcpServers": {
-    "shadcn": {
-      "command": "npx",
-      "args": ["shadcn@latest", "mcp"]
-    }
-  },
   "output": {
     "format": "text"
   },
