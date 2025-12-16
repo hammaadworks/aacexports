@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
+const repo = "aacexports";
 const nextConfig: NextConfig = {
-  output: 'export',
+  // basePath: `/${repo}`,
+  // assetPrefix: `/${repo}/`,
+  output: "export",
   images: {
     unoptimized: true,
   },
