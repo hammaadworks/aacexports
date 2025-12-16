@@ -30,7 +30,7 @@ export default function SteelPage() {
                 </BlurFade>
                 <BlurFade delay={0.2} inView>
                    <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                      Building the future. We supply high-tensile construction steel and iron products for infrastructure projects worldwide.
+                      High‑tensile strength for global infrastructure projects.
                    </p>
                 </BlurFade>
              </div>
@@ -63,13 +63,11 @@ export default function SteelPage() {
                       <h2 className="text-3xl font-bold font-serif">Strength & Reliability</h2>
                       <div className="prose prose-stone dark:prose-invert">
                          <p>
-                            India is a global leader in steel production. Al Ahmed Continental connects international 
-                            buyers with top-tier Indian mills. We specialize in TMT (Thermo Mechanically Treated) bars, 
-                            known for their superior strength and ductility.
+                            We supply from trusted mills with strict compliance.
                          </p>
                          <h3 className="text-xl font-bold mt-6 mb-3">Product Portfolio</h3>
                          <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>TMT Bars:</strong> Grades Fe500, Fe500D, Fe550. Available in all standard diameters (8mm to 32mm).</li>
+                            <li><strong>TMT Bars:</strong> (Fe500, Fe500D, Fe550 | 8–32mm)</li>
                             <li><strong>MS Billets:</strong> Raw material for rolling mills.</li>
                             <li><strong>Wire Rods:</strong> For drawing and construction mesh.</li>
                             <li><strong>Structural Steel:</strong> Angles, Channels, and Beams.</li>
@@ -90,18 +88,18 @@ export default function SteelPage() {
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Logistics</span>
-                               <span className="font-medium text-foreground">Break Bulk or Containerized (Cut lengths)</span>
+                               <span className="font-medium text-foreground">Break‑bulk or containerized shipping</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Inspection</span>
-                               <span className="font-medium text-foreground">SGS / Bureau Veritas optional</span>
+                               <span className="font-medium text-foreground">SGS / BV inspection optional</span>
                             </li>
                          </ul>
                       </div>
                       
                       <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
                          <h3 className="text-2xl font-bold font-serif mb-4">Catalog</h3>
-                         <p className="mb-6 text-muted-foreground">Download TMT bar weight charts and grade comparisons.</p>
+                         <p className="mb-6 text-muted-foreground">Weight charts + grade comparisons.</p>
                          <a href="/aace_catalog.pdf" target="_blank" rel="noopener noreferrer" className="w-full block">
                             <ShimmerButton className="w-full justify-center">
                                <Download className="w-4 h-4 mr-2" /> Download Steel Info

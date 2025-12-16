@@ -10,7 +10,6 @@ import { BorderBeam } from "@/components/ui/border-beam"
 import { cn } from "@/lib/utils"
 import { CheckCircle2, Globe2, Truck, ShieldCheck } from "lucide-react"
 import { HeroActions, StatItem, FaqItem } from "@/components/landing-client"
-import GlassSurface from "@/components/GlassSurface"
 import Aurora from "@/components/Aurora"
 import BlurText from "@/components/BlurText"
 import SplitText from "@/components/SplitText"
@@ -43,7 +42,7 @@ export default function Home() {
 
               <div className="max-w-5xl space-y-6">
                  <BlurText 
-                   text="Global Merchandise Exports, Built on Trust." 
+                   text="Global Exports. Zero Compromise." 
                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground font-serif leading-[1.1] justify-center text-center"
                    delay={50}
                    animateBy="words"
@@ -53,13 +52,13 @@ export default function Home() {
                 <BlurFade delay={0.4} inView>
                   <div className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                     <SplitText 
-                       text="Premier exporter of Natural Stones & Granite, Fresh Produce & Spices, Dehydrated Powders, Iron & Steel Materials."
+                       text="Delivering Stones, Steel, Electronics, Food Grains, and Dehydrated Powders for 30+ years."
                        className="inline font-medium text-foreground"
                        delay={30}
                        duration={0.5}
                     />
                     <br className="hidden md:block mt-4" />
-                    <span className="block mt-2">Delivered with consistency, compliance, and scale.</span>
+                    <span className="block mt-2 font-semibold">Consistency. Compliance. Scale.</span>
                   </div>
                 </BlurFade>
               </div>
@@ -70,21 +69,14 @@ export default function Home() {
             </div>
             
             {/* Stats */}
-            <GlassSurface 
-               width="100%" 
-               height="auto" 
-               borderRadius={0} 
-               className="absolute bottom-0 border-t border-border/40"
-               innerClassName="py-8"
-               blur={8}
-            >
+            <div className="absolute bottom-0 border-t border-border/40 w-full backdrop-blur-md bg-white/20 dark:bg-black/20 py-8">
                <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
-                  <StatItem value={30} label="Years Experience" />
-                  <StatItem value={25} label="Countries Served" />
-                  <StatItem value={500} label="Happy Clients" suffix="+" />
+                  <StatItem value={30} label="Years Expertise" />
+                  <StatItem value={25} label="Global Markets" suffix="+" />
+                  <StatItem value={500} label="Clients" suffix="+" />
                   <StatItem value={100} label="Quality Checks" suffix="%" />
                </div>
-            </GlassSurface>
+            </div>
           </section>
 
           {/* TRUST BAR / ABOUT */}
@@ -97,25 +89,27 @@ export default function Home() {
                       containerClassName="mb-8"
                       textClassName="text-3xl md:text-4xl font-bold tracking-tight font-serif text-foreground"
                    >
-                      Three Decades of Uncompromising Quality
+                      A Reputation Built on Reliability
                    </ScrollReveal>
                    
                    <div className="w-20 h-1 bg-primary rounded-full"></div>
-                   <p className="text-muted-foreground text-lg leading-relaxed">
-                     Al Ahmed Continental has been a pillar in the export industry since 1996. 
-                     What started as a vision to bridge the gap between Indian craftsmanship and global demand 
-                     has grown into a multi-vertical export house.
-                   </p>
-                   <p className="text-muted-foreground text-lg leading-relaxed">
-                     We don't just ship products; we deliver peace of mind. From the quarries of Rajasthan to the 
-                     farms of South India, every consignment is vetted, verified, and valued.
-                   </p>
+                   <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+                     <p>
+                       Since 1996, we’ve focused on one thing: <strong className="text-foreground">Do it right. Deliver on time. Every time.</strong>
+                     </p>
+                     <p>
+                       Our clients stay because of our predictability, documentation accuracy, and zero‑tolerance quality standards.
+                     </p>
+                     <p>
+                       We don’t operate like traders. We operate like <strong className="text-foreground">export infrastructure</strong>.
+                     </p>
+                   </div>
                    
                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                      <TrustItem text="Government Recognized" />
-                      <TrustItem text="ISO Certified Processes" />
-                      <TrustItem text="End-to-End Logistics" />
-                      <TrustItem text="24/7 Client Support" />
+                      <TrustItem text="Government‑Recognized Exporter" />
+                      <TrustItem text="ISO‑Aligned Processes" />
+                      <TrustItem text="Complete Documentation & Logistics Support" />
+                      <TrustItem text="24/7 Client Assistance" />
                    </ul>
                    
                    <div className="pt-8">
@@ -157,8 +151,8 @@ export default function Home() {
           <section id="verticals" className="py-32 bg-background relative">
              <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                   <h2 className="text-4xl md:text-5xl font-bold font-serif text-foreground">Export Verticals</h2>
-                   <p className="text-muted-foreground text-xl font-light">Diverse product lines, unified by a single standard of excellence.</p>
+                   <h2 className="text-4xl md:text-5xl font-bold font-serif text-foreground">Our Trading Verticals</h2>
+                   <p className="text-muted-foreground text-xl font-light">Three divisions. One standard: Excellence without compromise.</p>
                 </div>
 
                 <MagicBento 
@@ -182,28 +176,28 @@ export default function Home() {
              
              <div className="container mx-auto px-4 md:px-6 relative z-10 grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                   <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">Quality isn't a department.<br/>It's our legacy.</h2>
+                   <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif leading-tight">Quality Isn’t a Department — It’s Our Legacy</h2>
                    <p className="text-primary-foreground/90 text-xl mb-10 leading-relaxed font-light">
-                     Every shipment leaving our facility undergoes rigorous inspection. 
-                     We understand that in international trade, reputation is everything.
-                     Our documentation team ensures seamless customs clearance at both ends.
+                     Every shipment undergoes multi-stage inspection. 
+                     Every document is checked twice.
+                     Every timeline is honored.
                    </p>
                    <div className="grid grid-cols-2 gap-8">
                       <div className="flex flex-col gap-3">
                         <CheckCircle2 className="w-10 h-10 opacity-90" />
-                        <span className="font-semibold text-lg">Pre-Shipment Inspection</span>
+                        <span className="font-semibold text-lg">Pre‑Shipment Inspection</span>
                       </div>
                       <div className="flex flex-col gap-3">
                         <Globe2 className="w-10 h-10 opacity-90" />
-                        <span className="font-semibold text-lg">Global Compliance</span>
+                        <span className="font-semibold text-lg">Global Compliance Standards</span>
                       </div>
                       <div className="flex flex-col gap-3">
                         <Truck className="w-10 h-10 opacity-90" />
-                        <span className="font-semibold text-lg">Logistics Expert</span>
+                        <span className="font-semibold text-lg">Dedicated Logistics Team</span>
                       </div>
                    </div>
                 </div>
-                <GlassSurface width="100%" height="100%" borderRadius={20} innerClassName="p-10" blur={5}>
+                <div className="w-full h-full rounded-[20px] p-10 backdrop-blur-md bg-white/10 border border-white/20 shadow-xl">
                    <h3 className="text-2xl font-bold mb-6 font-serif">Documentation Support</h3>
                    <ul className="space-y-4 text-lg">
                       <li className="flex items-center gap-4">
@@ -216,14 +210,14 @@ export default function Home() {
                       </li>
                       <li className="flex items-center gap-4">
                         <div className="h-2 w-2 rounded-full bg-white"></div>
-                        Lab Analysis Reports
+                        Lab Reports
                       </li>
                       <li className="flex items-center gap-4">
                         <div className="h-2 w-2 rounded-full bg-white"></div>
                         Commercial Invoice & Packing List
                       </li>
                    </ul>
-                </GlassSurface>
+                </div>
              </div>
           </section>
 
@@ -255,22 +249,23 @@ export default function Home() {
           {/* MARKETS & CTA */}
           <section id="markets" className="py-32 bg-muted/30 relative overflow-hidden">
              <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif text-foreground">Serving Markets Across the Globe</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif text-foreground">Serving Buyers Across 25+ Countries</h2>
                 <p className="text-muted-foreground text-xl mb-16 max-w-2xl mx-auto font-light">
-                   From the Middle East to Europe, Southeast Asia to the Americas. 
-                   We bridge the distance with reliability.
+                   Middle East. Europe. Africa. Southeast Asia. The Americas.
                 </p>
                 
-                <GlassSurface width="100%" height="auto" borderRadius={24} className="max-w-5xl mx-auto shadow-2xl relative overflow-hidden" innerClassName="p-10 flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
-                   <div className="absolute inset-0 z-0 opacity-20">
-                      <GradientBackground />
-                   </div>
-                   <div className="text-left relative z-10">
+                <div className="w-full max-w-5xl mx-auto rounded-[24px] shadow-2xl relative overflow-hidden backdrop-blur-md bg-white/30 dark:bg-black/30 border border-white/20">
+                   <div className="p-10 flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+                      <div className="absolute inset-0 z-0 opacity-20">
+                         <GradientBackground />
+                      </div>
+                      <div className="text-left relative z-10">
                          <h3 className="text-3xl font-bold mb-3 font-serif">Ready to Source?</h3>
-                         <p className="text-muted-foreground text-lg">Send us your detailed requirement and get a quote within 24 hours.</p>
+                         <p className="text-muted-foreground text-lg">Send your requirements. Receive a tailored quote within 24 hours.</p>
                       </div>
                       <HeroActions text="Get A Quote Now" />
-                </GlassSurface>
+                   </div>
+                </div>
              </div>
           </section>
 

@@ -30,7 +30,7 @@ export default function PowdersPage() {
                 </BlurFade>
                 <BlurFade delay={0.2} inView>
                    <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                      Concentrated flavor, extended shelf life. We supply high-grade food ingredients for the processing industry and culinary sector.
+                      High‑grade ingredients for processing, culinary, and retail applications.
                    </p>
                 </BlurFade>
              </div>
@@ -63,17 +63,17 @@ export default function PowdersPage() {
                       <h2 className="text-3xl font-bold font-serif">Pure & Potent</h2>
                       <div className="prose prose-stone dark:prose-invert">
                          <p>
-                            Dehydration technology allows us to preserve the nutritional value and flavor profile of 
-                            fresh produce while drastically reducing weight and increasing shelf life. Our powders 
-                            are free from artificial additives and anti-caking agents (unless requested).
+                            Dehydration preserves flavor and nutrition while extending shelf life. 
+                            No additives. No shortcuts. Unless requested.
                          </p>
                          <h3 className="text-xl font-bold mt-6 mb-3">Product Range</h3>
                          <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Onion Powder (Red/White):</strong> Essential for seasoning mixes and ready-to-eat meals.</li>
-                            <li><strong>Garlic Powder:</strong> High potency, consistent flavor.</li>
-                            <li><strong>Red Chilli Powder:</strong> Customized heat levels (SHU) and color values (ASTA).</li>
-                            <li><strong>Banana Powder:</strong> Used in baby food and bakery products.</li>
-                            <li><strong>Moringa Powder:</strong> The superfood supplement.</li>
+                            <li><strong>Onion Powder (Red/White):</strong> For seasoning mixes and ready meals.</li>
+                            <li><strong>Garlic Powder:</strong> Strong aroma, consistent potency.</li>
+                            <li><strong>Red Chilli Powder:</strong> Custom SHU and ASTA values.</li>
+                            <li><strong>Green Chilli Powder:</strong> Vibrant color, sharp heat, ideal for blends and sauces.</li>
+                            <li><strong>Banana Powder:</strong> Used in bakery and baby food.</li>
+                            <li><strong>Moringa Powder:</strong> Nutrient-dense superfood.</li>
                          </ul>
                       </div>
                    </div>
@@ -87,15 +87,15 @@ export default function PowdersPage() {
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Retail</span>
-                               <span className="font-medium text-foreground">Private Label Jars/Pouches</span>
+                               <span className="font-medium text-foreground">Private‑label jars/pouches</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Packaging</span>
-                               <span className="font-medium text-foreground">Bulk Bags (20/25kg) with liner</span>
+                               <span className="font-medium text-foreground">20/25kg bulk bags</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Quality</span>
-                               <span className="font-medium text-foreground">Metal Detected, Sterilized</span>
+                               <span className="font-medium text-foreground">Metal-detected, sterilized</span>
                             </li>
                          </ul>
                       </div>

@@ -35,26 +35,38 @@ const cardData: BentoCardProps[] = [
   {
     color: '#1a1a1a',
     title: 'Natural Stones & Granite',
-    description: 'Premium Indian granite, marble, and sandstone for architectural marvels. Slabs, Tiles, & Blocks.',
+    description: 'Premium granite, marble, and sandstone — processed with precision.',
     label: 'Stones'
   },
   {
     color: '#1a1a1a',
-    title: 'Fresh Produce (DAARAAB)',
-    description: 'Farm-fresh vegetables and fruits, packed for freshness. G4 Green Chilli Specialists.',
-    label: 'Produce'
+    title: 'Iron & Steel',
+    description: 'High‑tensile TMT bars, billets, wire rods, and structural steel from India’s top mills.',
+    label: 'Steel'
+  },
+  {
+    color: '#1a1a1a',
+    title: 'Electrical & Electronics',
+    description: 'Export‑ready electrical systems, components, and electronics curated for global distribution.',
+    label: 'Electronics'
+  },
+  {
+    color: '#1a1a1a',
+    title: 'Rice',
+    description: 'Basmati & Non‑Basmati varieties — graded, sorted, and export‑ready.',
+    label: 'Rice'
   },
   {
     color: '#1a1a1a',
     title: 'Dehydrated Powders',
-    description: 'High-quality food ingredients. Onion, Garlic, Red Chilli, Banana & Moringa Powder.',
+    description: 'Pure. Potent. Clean-label ingredients for industrial and retail use.',
     label: 'Powders'
   },
   {
     color: '#1a1a1a',
-    title: 'Iron & Steel',
-    description: 'Construction-grade steel. Fe500 / Fe550 TMT Bars, IS Standards Compliant.',
-    label: 'Steel'
+    title: 'Fresh Produce (DAARAAB)',
+    description: 'Farm-to-port freshness backed by strict quality control.',
+    label: 'Produce'
   }
 ];
 

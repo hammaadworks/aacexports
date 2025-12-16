@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useModal } from "@/lib/modal-context"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
-import GlassSurface from "@/components/GlassSurface"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { cn } from "@/lib/utils"
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react"
@@ -61,13 +60,8 @@ export function VerticalCard({
     return (
         <div className="h-full">
             <Link href={route} className="block h-full group">
-                <GlassSurface 
-                    width="100%" 
-                    height="100%"
-                    borderRadius={20}
-                    className="h-full group-hover:border-primary/50 transition-colors overflow-hidden"
-                    innerClassName="p-8 flex flex-col justify-between h-full"
-                    opacity={0.6}
+                <div 
+                    className="h-full rounded-[20px] backdrop-blur-md bg-white/60 dark:bg-black/60 border border-border group-hover:border-primary/50 transition-colors overflow-hidden p-8 flex flex-col justify-between"
                 >
                     <div>
                        <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-background/50 border border-border shadow-sm text-primary backdrop-blur-sm", gradient)}>
@@ -91,7 +85,7 @@ export function VerticalCard({
                     >
                         Explore Details <ArrowRight className="w-4 h-4" />
                     </div>
-                </GlassSurface>
+                </div>
             </Link>
         </div>
     )

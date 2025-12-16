@@ -30,7 +30,7 @@ export default function ProducePage() {
                 </BlurFade>
                 <BlurFade delay={0.2} inView>
                    <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                      Farm-to-port freshness. Under our brand DAARAAB, we export premium Indian agriculture to the world, ensuring taste and nutrition are preserved.
+                      Farm-to-port freshness backed by strict quality control.
                    </p>
                 </BlurFade>
              </div>
@@ -63,9 +63,7 @@ export default function ProducePage() {
                       <h2 className="text-3xl font-bold font-serif">Freshness Guaranteed</h2>
                       <div className="prose prose-stone dark:prose-invert">
                          <p>
-                            India is the fruit basket of the world. We leverage this by sourcing directly from 
-                            contract farmers, ensuring strict adherence to export quality standards regarding size, 
-                            color, and pesticide residue levels.
+                            Direct sourcing from contract farmers ensures export-standard size, color, and residue control.
                          </p>
                          <h3 className="text-xl font-bold mt-6 mb-3">Key Exports</h3>
                          <ul className="list-disc pl-5 space-y-2">
@@ -82,11 +80,11 @@ export default function ProducePage() {
                          <ul className="space-y-4 text-muted-foreground">
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Packaging</span>
-                               <span className="font-medium text-foreground">Corrugated Boxes, Mesh Bags, Net Bags</span>
+                               <span className="font-medium text-foreground">Corrugated boxes, mesh bags</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Cold Chain</span>
-                               <span className="font-medium text-foreground">Pre-cooling & Reefer Containers</span>
+                               <span className="font-medium text-foreground">Pre‑cooling, reefer containers</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Certification</span>
@@ -101,7 +99,7 @@ export default function ProducePage() {
                       
                       <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
                          <h3 className="text-2xl font-bold font-serif mb-4">Catalog</h3>
-                         <p className="mb-6 text-muted-foreground">View our seasonal calendar and packaging specifications.</p>
+                         <p className="mb-6 text-muted-foreground">View seasonal calendar + packaging specs.</p>
                          <a href="/aace_catalog.pdf" target="_blank" rel="noopener noreferrer" className="w-full block">
                             <ShimmerButton className="w-full justify-center">
                                <Download className="w-4 h-4 mr-2" /> Download Produce List

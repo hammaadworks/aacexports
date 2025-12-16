@@ -31,7 +31,7 @@ export default function StonesPage() {
                 </BlurFade>
                 <BlurFade delay={0.2} inView>
                    <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                      Timeless elegance from the heart of India's quarries. We export premium quality slabs, tiles, and blocks processed to perfection.
+                      Timeless materials. Precision‑cut. Export‑ready.
                    </p>
                 </BlurFade>
              </div>
@@ -80,9 +80,7 @@ export default function StonesPage() {
                       <h2 className="text-3xl font-bold font-serif">Our Collection</h2>
                       <div className="prose prose-stone dark:prose-invert">
                          <p>
-                            Our stone division specializes in sourcing the finest granite, marble, and sandstone. 
-                            Located in Bangalore, we have direct access to the rich mineral belts of South India 
-                            and strong partnerships with quarries in Rajasthan.
+                            We source from India’s richest quarry belts.
                          </p>
                          <h3 className="text-xl font-bold mt-6 mb-3">Popular Varieties</h3>
                          <ul className="list-disc pl-5 space-y-2">
@@ -100,26 +98,26 @@ export default function StonesPage() {
                          <ul className="space-y-4 text-muted-foreground">
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Forms</span>
-                               <span className="font-medium text-foreground">Rough Blocks, Slabs (Gang Saw/Cutter), Tiles</span>
+                               <span className="font-medium text-foreground">Blocks, slabs, tiles</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Finishes</span>
-                               <span className="font-medium text-foreground">Polished, Honed, Flamed, Leather, Bush-Hammered</span>
+                               <span className="font-medium text-foreground">Polished, honed, flamed, leather, bush‑hammered</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Thickness</span>
-                               <span className="font-medium text-foreground">18mm, 20mm, 30mm, or Custom</span>
+                               <span className="font-medium text-foreground">18mm, 20mm, 30mm</span>
                             </li>
                             <li className="flex justify-between border-b border-border/50 pb-2">
                                <span>Origin</span>
-                               <span className="font-medium text-foreground">India (South & North)</span>
+                               <span className="font-medium text-foreground">South & North India</span>
                             </li>
                          </ul>
                       </div>
                       
                       <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
                          <h3 className="text-2xl font-bold font-serif mb-4">Catalog</h3>
-                         <p className="mb-6 text-muted-foreground">Download our complete stone catalog with high-res texture samples and technical data sheets.</p>
+                         <p className="mb-6 text-muted-foreground">Download complete stone catalog with high‑res textures.</p>
                          {/* Placeholder download link */}
                          <a href="/aace_catalog.pdf" target="_blank" rel="noopener noreferrer" className="w-full block">
                             <ShimmerButton className="w-full justify-center">
