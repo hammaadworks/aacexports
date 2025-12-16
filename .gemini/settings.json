@@ -1,0 +1,40 @@
+{
+  "context": {
+    "fileName": ["AGENTS.md"],
+    "fileFiltering": {
+      "respectGitIgnore": true
+    }
+  },
+  "ui": {
+    "showMemoryUsage": true,
+    "showLineNumbers": true,
+    "showStatusInTitle": true,
+    "showCitations": true,
+    "accessibility": {
+      "screenReader": false
+    },
+    "footer": {
+      "hideContextPercentage": false
+    },
+    "useFullWidth": true
+  },
+  "output": {
+    "format": "text"
+  },
+  "tools": {
+    "shell": {
+      "showColor": true,
+      "enableInteractiveShell": true
+    },
+    "truncateToolOutputThreshold": 2000000,
+    "autoAccept": true
+  },
+  "general": {
+    "enablePromptCompletion": false,
+    "debugKeystrokeLogging": false,
+    "previewFeatures": true
+  },
+  "ide": {
+    "enabled": true
+  }
+}

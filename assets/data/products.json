@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "name": "Makrana White",
+    "category": "Marble",
+    "description": "The most common type of Calcite Stone with innate white color. Used for sculpture and building construction.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-100 to-gray-300"
+  },
+  {
+    "id": 2,
+    "name": "Ketan Green",
+    "category": "Marble",
+    "description": "Calcite Stone with innate green color. Widely used for flooring and wall cladding.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-emerald-700 to-emerald-900"
+  },
+  {
+    "id": 3,
+    "name": "Makrana Dungri",
+    "category": "Marble",
+    "description": "White marble with slightly grey pattern. Preferred for flooring, requires no chemical treatment.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-200 to-gray-400"
+  },
+  {
+    "id": 4,
+    "name": "Makrana Albeta",
+    "category": "Marble",
+    "description": "White color with slightly black lines. Gives a rich look for flooring.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-100 to-stone-300"
+  },
+  {
+    "id": 5,
+    "name": "Makrana Brown",
+    "category": "Marble",
+    "description": "Albeta marble with brown color pattern on top.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-stone-400 to-stone-600"
+  },
+  {
+    "id": 6,
+    "name": "Makrana Pink",
+    "category": "Marble",
+    "description": "Pink color pattern on white. Used for decoration and flooring.",
+    "finish": "Unpolished",
+    "origin": "India",
+    "image_placeholder_color": "from-pink-100 to-rose-200"
+  },
+  {
+    "id": 7,
+    "name": "Black Paradiso",
+    "category": "Granite",
+    "description": "Premium Indian Granite with swirling black and violet patterns.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-800 to-purple-900"
+  },
+  {
+    "id": 8,
+    "name": "Ivory Brown",
+    "category": "Granite",
+    "description": "Beige and light brown granite suitable for large scale cladding.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-orange-100 to-amber-200"
+  },
+  {
+    "id": 9,
+    "name": "Ze Black",
+    "category": "Granite",
+    "description": "Deep black granite, highly durable.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-black to-gray-900"
+  },
+  {
+    "id": 10,
+    "name": "Black Forest",
+    "category": "Granite",
+    "description": "Bold black granite with sweeping white veins resembling a forest in winter.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-900 to-slate-800"
+  },
+  {
+    "id": 11,
+    "name": "Colonial Cream",
+    "category": "Granite",
+    "description": "Soft cream background with gold and brown speckles.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-yellow-50 to-amber-100"
+  },
+  {
+    "id": 12,
+    "name": "Alaska Gold",
+    "category": "Exotic Granite",
+    "description": "Stunning gold and warm earth tones.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-yellow-200 to-yellow-500"
+  },
+  {
+    "id": 13,
+    "name": "Alaska White",
+    "category": "Exotic Granite",
+    "description": "Icy white background with blacks and greys.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-100 to-slate-300"
+  },
+  {
+    "id": 14,
+    "name": "Fusion Gold",
+    "category": "Exotic Granite",
+    "description": "Dynamic pattern of gold and black, truly unique.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-900 to-yellow-600"
+  },
+  {
+    "id": 15,
+    "name": "Rose Quartz",
+    "category": "Semi-Precious",
+    "description": "Translucent pink quartz, backlighting recommended.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-pink-300 to-pink-500"
+  },
+  {
+    "id": 16,
+    "name": "Blue Lace Agate",
+    "category": "Semi-Precious",
+    "description": "Intricate blue lace patterns, a luxury statement.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-blue-200 to-blue-400"
+  },
+  {
+    "id": 17,
+    "name": "Amethyst",
+    "category": "Semi-Precious",
+    "description": "Royal purple semi-precious stone.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-purple-600 to-purple-900"
+  },
+  {
+    "id": 18,
+    "name": "Petrified Wood Retro",
+    "category": "Semi-Precious",
+    "description": "Fossilized wood with rich earthy tones.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-amber-700 to-brown-900"
+  },
+  {
+    "id": 19,
+    "name": "Lapis Lazuli",
+    "category": "Semi-Precious",
+    "description": "Deep celestial blue with golden pyrite inclusions.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-blue-700 to-blue-950"
+  },
+  {
+    "id": 20,
+    "name": "Malachite",
+    "category": "Semi-Precious",
+    "description": "Vivid green banded mineral.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-emerald-500 to-green-800"
+  },
+  {
+    "id": 21,
+    "name": "Red Multi",
+    "category": "Granite",
+    "description": "Vibrant red background with black and grey waves.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-red-700 to-red-900"
+  },
+  {
+    "id": 22,
+    "name": "Viscon White",
+    "category": "Granite",
+    "description": "White and grey swirls, distinctive and modern.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-200 to-gray-500"
+  },
+  {
+    "id": 23,
+    "name": "Tan Brown",
+    "category": "Granite",
+    "description": "Classic brown granite with copper colored flecks.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-amber-900 to-black"
+  },
+  {
+    "id": 24,
+    "name": "Crystal Quartz",
+    "category": "Semi-Precious",
+    "description": "Clear and icy, perfect for light manipulation.",
+    "finish": "Polished",
+    "origin": "India",
+    "image_placeholder_color": "from-cyan-100 to-white"
+  },
+  {
+    "id": 25,
+    "name": "Construction Rebar",
+    "category": "Iron & Steel",
+    "description": "High-grade steel reinforcement bars for robust construction projects.",
+    "finish": "Mill Finish",
+    "origin": "India",
+    "image_placeholder_color": "from-gray-600 to-gray-800"
+  },
+  {
+    "id": 26,
+    "name": "G4 Green Chilli Fresh",
+    "category": "Mixed Veg & Fruits",
+    "description": "Premium fresh green chillies, packed with flavor and heat, cultivated in fertile regions.",
+    "finish": "Fresh",
+    "origin": "India",
+    "image_placeholder_color": "from-lime-500 to-green-600"
+  },
+  {
+    "id": 27,
+    "name": "Dehydrated Onion Powder",
+    "category": "Dehydrated Food Powders",
+    "description": "100% natural, reliable, and flavor-rich onion powder for food processing.",
+    "finish": "Powder",
+    "origin": "India",
+    "image_placeholder_color": "from-yellow-700 to-amber-900"
+  },
+  {
+    "id": 28,
+    "name": "Dehydrated Banana Powder",
+    "category": "Dehydrated Food Powders",
+    "description": "Natural banana powder, retaining nutritional integrity and flavor consistency.",
+    "finish": "Powder",
+    "origin": "India",
+    "image_placeholder_color": "from-yellow-200 to-yellow-500"
+  }
+]
