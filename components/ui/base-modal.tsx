@@ -19,7 +19,8 @@ interface BaseModalProps {
   description?: string;
   children?: React.ReactNode;
   footerContent?: React.ReactNode; 
-  className?: string; 
+  className?: string;
+  headerClassName?: string;
 }
 
 /**
@@ -35,6 +36,7 @@ interface BaseModalProps {
  * @param children - The main content of the modal.
  * @param footerContent - Optional custom elements for the footer (e.g., action buttons).
  * @param className - Optional additional classes for the DialogContent wrapper.
+ * @param headerClassName - Optional additional classes for the DialogHeader.
  */
 const BaseModal: React.FC<BaseModalProps> = ({
   isOpen,
@@ -44,6 +46,7 @@ const BaseModal: React.FC<BaseModalProps> = ({
   children,
   footerContent,
   className,
+  headerClassName,
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -55,15 +58,13 @@ const BaseModal: React.FC<BaseModalProps> = ({
           className
         )}
       >
-        <DialogHeader className="px-4 pt-10">
+        <DialogHeader className={cn("pt-4", headerClassName)}>
           <DialogTitle>{title}</DialogTitle>
           {description && <DialogDescription className="mt-1">{description}</DialogDescription>}
         </DialogHeader>
-        <div className="px-4">
-          {children}
-        </div>
+        {children}
         {footerContent && (
-          <DialogFooter className="px-4 pb-4">
+          <DialogFooter className="pb-4">
             {footerContent}
           </DialogFooter>
         )}

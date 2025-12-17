@@ -53,7 +53,7 @@ export function Navbar() {
               onClick={() => setActiveTab(item.href)}
               className={cn(
                 "relative flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200",
-                isActive ? "text-foreground" : "text-primary-foreground hover:text-foreground" // Inactive text is primary-foreground (navy)
+                isActive ? "text-foreground" : "text-white hover:text-foreground" // Inactive text is white
               )}
               onMouseEnter={() => setHoveredTab(item.name)}
               onMouseLeave={() => setHoveredTab(null)}
@@ -78,8 +78,8 @@ export function Navbar() {
 
               {/* Content */}
               <span className="relative z-10 flex items-center gap-2">
-                <item.icon size={18} className={cn(isActive ? "text-foreground" : "currentColor")} />
-                <span className={cn("hidden sm:inline", isActive ? "text-foreground" : "")}>
+                <item.icon size={18} className={cn(isActive ? "text-foreground" : "text-white")} />
+                <span className={cn("hidden sm:inline", isActive ? "text-foreground" : "text-white")}>
                     {item.name}
                 </span>
               </span>

@@ -124,9 +124,10 @@ export default function CertificatesPage() {
         isOpen={!!selectedCert} 
         onClose={() => setSelectedCert(null)} 
         title={selectedCert?.title || "Certificate View"}
-        className="!w-[90vw] !max-w-6xl !h-[90vh] flex flex-col"
+        className="!w-[95vw] !max-w-7xl !h-[95vh] !p-0 flex flex-col gap-0"
+        headerClassName="px-6 py-4 border-b"
       >
-        <div className="w-full h-full min-h-[50vh] bg-muted/20 rounded-md overflow-hidden border">
+        <div className="w-full flex-grow bg-muted/20 overflow-hidden">
            {selectedCert && (
              <iframe 
                src={`/aacexports/certificates/${selectedCert.file}#toolbar=0&navpanes=0&scrollbar=0`} 
