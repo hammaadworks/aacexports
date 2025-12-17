@@ -98,7 +98,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
         />
-        <Button type="submit" className="w-full mt-2 rounded-full" disabled={loading}>
+        <Button type="submit" className="w-full mt-2 rounded-full text-white" disabled={loading}>
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <><Send className="mr-2 h-4 w-4" /> Send Message</>}
         </Button>
       </form>

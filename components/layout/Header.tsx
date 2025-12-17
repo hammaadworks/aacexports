@@ -53,7 +53,8 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <Button 
-            className="bg-[#EAB308] hover:bg-[#CA8A04] text-[#0F172A] font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300"
+            variant="default"
+            className="font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 text-white"
             size="default" 
             onClick={() => setIsContactOpen(true)}
           >
