@@ -40,10 +40,17 @@ export function Verticals() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
       <div className="container mx-auto px-6">
-        <SectionTitle 
-            title="Our Trading Verticals" 
-            subtitle="Three divisions. One commitment: consistent international standards."
-        />
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+        >
+            <SectionTitle 
+                title="Our Trading Verticals" 
+                subtitle="Three divisions. One commitment: consistent international standards."
+            />
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {verticals.map((item, index) => (

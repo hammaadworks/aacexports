@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
-import { Badge } from "@/components/ui/badge";
 import { ShieldCheck, FileText, Truck, Headphones } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 const trustBadges = [
   { label: "Government-Recognized Exporter", icon: ShieldCheck },
@@ -12,11 +15,17 @@ const trustBadges = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          <div className="space-y-6">
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <SectionTitle 
               title="A Three-Decade Legacy of Precision and Dependability" 
               align="left"
@@ -29,16 +38,23 @@ export function About() {
             <p className="text-lg text-muted-foreground leading-relaxed">
                 We bridge the gap between Indian craftsmanship and global demand, ensuring that what you order is exactly what you receive.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="flex flex-col items-start p-6 rounded-xl border border-border bg-secondary/10 hover:bg-secondary/30 transition-colors">
+              <motion.div 
+                key={index} 
+                className={cn("flex flex-col items-start p-6 rounded-xl border border-border bg-secondary/10 transition-colors glass-card-hover")}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                     <badge.icon size={24} />
                 </div>
                 <h4 className="font-semibold text-foreground">{badge.label}</h4>
-              </div>
+              </motion.div>
             ))}
           </div>
 

@@ -1,24 +1,42 @@
+"use client";
+
 import React from "react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CheckCircle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export default function SteelPage() {
   return (
-    <div className="pt-24 pb-12">
+    <div className="pt-24 pb-12 relative overflow-hidden">
+       {/* Background decorative blob */}
+       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+
       {/* Hero */}
       <section className="container mx-auto px-6 mb-16 text-center">
-        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">Iron & Steel</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Premium-grade materials engineered for modern infrastructure.
-        </p>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+        >
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">Iron & Steel</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Premium-grade materials engineered for modern infrastructure.
+            </p>
+        </motion.div>
       </section>
 
       {/* Details */}
       <section className="container mx-auto px-6 mb-16">
-        <div className="bg-secondary/20 rounded-2xl p-8 md:p-12">
+        <motion.div 
+            className="bg-secondary/20 rounded-2xl p-8 md:p-12 border border-border/50 backdrop-blur-sm"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
             <h2 className="text-3xl font-serif font-bold mb-6">Strength. Stability. Standards You Can Rely On.</h2>
             <div className="grid md:grid-cols-2 gap-8 text-lg text-muted-foreground leading-relaxed">
                 <p>
@@ -30,12 +48,20 @@ export default function SteelPage() {
                     Bulk, scheduled, and project-based supplies are supported with transparent pricing and reliable logistics.
                 </p>
             </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Product Portfolio */}
       <section className="container mx-auto px-6 mb-16">
-        <SectionTitle title="Product Portfolio" className="mb-8" />
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+        >
+            <SectionTitle title="Product Portfolio" className="mb-8" />
+        </motion.div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
                 { title: "TMT Bars", desc: "Fe500 · Fe500D · Fe550 (8mm–32mm)" },
@@ -43,14 +69,22 @@ export default function SteelPage() {
                 { title: "Wire Rods", desc: "For drawing, reinforcement, mesh production" },
                 { title: "Structural Steel", desc: "Angles · Channels · Beams" }
             ].map((item, i) => (
-                <Card key={i} className="bg-card hover:shadow-md transition-shadow">
-                    <CardHeader>
-                        <CardTitle>{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground">{item.desc}</p>
-                    </CardContent>
-                </Card>
+                <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                >
+                    <Card className="bg-card hover:shadow-lg transition-all hover:border-primary/20 h-full">
+                        <CardHeader>
+                            <CardTitle>{item.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">{item.desc}</p>
+                        </CardContent>
+                    </Card>
+                </motion.div>
             ))}
         </div>
       </section>
@@ -58,7 +92,12 @@ export default function SteelPage() {
       {/* Standards & Assurance */}
       <section className="container mx-auto px-6 mb-20">
         <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <h3 className="text-2xl font-bold mb-6">Standards & Assurance</h3>
                 <ul className="space-y-4">
                     {[
@@ -73,8 +112,13 @@ export default function SteelPage() {
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
                 <h3 className="text-2xl font-bold mb-6">Why Buyers Prefer Our Steel Division</h3>
                 <ul className="space-y-4">
                     {[
@@ -89,7 +133,7 @@ export default function SteelPage() {
                         </li>
                     ))}
                 </ul>
-            </div>
+            </motion.div>
         </div>
       </section>
       
