@@ -46,7 +46,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     <div className="flex flex-col gap-6">
       {/* Direct Contact Options */}
       <div className="grid grid-cols-2 gap-3">
-        <Button variant="outline" className="h-auto py-4 flex-col gap-1 hover:bg-green-50 hover:text-green-700 hover:border-green-200 dark:hover:bg-green-900/20" asChild>
+        <Button variant="outline" className="h-auto py-4 flex-col gap-1 hover:bg-green-50 hover:text-green-700 hover:border-green-200 dark:hover:bg-green-900/20 rounded-full" asChild>
             <Link href="https://wa.me/916363372655?text=Interest%20in%20aacexports.in%20lets%20discuss" target="_blank">
                 <div className="flex items-center gap-2 mb-1">
                     <MessageSquare className="h-5 w-5 text-green-600" />
@@ -55,7 +55,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 <span className="text-xs text-muted-foreground">+91 63633 72655</span>
             </Link>
         </Button>
-        <Button variant="outline" className="h-auto py-4 flex-col gap-1 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 dark:hover:bg-blue-900/20" asChild>
+        <Button variant="outline" className="h-auto py-4 flex-col gap-1 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 dark:hover:bg-blue-900/20 rounded-full" asChild>
             <Link href="mailto:sales@aacexports.in?subject=Enquiry%20from%20Website&body=Hi%20Team%2C%0A%0AI%20am%20interested%20in...">
                 <div className="flex items-center gap-2 mb-1">
                     <Mail className="h-5 w-5 text-blue-600" />
@@ -98,7 +98,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
         />
-        <Button type="submit" className="w-full mt-2" disabled={loading}>
+        <Button type="submit" className="w-full mt-2 rounded-full" disabled={loading}>
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <><Send className="mr-2 h-4 w-4" /> Send Message</>}
         </Button>
       </form>
@@ -120,7 +120,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 We'll get back to you shortly.
             </p>
         </div>
-        <Button onClick={handleClose} variant="secondary" className="mt-4">
+        <Button onClick={handleClose} variant="secondary" className="mt-4 rounded-full">
             Close
         </Button>
     </div>

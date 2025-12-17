@@ -91,7 +91,7 @@ export default function CertificatesPage() {
                         <Button 
                           variant="outline" 
                           size="sm" 
-                          className="w-full" 
+                          className="w-full rounded-full" 
                           onClick={() => setSelectedCert({ title: cert.title, file: cert.file })}
                         >
                             <Eye className="mr-2 h-3 w-3" /> View Certificate
@@ -113,7 +113,7 @@ export default function CertificatesPage() {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
                 We provide shipment-specific documents including Certificate of Origin, Phytosanitary Certificates, and Lab Reports upon request.
             </p>
-            <Button size="lg" onClick={openModal}>
+            <Button size="lg" variant="default" className="rounded-full" onClick={openModal}>
                 Contact Compliance Team
             </Button>
         </div>
