@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
