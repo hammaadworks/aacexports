@@ -9,8 +9,19 @@ import { motion } from "motion/react";
 export function Hero() {
   return (
     <section className="relative flex min-h-[85vh] flex-col justify-center overflow-hidden bg-background pt-20 md:pt-0">
-      {/* Background Elements - Optional: Add subtle gradient or pattern */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background opacity-50" />
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        {/* Main Background Image */}
+        <img 
+          src="/aacexports/img_bg.png" 
+          alt="Background Pattern" 
+          className="h-full w-full object-cover"
+        />
+        {/* Overlay for text readability - adjusts based on light/dark mode */}
+        <div className="absolute inset-0 bg-white/50 dark:bg-black/50" />
+        {/* Subtle Gradient to smooth edges */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
+      </div>
       
       <div className="container relative z-10 mx-auto px-6">
         <div className="mx-auto max-w-4xl text-center">

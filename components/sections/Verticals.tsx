@@ -22,14 +22,14 @@ const verticals = [
     description: "Basmati & Non-Basmati rice, graded, polished, and fully export-ready.",
     icon: Wheat,
     href: "/produce",
-    details: ["Rice", "Commodity Catalog", "Fresh Produce"],
+    details: ["Rice", "Spices", "Fresh Produce"],
   },
   {
     title: "Dehydrated Powders",
     description: "Clean-label, potent ingredients for industrial and culinary brands.",
     icon: Zap,
     href: "/powders",
-    details: ["Onion & Garlic", "Chilli Powders", "Banana & Moringa"],
+    details: ["Onion & Garlic", "Chilli & Turmeric", "Banana & Moringa"],
   },
 ];
 

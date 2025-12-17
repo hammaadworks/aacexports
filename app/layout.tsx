@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { MobileNav } from "@/components/layout/MobileNav";
+import { Navbar } from "@/components/layout/Navbar";
+import { Providers } from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,21 +29,23 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/aacexports/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/aacexports/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/aacexports/favicons/favicon-16x16.png" />
+        <link rel="manifest" href="/aacexports/favicons/site.webmanifest" />
+        <link rel="shortcut icon" href="/aacexports/favicons/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary`}
       >
-        <Header />
-        <main className="min-h-screen">
-            {children}
-        </main>
-        <Footer />
-        <MobileNav />
+        <Providers>
+          <Header />
+          <main className="min-h-screen">
+              {children}
+          </main>
+          <Footer />
+          <Navbar />
+        </Providers>
       </body>
     </html>
   );

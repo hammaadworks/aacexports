@@ -5,7 +5,7 @@
    THEME IMPORT
    Change this import to switch themes (e.g., './themes/monolith.css')
    ----------------------------------------------------------------------- */
-@import "./themes/mocha.css";
+@import "./themes/aac.css";
 
 @custom-variant dark (&:is(.dark *));
 
