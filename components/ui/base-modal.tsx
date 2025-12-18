@@ -52,9 +52,11 @@ const BaseModal: React.FC<BaseModalProps> = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
         className={cn(
-          "w-full max-w-full sm:max-w-lg max-h-[80vh] overflow-y-auto p-6", 
-          // Responsive width override for mobile-first feel:
-          "!w-[calc(100vw-2rem)] sm:!w-full", 
+          // Mobile: Full screen to avoid keyboard issues
+          "!fixed !top-0 !left-0 !translate-x-0 !translate-y-0 !w-full !h-[100dvh] !max-w-none !max-h-none !rounded-none !border-0",
+          // Tablet/Desktop: Restore centered modal
+          "sm:!fixed sm:!top-[50%] sm:!left-[50%] sm:!translate-x-[-50%] sm:!translate-y-[-50%] sm:!w-full sm:!max-w-lg sm:!h-auto sm:!max-h-[80vh] sm:!rounded-lg sm:!border",
+          "overflow-y-auto p-6", 
           className
         )}
       >

@@ -1,38 +1,234 @@
 @import url("https://geistfont.vercel.app/geist.css");
 @import "tailwindcss";
 
-/* -----------------------------------------------------------------------
-   THEME IMPORT
-   Change this import to switch themes (e.g., './themes/monolith.css')
-   ----------------------------------------------------------------------- */
-@import "./themes/aac.css";
-
 @custom-variant dark (&:is(.dark *));
 
-/* 
-   GLOBAL THEME SETTINGS
-   These extend the imported theme with app-specific animations 
-   and shared structural variables.
-*/
+/* -----------------------------------------------------------------------
+   THEME CONFIGURATION
+   ----------------------------------------------------------------------- */
+
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
 
-  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
 
-  @keyframes orbit {
-    0% {
-      transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --font-sans: var(--font-sans);
+    --font-serif: var(--font-serif);
+    --font-mono: var(--font-mono);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    --shadow-2xs: var(--shadow-2xs);
+    --shadow-xs: var(--shadow-xs);
+    --shadow-sm: var(--shadow-sm);
+    --shadow: var(--shadow);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+    --shadow-2xl: var(--shadow-2xl);
+    --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite;
+  @keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+        }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+        }
     }
-    100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc((var(--angle) * -1deg) - 360deg));
-    }
-  }
 }
 
+/* -----------------------------------------------------------------------
+   ROOT VARIABLES (LIGHT MODE)
+   ----------------------------------------------------------------------- */
+:root {
+    /* ============================= */
+    /* Brand Core */
+    /* ============================= */
+    --brand-gold: #EAB308;
+    --brand-green: #303F2D;
+    --brand-white: #FFFFFF;
+
+    /* ============================= */
+    /* Core Surfaces */
+    /* ============================= */
+    --background: var(--brand-white);
+    --foreground: var(--brand-green); /* Use Brand Green for main text */
+
+    --card: var(--brand-white);
+    --card-foreground: var(--brand-green);
+
+    --popover: var(--brand-white);
+    --popover-foreground: var(--brand-green);
+
+    /* ============================= */
+    /* Primary Actions */
+    /* ============================= */
+    --primary: var(--brand-gold);
+    --primary-foreground: var(--brand-white); /* Green text on Gold */
+
+    /* ============================= */
+    /* Secondary */
+    /* ============================= */
+    --secondary: var(--brand-green);
+    --secondary-foreground: var(--brand-white);
+
+    /* ============================= */
+    /* Muted / Subtle UI */
+    /* ============================= */
+    --muted: #D6DED9; /* Border color for subtle backgrounds */
+    --muted-foreground: #5B6B60; /* Darker green-gray for readability */
+
+    /* ============================= */
+    /* Accent / Highlight */
+    /* ============================= */
+    --accent: #FFFBE6; /* Lightest tint of Gold */
+    --accent-foreground: var(--brand-green);
+
+    /* ============================= */
+    /* Feedback */
+    /* ============================= */
+    --destructive: #B91C1C;
+    --destructive-foreground: var(--brand-white);
+
+    /* ============================= */
+    /* Borders & Inputs */
+    /* ============================= */
+    --border: #D6DED9;
+    --input: #D6DED9;
+    --ring: var(--brand-gold);
+
+    /* ============================= */
+    /* Charts */
+    /* ============================= */
+    --chart-1: var(--brand-gold);
+    --chart-2: var(--brand-green);
+    --chart-3: #9A7B00;
+    --chart-4: #4B6356;
+    --chart-5: #6B4E00;
+
+    /* ============================= */
+    /* Sidebar */
+    /* ============================= */
+    --sidebar: #F7F9F8;
+    --sidebar-foreground: var(--brand-green);
+    --sidebar-primary: var(--brand-gold);
+    --sidebar-primary-foreground: var(--brand-green);
+    --sidebar-accent: var(--brand-white);
+    --sidebar-accent-foreground: var(--brand-green);
+    --sidebar-border: #D6DED9;
+    --sidebar-ring: var(--brand-gold);
+
+    /* ============================= */
+    /* Typography */
+    /* ============================= */
+    --font-sans: Inter, system-ui, sans-serif;
+    --font-serif: Source Serif 4, serif;
+    --font-mono: JetBrains Mono, monospace;
+
+    /* ============================= */
+    /* Layout */
+    /* ============================= */
+    --radius: 0.5rem;
+
+    /* ============================= */
+    /* Shadows */
+    /* ============================= */
+    --shadow-2xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.14);
+    --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.18);
+    --shadow-2xl: 0 32px 64px rgba(0, 0, 0, 0.22);
+}
+
+/* -----------------------------------------------------------------------
+   DARK MODE VARIABLES
+   ----------------------------------------------------------------------- */
+.dark {
+    /* Use deep dark green/black (derived from brand) for bg */
+    --background: #0A0F0D;
+    --foreground: #F4F6F4; /* Light off-white for text */
+
+    --card: #151C18; /* Slightly lighter dark green */
+    --card-foreground: #F4F6F4;
+
+    --popover: #151C18;
+    --popover-foreground: #F4F6F4;
+
+    --primary: var(--brand-gold);
+    --primary-foreground: var(--brand-green);
+
+    --secondary: var(--brand-green);
+    --secondary-foreground: var(--brand-white);
+
+    --muted: var(--brand-green);
+    --muted-foreground: #A3B8AD;
+
+    --accent: var(--brand-green);
+    --accent-foreground: var(--brand-gold);
+
+    --destructive: #7F1D1D;
+    --destructive-foreground: var(--brand-white);
+
+    --border: #303F2D;
+    --input: #303F2D;
+    --ring: var(--brand-gold);
+
+    --chart-1: var(--brand-gold);
+    --chart-2: #A3B8AD;
+    --chart-3: #D6DED9;
+    --chart-4: #4B6356;
+    --chart-5: #6B4E00;
+
+    --sidebar: #151C18;
+    --sidebar-foreground: #F4F6F4;
+    --sidebar-primary: var(--brand-gold);
+    --sidebar-primary-foreground: var(--brand-green);
+    --sidebar-accent: var(--brand-green);
+    --sidebar-accent-foreground: var(--brand-gold);
+    --sidebar-border: #303F2D;
+    --sidebar-ring: var(--brand-gold);
+}
+
+/* -----------------------------------------------------------------------
+   BASE STYLES
+   ----------------------------------------------------------------------- */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -40,135 +236,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  input,
-  textarea,
-  [contenteditable] {
-    caret-color: var(--primary);
-    caret-shape: block;
-  }
-}
-
-/* -----------------------------------------------------------------------
-   UTILITIES & ANIMATIONS
-   ----------------------------------------------------------------------- */
-
-/* Utility to restore native cursor for scrollable areas where custom cursor breaks interaction */
-.force-native-cursor,
-.force-native-cursor * {
-  cursor: auto !important;
-}
-
-/* Keyframe Animations for Motivational Quote Card */
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 0 10px var(--primary);
-  }
-  50% {
-    box-shadow: 0 0 25px var(--primary), 0 0 50px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 10px var(--primary);
-  }
-}
-
-@keyframes rotate-light {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Custom Utility for Glassmorphic Cards */
-.glass-card-hover {
-  @apply bg-white/50 backdrop-blur-sm border border-white/20 shadow-sm transition-all duration-300 hover:shadow-lg hover:bg-white/80 dark:bg-neutral-900/50 dark:border-white/5 dark:hover:bg-neutral-900/80;
-}
-
-@keyframes moveRightFade {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(5px);
-    opacity: 0;
-  }
-}
-
-@keyframes chevron-pulse {
-  0%,
-  50% {
-    /* First 2s (0-2s) of 4s total - Static at initial state */
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  75% {
-    /* Midpoint of animation phase (2s + 1s = 3s out of 4s total, or midpoint of 50-100% phase) */
-    transform: translateY(2px) scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    /* End of animation phase (4s) - Back to initial state */
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-.animate-chevron-pulse {
-  animation: chevron-pulse 4s ease-in-out infinite; /* Changed duration to 4s */
-}
-
-/* Global native cursor hide for custom Pointer component */
-.hide-native-cursor,
-.hide-native-cursor * {
-  cursor: none !important;
-}
-
-/* More robust overrides for @uiw/react-md-editor fullscreen behavior */
-.w-md-editor-fullscreen,
-.w-md-editor-container-fullscreen {
-  /* Target both potential fullscreen classes */
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
-  min-height: auto !important; /* Ensure it doesn't force a minimum height */
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: auto !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: none !important; /* Reset any potential transforms */
-  box-shadow: none !important; /* Remove any fullscreen shadows */
-  border-radius: 0 !important; /* Remove any fullscreen border-radius */
-}
-
-/* Prevent body scroll lock when editor tries to go fullscreen */
-body.w-md-editor-body-fullscreen,
-html.w-md-editor-body-fullscreen {
-  /* Target both body and html for safety */
-  overflow: auto !important; /* Revert overflow hidden */
-  position: static !important; /* Ensure body is not fixed */
-  height: auto !important; /* Ensure body height is not forced */
-  width: auto !important; /* Ensure body width is not forced */
-  padding-right: 0 !important; /* Remove any padding added for scrollbar compensation */
-}
-
-/* Ensure the editor content area itself is scrollable if needed */
-.w-md-editor .w-md-editor-content {
-  overflow: auto !important;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }

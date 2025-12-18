@@ -21,6 +21,7 @@
   "registries": {
     "@animate-ui": "https://animate-ui.com/r/{name}.json",
     "@ha-components": "https://hacomponents.keshuac.com/r/{name}.json",
-    "@react-bits": "https://reactbits.dev/r/{name}.json"
+    "@react-bits": "https://reactbits.dev/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}.json"
   }
 }

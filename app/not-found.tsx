@@ -1,14 +1,28 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
+import { WordRotate } from '@/components/ui/word-rotate'
 
 export default function NotFound() {
   return (
-    <div className="flex h-[80vh] flex-col items-center justify-center text-center px-6">
-      <h1 className="text-9xl font-serif font-bold text-primary/20">404</h1>
-      <h2 className="text-3xl font-bold mt-4 mb-2">Page Not Found</h2>
-      <p className="text-muted-foreground mb-8 max-w-md">
-        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+    <main className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <h1 className="text-[15rem] font-serif font-extrabold text-primary/80 leading-none">404</h1>
+      <h2 className="text-5xl font-bold mt-4 mb-2">
+        <WordRotate
+          className="text-5xl font-bold mt-4 mb-2"
+          words={[
+            "Page Not Found",
+            "Lost in Transit, Not Found at Port",
+            "Manifest Missing! Page Undeliverable",
+            "Oops! Incorrect HS Code, Page Not Classified",
+            "Shipment Delayed: Page Not Arrived Yet",
+            "This Page Failed Customs Inspection",
+          ]}
+        />
+      </h2>
+      <p className="text-muted-foreground mb-8 max-w-lg text-lg">
+        It seems this page has gone off-manifest, failed its customs inspection, or perhaps was re-routed to an unknown destination.
+        Our apologies, we're currently tracking its last known coordinates. Please check your waybill (URL) and try again!
       </p>
       <Button asChild>
         <Link href="/">
@@ -16,6 +30,6 @@ export default function NotFound() {
           Back to Home
         </Link>
       </Button>
-    </div>
+    </main>
   )
 }
