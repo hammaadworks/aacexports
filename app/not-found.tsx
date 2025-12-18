@@ -6,10 +6,10 @@ import { WordRotate } from '@/components/ui/word-rotate'
 export default function NotFound() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-      <h1 className="text-[15rem] font-serif font-extrabold text-primary/80 leading-none">404</h1>
-      <h2 className="text-5xl font-bold mt-4 mb-2">
+      <h1 className="text-8xl md:text-[15rem] font-serif font-extrabold text-primary/80 leading-none">404</h1>
+      <h2 className="text-2xl md:text-5xl font-bold mt-4 mb-2">
         <WordRotate
-          className="text-5xl font-bold mt-4 mb-2"
+          className="text-2xl md:text-5xl font-bold mt-4 mb-2"
           words={[
             "Page Not Found",
             "Lost in Transit, Not Found at Port",

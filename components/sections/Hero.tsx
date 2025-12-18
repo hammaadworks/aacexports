@@ -5,6 +5,7 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Ripple} from "@/components/ui/ripple";
 import {ArrowRight, Globe} from "lucide-react";
+import { PageHeaderBadge } from "@/components/ui/PageHeaderBadge";
 
 export function Hero() {
     return (<section
@@ -13,11 +14,9 @@ export function Hero() {
         <div className="relative h-[500px] w-full overflow-hidden">
             <div className="container relative z-10 mx-auto px-6">
                 <div className="mx-auto max-w-4xl text-center">
-                    <div
-                        className="inline-flex items-center rounded-full border border-border bg-secondary/50 px-3 py-1 text-sm font-medium text-muted-foreground backdrop-blur-sm mb-6">
-                        <Globe className="mr-2 h-4 w-4 text-primary"/>
+                    <PageHeaderBadge icon={Globe} className="bg-secondary/50">
                         Global Exports. Built on Standards.
-                    </div>
+                    </PageHeaderBadge>
 
                     <h1 className="mb-6 text-4xl font-serif font-bold leading-tight text-foreground md:text-6xl lg:text-7xl">
                         Powered by Experience. <br/>
