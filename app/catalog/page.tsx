@@ -2,7 +2,7 @@
 
 import React, {useEffect, useRef, useState} from "react";
 import {Button} from "@/components/ui/button";
-import {Anvil, BookOpen, Download, Eye, Gem, Leaf, PackageOpen, Utensils} from "lucide-react";
+import {Anvil, BookOpen, Download, Eye, Gem, Leaf, Maximize2, PackageOpen, Utensils} from "lucide-react";
 import {motion} from "motion/react";
 import {MagicCard} from "@/components/ui/magic-card";
 import {BlurFade} from "@/components/ui/blur-fade";
@@ -10,10 +10,10 @@ import {useModal} from "@/lib/modal-context";
 import BaseModal from "@/components/ui/base-modal";
 import {PageHeaderBadge} from "@/components/ui/PageHeaderBadge";
 import CustomContact from "@/components/CustomContact";
-import {Document, Page, pdfjs} from 'react-pdf';
+import dynamic from "next/dynamic";
 
-// Configure PDF worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@5.4.296/build/pdf.worker.min.mjs`;
+const Document = dynamic(() => import("react-pdf").then(mod => mod.Document), { ssr: false });
+const Page = dynamic(() => import("react-pdf").then(mod => mod.Page), { ssr: false });
 
 // Define catalog data structure
 const catalogs = [{
@@ -59,6 +59,12 @@ export default function CatalogPage() {
     const [numPages, setNumPages] = useState<number | null>(null);
     const [containerWidth, setContainerWidth] = useState<number>(0);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        import("react-pdf").then(mod => {
+            mod.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@5.4.296/build/pdf.worker.min.mjs`;
+        });
+    }, []);
 
     // Handle container resizing to make PDF responsive
     useEffect(() => {
@@ -129,7 +135,7 @@ export default function CatalogPage() {
                                         <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-3 pt-2">
+                                    <div className="pt-2">
                                         <Button
                                             variant="default"
                                             size="sm"
@@ -141,19 +147,6 @@ export default function CatalogPage() {
                                         >
                                             <Eye className="mr-2 h-3.5 w-3.5"/> View
                                         </Button>
-                                        <a
-                                            href={`/aacexports/catalog/${item.file}`}
-                                            download
-                                            className="w-full"
-                                        >
-                                            <Button
-                                                variant="outline"
-                                                size="sm"
-                                                className="w-full rounded-lg group border-primary/20 hover:border-primary/50 hover:bg-primary/5"
-                                            >
-                                                <Download className="mr-2 h-3.5 w-3.5 text-primary"/> PDF
-                                            </Button>
-                                        </a>
                                     </div>
 
                                     {/* Decorative Image for Large Screens (First Item Only) */}
@@ -162,11 +155,6 @@ export default function CatalogPage() {
                                             <div className="relative h-48 w-[calc(100%+4rem)] overflow-hidden">
                                                 <div
                                                     className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
-                                                <img
-                                                    src="/aacexports/assets/img/product-range/granite.png"
-                                                    alt="Natural Stones"
-                                                    className="w-full h-full object-cover opacity-80 mix-blend-multiply hover:scale-105 transition-transform duration-700"
-                                                />
                                             </div>
                                         </div>)}
                                 </div>
@@ -188,6 +176,18 @@ export default function CatalogPage() {
                 title={selectedDoc?.title || "Catalog View"}
                 className="!w-[95vw] !max-w-7xl !h-[95vh] !p-0 flex flex-col gap-0"
                 headerClassName="px-6 py-4 border-b shrink-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                footerContent={
+                    selectedDoc && (
+                        <div className="w-full flex justify-end px-6 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t">
+                            <Button asChild variant="default">
+                                <a href={`/aacexports/catalog/${selectedDoc.file}`} target="_blank"
+                                   rel="noopener noreferrer">
+                                    <Maximize2 className="mr-2 h-4 w-4"/> View Full Page
+                                </a>
+                            </Button>
+                        </div>
+                    )
+                }
             >
                 <div className="w-full flex-grow bg-muted/30 overflow-y-auto p-4 md:p-8 flex justify-center relative"
                      ref={containerRef}>

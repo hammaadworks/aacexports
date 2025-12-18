@@ -21,7 +21,7 @@ const CustomContact: React.FC<CustomContactProps> = ({
             <div
                 className="relative bg-secondary/90 border border-border/50 rounded-3xl p-8 md:p-16 text-center overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-[url('/aacexports/assets/img/cta-bg.jpg')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+                    className="absolute inset-0 opacity-10 bg-cover bg-center mix-blend-overlay"></div>
                 <BorderBeam size={350} duration={15} delay={5} colorFrom="#EAB308" colorTo="#ffffff"/>
 
                 <div className="relative z-10">

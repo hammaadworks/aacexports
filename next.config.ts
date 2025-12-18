@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
         '*.local-origin.dev',
         'http://localhost:3000',
         '192.168.1.4',
-        'http://192.168.1.4:3000', // Add the specific origin with the port
+        '192.168.1.4:3000', // Add the specific origin with the port
     ],
 };
 

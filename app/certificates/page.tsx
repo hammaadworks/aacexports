@@ -2,18 +2,18 @@
 
 import React, {useEffect, useRef, useState} from "react";
 import {Button} from "@/components/ui/button";
-import {CheckCircle2, Download, Eye, FileText, ShieldCheck} from "lucide-react";
+import {CheckCircle2, Download, Eye, FileText, Maximize2, ShieldCheck} from "lucide-react";
 import {motion} from "motion/react";
 import {MagicCard} from "@/components/ui/magic-card";
 import {BlurFade} from "@/components/ui/blur-fade";
 import {useModal} from "@/lib/modal-context";
 import BaseModal from "@/components/ui/base-modal";
 import {PageHeaderBadge} from "@/components/ui/PageHeaderBadge";
-import {Document, Page, pdfjs} from 'react-pdf';
 import CustomContact from "@/components/CustomContact";
+import dynamic from "next/dynamic";
 
-// Configure PDF worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@5.4.296/build/pdf.worker.min.mjs`;
+const Document = dynamic(() => import("react-pdf").then(mod => mod.Document), { ssr: false });
+const Page = dynamic(() => import("react-pdf").then(mod => mod.Page), { ssr: false });
 
 // Define certificate data structure mapping to available PDFs
 const certificates = [{
@@ -56,6 +56,12 @@ export default function CertificatesPage() {
     const [numPages, setNumPages] = useState<number | null>(null);
     const [containerWidth, setContainerWidth] = useState<number>(0);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        import("react-pdf").then(mod => {
+            mod.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@5.4.296/build/pdf.worker.min.mjs`;
+        });
+    }, []);
 
     // Handle container resizing to make PDF responsive
     useEffect(() => {
@@ -121,7 +127,7 @@ export default function CertificatesPage() {
                                         <p className="text-sm text-muted-foreground leading-relaxed">{cert.description}</p>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-3 pt-2">
+                                    <div className="pt-2">
                                         <Button
                                             variant="default"
                                             size="sm"
@@ -133,19 +139,6 @@ export default function CertificatesPage() {
                                         >
                                             <Eye className="mr-2 h-3.5 w-3.5"/> View
                                         </Button>
-                                        <a
-                                            href={`/aacexports/certificates/${cert.file}`}
-                                            download
-                                            className="w-full"
-                                        >
-                                            <Button
-                                                variant="outline"
-                                                size="sm"
-                                                className="w-full rounded-lg group border-primary/20 hover:border-primary/50 hover:bg-primary/5"
-                                            >
-                                                <Download className="mr-2 h-3.5 w-3.5 text-primary"/> Save
-                                            </Button>
-                                        </a>
                                     </div>
                                 </div>
                             </MagicCard>
@@ -167,6 +160,18 @@ export default function CertificatesPage() {
                 title={selectedCert?.title || "Certificate View"}
                 className="!w-[95vw] !max-w-7xl !h-[95vh] !p-0 flex flex-col gap-0"
                 headerClassName="px-6 py-4 border-b shrink-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                footerContent={
+                    selectedCert && (
+                        <div className="w-full flex justify-end px-6 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t">
+                            <Button asChild variant="default">
+                                <a href={`/aacexports/certificates/${selectedCert.file}`} target="_blank"
+                                   rel="noopener noreferrer">
+                                    <Maximize2 className="mr-2 h-4 w-4"/> View Full Page
+                                </a>
+                            </Button>
+                        </div>
+                    )
+                }
             >
                 <div className="w-full flex-grow bg-muted/30 overflow-y-auto p-4 md:p-8 flex justify-center relative"
                      ref={containerRef}>
