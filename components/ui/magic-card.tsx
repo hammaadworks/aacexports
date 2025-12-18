@@ -70,7 +70,7 @@ export function MagicCard({
 
   return (
     <div
-      className={cn("group relative rounded-[inherit]", className)}
+      className={cn("group relative rounded-[inherit] overflow-hidden", className)}
       onPointerMove={handlePointerMove}
       onPointerLeave={reset}
       onPointerEnter={reset}
@@ -97,7 +97,7 @@ export function MagicCard({
           opacity: gradientOpacity,
         }}
       />
-      <div className="relative">{children}</div>
+      <div className="relative h-full">{children}</div>
     </div>
   )
 }

@@ -1,24 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import {Linkedin, Mail, MapPin, MessageSquareText, Phone} from "lucide-react";
+import {Linkedin, Mail, MapPin, MessageCircle, Phone} from "lucide-react";
 
 export function AppFooter() {
     return (
-        <footer className="bg-secondary text-white border-t border-primary/20 pt-20 pb-12">
+        <footer className="bg-secondary text-white border-t border-primary/20 pt-12 pb-8">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
 
                     {/* Brand Section */}
-                    <div className="space-y-8">
+                    <div className="space-y-6">
                         {/* Logo / Name */}
-                        <div className="flex flex-col select-none">
-                            <span className="text-4xl md:text-5xl font-sans font-black tracking-normal text-primary uppercase mb-2">
-                                Al Ahmed
-                            </span>
-                            <div className="flex flex-col text-xs md:text-sm font-semibold tracking-[0.35em] text-white/70 uppercase space-y-1.5 leading-none">
-                                <span>Continental</span>
-                                <span>Exports</span>
-                                <span>aacexports.in</span>
+                        <div className="flex flex-col select-none mb-6">
+                            <div className="flex flex-col items-center">
+                                {/* Main Title */}
+                                <h2 className="text-2xl font-serif text-primary tracking-tight text-center leading-none font-medium">
+                                    Al Ahmed Continental
+                                </h2>
+                                
+                                {/* Subtitle Container with Lines */}
+                                <div className="flex items-center gap-3 w-full max-w-[260px] my-2">
+                                    <div className="h-[1px] bg-primary flex-grow opacity-60"></div>
+                                    <span className="text-white text-xs tracking-[0.3em] font-sans font-medium uppercase">
+                                        Exports
+                                    </span>
+                                    <div className="h-[1px] bg-primary flex-grow opacity-60"></div>
+                                </div>
+                                
+                                {/* URL */}
+                                <a href="https://aacexports.in" className="text-primary text-xs tracking-[0.2em] hover:text-white transition-colors">
+                                    aacexports.in
+                                </a>
                             </div>
                         </div>
 
@@ -46,11 +58,11 @@ export function AppFooter() {
 
                     {/* Quick Links */}
                     <div className="flex flex-col">
-                        <h4 className="font-bold text-lg mb-8 text-primary relative inline-block">
+                        <h4 className="font-bold text-lg mb-6 text-primary relative inline-block">
                             Quick Links
                             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary/40 rounded-full"></span>
                         </h4>
-                        <ul className="space-y-4 text-sm text-white/80 font-light">
+                        <ul className="space-y-3 text-sm text-white/80 font-light">
                             <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
                             <li><Link href="/#about" className="hover:text-primary transition-colors">About</Link></li>
                             <li><Link href="/#verticals" className="hover:text-primary transition-colors">Verticals</Link></li>
@@ -61,11 +73,11 @@ export function AppFooter() {
 
                     {/* Verticals */}
                     <div className="flex flex-col">
-                        <h4 className="font-bold text-lg mb-8 text-primary relative inline-block">
+                        <h4 className="font-bold text-lg mb-6 text-primary relative inline-block">
                             Our Verticals
                             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary/40 rounded-full"></span>
                         </h4>
-                        <ul className="space-y-4 text-sm text-white/80 font-light">
+                        <ul className="space-y-3 text-sm text-white/80 font-light">
                             <li><Link href="/steel" className="hover:text-primary transition-colors">Iron & Steel</Link></li>
                             <li><Link href="/produce" className="hover:text-primary transition-colors">Fresh Produce</Link></li>
                             <li><Link href="/powders" className="hover:text-primary transition-colors">Dehydrated Powders</Link></li>
@@ -75,11 +87,11 @@ export function AppFooter() {
 
                     {/* Contact Links */}
                     <div id="contact" className="flex flex-col">
-                        <h4 className="font-bold text-lg mb-8 text-primary relative inline-block">
+                        <h4 className="font-bold text-lg mb-6 text-primary relative inline-block">
                             Connect With Us
                             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary/40 rounded-full"></span>
                         </h4>
-                        <ul className="space-y-5 text-sm text-white/80">
+                        <ul className="space-y-3 text-sm text-white/80">
                             <li className="flex items-center gap-4 group">
                                 <div className="p-2.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
                                     <MapPin size={18} className="text-primary" strokeWidth={1.5} />
@@ -106,7 +118,7 @@ export function AppFooter() {
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="p-2.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
-                                    <MessageSquareText size={18} className="text-primary" strokeWidth={1.5} />
+                                    <MessageCircle size={18} className="text-primary" strokeWidth={1.5} />
                                 </div>
                                 <a href="https://wa.me/916363372655" target="_blank" rel="noopener noreferrer" className="group-hover:text-primary transition-colors font-light">WhatsApp</a>
                             </li>

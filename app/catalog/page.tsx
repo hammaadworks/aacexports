@@ -118,46 +118,104 @@ export default function CatalogPage() {
                                 className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300"
                                 gradientColor={item.gradient}
                             >
-                                <div className="p-8 flex flex-col h-full gap-6">
-                                    <div className="flex flex-row items-start justify-between">
-                                        <div
-                                            className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 ring-1 ring-inset ring-primary/20">
-                                            <item.icon size={24}/>
-                                        </div>
-                                        <div
-                                            className="px-3 py-1 rounded-full bg-secondary/5 border border-secondary/10 text-[10px] font-bold uppercase tracking-wider text-secondary/80">
-                                            {item.category}
-                                        </div>
-                                    </div>
-
-                                    <div className="flex-grow space-y-3">
-                                        <h3 className="text-xl font-bold leading-tight font-serif">{item.title}</h3>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                                    </div>
-
-                                    <div className="pt-2">
-                                        <Button
-                                            variant="default"
-                                            size="sm"
-                                            className="w-full rounded-lg group bg-primary text-primary-foreground hover:bg-primary/90"
-                                            onClick={() => {
-                                                setSelectedDoc({title: item.title, file: item.file});
-                                                setNumPages(null);
-                                            }}
-                                        >
-                                            <Eye className="mr-2 h-3.5 w-3.5"/> View
-                                        </Button>
-                                    </div>
-
-                                    {/* Decorative Image for Large Screens (First Item Only) */}
-                                    {index === 0 && (
-                                        <div className="hidden lg:block relative w-full mt-auto pt-6 -mb-8 -mx-8">
-                                            <div className="relative h-48 w-[calc(100%+4rem)] overflow-hidden">
-                                                <div
-                                                    className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+                                {index === 0 ? (
+                                    // Special Layout for Natural Stones (Index 0)
+                                    <div className="p-8 flex flex-col h-full relative z-10">
+                                        {/* Header */}
+                                        <div className="flex justify-between items-start mb-6">
+                                            <div
+                                                className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 ring-1 ring-inset ring-primary/20">
+                                                <item.icon size={28}/>
                                             </div>
-                                        </div>)}
-                                </div>
+                                            <div
+                                                className="px-3 py-1 rounded-full bg-secondary/5 border border-secondary/10 text-[10px] font-bold uppercase tracking-wider text-secondary/80">
+                                                {item.category}
+                                            </div>
+                                        </div>
+
+                                        {/* Enhanced Title & Desc */}
+                                        <div className="mb-8">
+                                            <h3 className="text-4xl font-serif font-bold text-foreground mb-4 leading-tight tracking-tight">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-lg text-muted-foreground leading-relaxed max-w-sm">
+                                                {item.description}
+                                            </p>
+                                        </div>
+
+                                        {/* Features List */}
+                                        <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-10 max-w-md">
+                                            {["Granite", "Marble", "Quartz", "Sandstone", "Limestone", "Slate"].map((stone) => (
+                                                <div key={stone}
+                                                     className="flex items-center text-sm font-medium text-muted-foreground/80">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2.5"/>
+                                                    {stone}
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Action Button - Pushed to bottom */}
+                                        <div className="mt-auto pt-4 relative z-20 w-full sm:w-auto">
+                                            <Button
+                                                variant="default"
+                                                size="lg"
+                                                className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
+                                                onClick={() => {
+                                                    setSelectedDoc({title: item.title, file: item.file});
+                                                    setNumPages(null);
+                                                }}
+                                            >
+                                                <Eye className="mr-2 h-4 w-4"/> Explore Catalog
+                                            </Button>
+                                        </div>
+
+                                        {/* Abstract "Stone Stack" Visualization */}
+                                        <div className="absolute right-0 bottom-0 w-80 h-80 pointer-events-none opacity-[0.15] hidden sm:block">
+                                            {/* Bottom Slab */}
+                                            <div
+                                                className="absolute bottom-[-40px] right-[-40px] w-64 h-64 bg-current rounded-[3rem] transform -rotate-12"/>
+                                            {/* Middle Slab */}
+                                            <div
+                                                className="absolute bottom-[-10px] right-[20px] w-56 h-56 bg-current rounded-[2.5rem] transform -rotate-3 opacity-80"/>
+                                            {/* Top Slab */}
+                                            <div
+                                                className="absolute bottom-[40px] right-[60px] w-48 h-48 bg-current rounded-[2rem] transform rotate-6 opacity-60"/>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    // Standard Layout for other items
+                                    <div className="p-8 flex flex-col h-full gap-6">
+                                        <div className="flex flex-row items-start justify-between">
+                                            <div
+                                                className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 ring-1 ring-inset ring-primary/20">
+                                                <item.icon size={24}/>
+                                            </div>
+                                            <div
+                                                className="px-3 py-1 rounded-full bg-secondary/5 border border-secondary/10 text-[10px] font-bold uppercase tracking-wider text-secondary/80">
+                                                {item.category}
+                                            </div>
+                                        </div>
+
+                                        <div className="flex-grow space-y-3">
+                                            <h3 className="text-xl font-bold leading-tight font-serif">{item.title}</h3>
+                                            <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                                        </div>
+
+                                        <div className="pt-2">
+                                            <Button
+                                                variant="default"
+                                                size="sm"
+                                                className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
+                                                onClick={() => {
+                                                    setSelectedDoc({title: item.title, file: item.file});
+                                                    setNumPages(null);
+                                                }}
+                                            >
+                                                <Eye className="mr-2 h-3.5 w-3.5"/> Explore Catalog
+                                            </Button>
+                                        </div>
+                                    </div>
+                                )}
                             </MagicCard>
                         </BlurFade>))}
                 </div>

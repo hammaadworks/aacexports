@@ -131,13 +131,13 @@ export default function CertificatesPage() {
                                         <Button
                                             variant="default"
                                             size="sm"
-                                            className="w-full rounded-lg group bg-primary text-primary-foreground hover:bg-primary/90"
+                                            className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
                                             onClick={() => {
                                                 setSelectedCert({title: cert.title, file: cert.file});
                                                 setNumPages(null); // Reset pages on new selection
                                             }}
                                         >
-                                            <Eye className="mr-2 h-3.5 w-3.5"/> View
+                                            <Eye className="mr-2 h-3.5 w-3.5"/> View Certificate
                                         </Button>
                                     </div>
                                 </div>
