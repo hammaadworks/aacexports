@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <Providers>
           <AppHeader />
-          <main className="min-h-screen">
+          <main className="min-h-screen lg:pt-4">
               {children}
           </main>
           <AppFooter />

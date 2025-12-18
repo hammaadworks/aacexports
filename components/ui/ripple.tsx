@@ -6,6 +6,7 @@ interface RippleProps extends ComponentPropsWithoutRef<"div"> {
     mainCircleSize?: number
     mainCircleOpacity?: number
     numCircles?: number
+    color?: string | string[]
 }
 
 export const Ripple = React.memo(function Ripple({
@@ -13,6 +14,7 @@ export const Ripple = React.memo(function Ripple({
                                                      mainCircleOpacity = 0.24,
                                                      numCircles = 8,
                                                      className,
+                                                     color,
                                                      ...props
                                                  }: RippleProps) {
     return (<div
@@ -24,10 +26,11 @@ export const Ripple = React.memo(function Ripple({
                 const opacity = mainCircleOpacity - i * 0.03
                 const animationDelay = `${i * 0.06}s`
                 const borderStyle = "solid"
+                const borderColor = Array.isArray(color) ? color[i % color.length] : (color || `var(--foreground)`)
 
                 return (<div
                         key={i}
-                        className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl`}
+                        className={cn("animate-ripple absolute rounded-full border shadow-xl")}
                         style={{
                             "--i": i,
                             width: `${size}px`,
@@ -36,7 +39,8 @@ export const Ripple = React.memo(function Ripple({
                             animationDelay,
                             borderStyle,
                             borderWidth: "1px",
-                            borderColor: `var(--foreground)`,
+                            borderColor,
+                            backgroundColor: "rgba(214, 222, 217, 0.15)", // Very light green from --muted in globals.css
                             top: "50%",
                             left: "50%",
                             transform: "translate(-50%, -50%) scale(1)",

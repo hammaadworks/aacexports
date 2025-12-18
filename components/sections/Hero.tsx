@@ -42,7 +42,7 @@ export function Hero() {
                 </div>
             </div>
             {/* Background Ripple */}
-            <Ripple mainCircleSize={100} mainCircleOpacity={0.20}/>
+            <Ripple mainCircleSize={100} mainCircleOpacity={0.80} color={["var(--brand-gold)", "var(--brand-green)"]}/>
         </div>
     </section>);
 }

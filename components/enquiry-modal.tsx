@@ -17,6 +17,7 @@ interface EnquiryModalProps {
 export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState({ contact: "" });
 
   // Form State
   const [formData, setFormData] = useState({
@@ -25,8 +26,29 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     message: ""
   });
 
+  const validate = () => {
+    let isValid = true;
+    const newErrors = { contact: "" };
+
+    if (formData.contact) {
+      // Basic validation for Email or Phone (allow international format for phone)
+      const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.contact);
+      const isPhone = /^\+?[\d\s-]{10,}$/.test(formData.contact);
+
+      if (!isEmail && !isPhone) {
+        newErrors.contact = "Please enter a valid email or phone number.";
+        isValid = false;
+      }
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
+
     setLoading(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -39,44 +61,62 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     setTimeout(() => {
         setSuccess(false);
         setFormData({ name: "", contact: "", message: "" });
+        setErrors({ contact: "" });
     }, 300);
   };
 
+  // Dynamic Content for Links
+  const baseWa = "https://wa.me/916363372655";
+  const baseMail = "mailto:sales@aacexports.in";
+  
+  const contactText = formData.name || formData.contact || formData.message 
+    ? `Hi, I am interested in AAC Exports.\n\nName: ${formData.name}\nContact: ${formData.contact}\nRequirement: ${formData.message}`
+    : "Hi, I am interested in AAC Exports products. Let's discuss.";
+  
+  const waLink = `${baseWa}?text=${encodeURIComponent(contactText)}`;
+  const mailLink = `${baseMail}?subject=Enquiry%20from%20Website&body=${encodeURIComponent(contactText)}`;
+
   const renderContent = () => (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       {/* Header */}
       <div className="text-center space-y-1">
          <h2 className="text-2xl font-serif font-bold text-foreground">Get in Touch</h2>
          <p className="text-muted-foreground text-sm">We typically reply within 2 hours.</p>
       </div>
 
-      {/* Direct Contact Options - Modern Cards */}
-      <div className="grid grid-cols-2 gap-4">
-        <Button variant="outline" className="h-auto py-5 flex-col gap-2 border-border/60 hover:border-green-500/50 hover:bg-green-50/50 dark:hover:bg-green-900/10 transition-all duration-300 group" asChild>
-            <Link href="https://wa.me/916363372655?text=Interest%20in%20aacexports.in%20lets%20discuss" target="_blank">
-                <div className="h-10 w-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <MessageSquare className="h-5 w-5 text-green-600 dark:text-green-400" />
+      {/* Direct Contact Options - Compact & Up Top */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <Button variant="outline" className="h-16 px-4 justify-start border-border/60 hover:border-green-500/50 hover:bg-green-50/50 dark:hover:bg-green-900/10 transition-all duration-300 group" asChild>
+            <Link href={waLink} target="_blank" className="flex items-center gap-3 w-full">
+                <div className="h-9 w-9 shrink-0 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <MessageSquare className="h-4 w-4 text-green-600 dark:text-green-400" />
                 </div>
-                <div className="text-center">
-                    <span className="text-sm font-semibold block text-foreground">WhatsApp</span>
-                    <span className="text-[10px] text-muted-foreground uppercase tracking-wider">Fastest</span>
+                <div className="flex flex-col items-start min-w-0">
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold text-foreground">WhatsApp</span>
+                        <span className="text-[10px] text-green-600 dark:text-green-400 font-medium bg-green-100/50 dark:bg-green-900/20 px-1.5 rounded-full">Fastest</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground truncate w-full">+91 63633 72655</span>
                 </div>
             </Link>
         </Button>
-        <Button variant="outline" className="h-auto py-5 flex-col gap-2 border-border/60 hover:border-blue-500/50 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300 group" asChild>
-            <Link href="mailto:sales@aacexports.in?subject=Enquiry%20from%20Website&body=Hi%20Team%2C%0A%0AI%20am%20interested%20in...">
-                <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+        <Button variant="outline" className="h-16 px-4 justify-start border-border/60 hover:border-blue-500/50 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300 group" asChild>
+            <Link href={mailLink} className="flex items-center gap-3 w-full">
+                <div className="h-9 w-9 shrink-0 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <div className="text-center">
-                    <span className="text-sm font-semibold block text-foreground">Email</span>
-                    <span className="text-[10px] text-muted-foreground uppercase tracking-wider">Official</span>
+                <div className="flex flex-col items-start min-w-0">
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold text-foreground">Email</span>
+                        <span className="text-[10px] text-blue-600 dark:text-blue-400 font-medium bg-blue-100/50 dark:bg-blue-900/20 px-1.5 rounded-full">Official</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground truncate w-full">sales@aacexports.in</span>
                 </div>
             </Link>
         </Button>
       </div>
 
-      <div className="relative py-2">
+      <div className="relative py-1">
         <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t border-border" />
         </div>
@@ -102,9 +142,13 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     placeholder="Email or Phone Number" 
                     required 
                     value={formData.contact}
-                    onChange={(e) => setFormData({...formData, contact: e.target.value})}
-                    className="h-11 bg-background border-border/80 focus-visible:ring-primary/30 transition-all pl-4"
+                    onChange={(e) => {
+                        setFormData({...formData, contact: e.target.value});
+                        if (errors.contact) setErrors({ contact: "" });
+                    }}
+                    className={`h-11 bg-background border-border/80 focus-visible:ring-primary/30 transition-all pl-4 ${errors.contact ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                 />
+                {errors.contact && <span className="text-xs text-red-500 mt-1 ml-1">{errors.contact}</span>}
             </div>
             <div className="relative group">
                 <Textarea 
@@ -119,7 +163,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
         <Button 
             type="submit" 
-            className="w-full h-12 mt-2 rounded-lg text-secondary-foreground font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5 transition-all bg-primary" 
+            className="w-full h-12 mt-2 rounded-lg text-primary-foreground font-bold text-sm shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 bg-primary" 
             disabled={loading}
         >
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <span className="flex items-center">Send Message <ArrowRight className="ml-2 h-4 w-4" /></span>}
@@ -131,8 +175,8 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
   const renderSuccess = () => (
     <div className="flex flex-col items-center justify-center py-12 text-center gap-6">
         <motion.div 
-            initial={{ scale: 0.5, opacity: 0 }} 
-            animate={{ scale: 1, opacity: 1 }} 
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             className="h-24 w-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-2"
         >
             <CheckCircle2 className="h-12 w-12 text-green-600 dark:text-green-400" />

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAC Exports - Brand Button System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Brand Fonts: Inter (Sans) and Source Serif 4 (Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Core Brand Colors from globals.css */
+      --brand-gold: #EAB308;
+      --brand-green: #303F2D;
+      --brand-white: #FFFFFF;
+      --bg-dark: #0A0F0D; /* Deep dark green/black */
+      
+      /* Mapping */
+      --color-primary: var(--brand-gold);
+      --color-secondary: var(--brand-green);
+    }
+
+    /* Typography */
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Source Serif 4', serif; }
+
+    /* Custom Classes */
+    .bg-brand-dark { background-color: var(--bg-dark); }
+    .bg-brand-gold { background-color: var(--brand-gold); }
+    .bg-brand-green { background-color: var(--brand-green); }
+    
+    .text-brand-gold { color: var(--brand-gold); }
+    .text-brand-green { color: var(--brand-green); }
+    
+    .border-brand-gold { border-color: var(--brand-gold); }
+    .border-brand-green { border-color: var(--brand-green); }
+
+    /* Button Base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600; /* Inter SemiBold */
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* 1. Solid Primary (Gold) */
+    /* Best for Dark Mode or High Contrast on Light */
+    .btn-primary {
+      background-color: var(--brand-gold);
+      color: var(--brand-white); /* Text is White per app usage, could be Green for high contrast */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .btn-primary:hover {
+      background-color: rgba(234, 179, 8, 0.9); /* Gold / 90% */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-1px);
+    }
+
+    /* 2. Solid Secondary (Green) */
+    /* Best for Light Mode */
+    .btn-secondary {
+      background-color: var(--brand-green);
+      color: var(--brand-white);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(48, 63, 45, 0.9); /* Green / 90% */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* 3. Outline Primary (Gold) */
+    /* Best for Dark Mode Secondary Actions */
+    .btn-outline-gold {
+      background-color: transparent;
+      color: var(--brand-gold);
+      border: 2px solid var(--brand-gold);
+    }
+    .btn-outline-gold:hover {
+      background-color: var(--brand-gold);
+      color: var(--brand-white);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 4. Outline Secondary (Green) - Extra for Light Mode */
+    .btn-outline-green {
+      background-color: transparent;
+      color: var(--brand-green);
+      border: 2px solid var(--brand-green);
+    }
+    .btn-outline-green:hover {
+      background-color: var(--brand-green);
+      color: var(--brand-white);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="bg-slate-50 border-b border-slate-200 p-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-green mb-2">AAC Exports UI Kit</h1>
+      <p class="text-slate-600 font-sans">Button styles reflecting the "Nature & Luxury" brand identity.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: DARK MODE (Brand Core) -->
+  <div class="bg-brand-dark min-h-[400px] p-12 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto w-full">
+      <div class="flex items-center gap-4 mb-8">
+        <span class="w-3 h-3 rounded-full bg-brand-gold"></span>
+        <h2 class="text-2xl text-white">Dark Theme <span class="text-sm font-sans text-gray-500 font-normal ml-2">(Primary Environment)</span></h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        
+        <!-- Primary Action -->
+        <div class="space-y-4">
+          <button class="btn btn-primary w-full">
+            Get in Touch
+          </button>
+          <div class="text-sm text-gray-400 font-sans">
+            <strong class="text-brand-gold">Solid Primary</strong><br>
+            Use for main CTA. Gold stands out against the dark stone background.
+          </div>
+        </div>
+
+        <!-- Secondary Action (Outline) -->
+        <div class="space-y-4">
+          <button class="btn btn-outline-gold w-full">
+            View Catalogue
+          </button>
+          <div class="text-sm text-gray-400 font-sans">
+            <strong class="text-brand-gold">Outline Gold</strong><br>
+            Use for secondary options. Elegant and doesn't compete with the main CTA.
+          </div>
+        </div>
+
+        <!-- Icon Button (Ghost) -->
+        <div class="space-y-4">
+          <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300 mx-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="text-sm text-gray-400 font-sans text-center">
+             <strong class="text-gray-300">Icon / Ghost</strong><br>
+             For sliders or small nav interactions.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: LIGHT MODE (Documentation / Content) -->
+  <div class="bg-white min-h-[400px] p-12 flex flex-col justify-center border-t border-slate-100">
+    <div class="max-w-4xl mx-auto w-full">
+      <div class="flex items-center gap-4 mb-8">
+        <span class="w-3 h-3 rounded-full bg-brand-green"></span>
+        <h2 class="text-2xl text-brand-green">Light Theme <span class="text-sm font-sans text-gray-400 font-normal ml-2">(Content Pages)</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        
+        <!-- Secondary Solid (Brand Green) -->
+        <div class="space-y-4">
+          <button class="btn btn-secondary w-full">
+            Download Brochure
+          </button>
+          <div class="text-sm text-gray-500 font-sans">
+            <strong class="text-brand-green">Solid Secondary</strong><br>
+            The Brand Green is too dark for the dark theme, but perfect for white backgrounds. Represents stability.
+          </div>
+        </div>
+
+        <!-- Primary Solid (Gold) - Still works -->
+        <div class="space-y-4">
+          <button class="btn btn-primary w-full">
+            Contact Sales
+          </button>
+          <div class="text-sm text-gray-500 font-sans">
+            <strong class="text-brand-gold">Solid Primary</strong><br>
+            Gold also works on white, maintaining high brand recognition.
+          </div>
+        </div>
+
+        <!-- Outline Green -->
+        <div class="space-y-4">
+          <button class="btn btn-outline-green w-full">
+            Read More
+          </button>
+          <div class="text-sm text-gray-500 font-sans">
+             <strong class="text-brand-green">Outline Green</strong><br>
+             A subtle call to action for text-heavy pages.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
