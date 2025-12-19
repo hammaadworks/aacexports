@@ -85,28 +85,28 @@ export default function CatalogPage() {
         setNumPages(numPages);
     }
 
-    return (<div className="pt-24 pb-24 relative min-h-screen">
-            {/* Background Grid */}
-            <div
-                className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    return (<div className="relative min-h-screen bg-[#FDFCF8] text-foreground overflow-hidden">
+             {/* Background Texture */}
+            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')" }}></div>
 
-            <section className="container mx-auto px-6 mb-16 text-center">
+            <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-24 px-6 text-center z-10">
                 <motion.div
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5}}
                 >
                     <PageHeaderBadge icon={BookOpen}>Digital Library</PageHeaderBadge>
-                    <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Product Catalogs</h1>
+                    <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 tracking-tighter text-[#2D3028]">
+                        Product Catalogs
+                    </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Discover our diverse range of export-quality products. Browse detailed specifications and
-                        brochures
-                        designed to help you make informed sourcing decisions.
+                        brochures designed to help you make informed sourcing decisions.
                     </p>
                 </motion.div>
             </section>
 
-            <section className="container mx-auto px-6 mb-20">
+            <section className="container mx-auto px-6 mb-20 relative z-10">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {catalogs.map((item, index) => (<BlurFade
                             key={index}
@@ -115,7 +115,7 @@ export default function CatalogPage() {
                             className={index === 0 ? "lg:row-span-2" : ""}
                         >
                             <MagicCard
-                                className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300"
+                                className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/80 backdrop-blur-sm"
                                 gradientColor={item.gradient}
                             >
                                 {index === 0 ? (
@@ -159,7 +159,7 @@ export default function CatalogPage() {
                                             <Button
                                                 variant="default"
                                                 size="lg"
-                                                className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
+                                                className="w-full rounded-full group bg-[#2D3028] text-white hover:bg-[#3E4236]"
                                                 onClick={() => {
                                                     setSelectedDoc({title: item.title, file: item.file});
                                                     setNumPages(null);
@@ -205,7 +205,7 @@ export default function CatalogPage() {
                                             <Button
                                                 variant="default"
                                                 size="sm"
-                                                className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
+                                                className="w-full rounded-full group bg-[#2D3028] text-white hover:bg-[#3E4236]"
                                                 onClick={() => {
                                                     setSelectedDoc({title: item.title, file: item.file});
                                                     setNumPages(null);
@@ -238,7 +238,7 @@ export default function CatalogPage() {
                     selectedDoc && (
                         <div className="w-full flex justify-end px-6 py-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t">
                             <Button asChild variant="default">
-                                <a href={`/aacexports/catalog/${selectedDoc.file}`} target="_blank"
+                                <a href={`/aacexports/catalogs/${selectedDoc.file}`} target="_blank"
                                    rel="noopener noreferrer">
                                     <Maximize2 className="mr-2 h-4 w-4"/> View Full Page
                                 </a>
@@ -250,7 +250,7 @@ export default function CatalogPage() {
                 <div className="w-full flex-grow bg-muted/30 overflow-y-auto p-4 md:p-8 flex justify-center relative"
                      ref={containerRef}>
                     {selectedDoc && (<Document
-                            file={`/aacexports/catalog/${selectedDoc.file}`}
+                            file={`/aacexports/catalogs/${selectedDoc.file}`}
                             onLoadSuccess={onDocumentLoadSuccess}
                             loading={<div className="absolute inset-0 flex items-center justify-center">
                                 <div className="flex flex-col items-center gap-2">

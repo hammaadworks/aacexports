@@ -66,7 +66,7 @@ export function AppFooter() {
                             <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
                             <li><Link href="/#about" className="hover:text-primary transition-colors">About</Link></li>
                             <li><Link href="/#verticals" className="hover:text-primary transition-colors">Verticals</Link></li>
-                            <li><Link href="/catalog" className="hover:text-primary transition-colors">Catalogs</Link></li>
+                            <li><Link href="/catalogs" className="hover:text-primary transition-colors">Catalogs</Link></li>
                             <li><Link href="/certificates" className="hover:text-primary transition-colors">Certificates</Link></li>
                         </ul>
                     </div>

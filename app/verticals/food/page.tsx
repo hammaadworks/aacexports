@@ -7,50 +7,9 @@ import {motion, useScroll, useTransform} from "motion/react";
 import {useModal} from "@/lib/modal-context";
 import {PageHeaderBadge} from "@/components/ui/PageHeaderBadge";
 import CustomContact from "@/components/CustomContact";
-import {DotPattern} from "@/components/ui/dot-pattern";
 import {cn} from "@/lib/utils";
 import {MagicCard} from "@/components/ui/magic-card";
-
-// --- Components ---
-
-const FeatureRow = ({
-                        title,
-                        description,
-                        tags,
-                        imageAlign = "right",
-                        color = "bg-yellow-500"
-                    }: {
-    title: string;
-    description: string;
-    tags: string[];
-    imageAlign?: "left" | "right";
-    color?: string;
-}) => {
-    return (
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24 last:mb-0">
-            <div className={cn("order-2 lg:order-1", imageAlign === "right" ? "lg:order-1" : "lg:order-2")}>
-                <h3 className="text-3xl font-serif font-bold mb-4">{title}</h3>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{description}</p>
-                <div className="flex flex-wrap gap-2">
-                    {tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-            </div>
-            <div className={cn("order-1 lg:order-2 h-64 lg:h-96 rounded-2xl overflow-hidden relative", imageAlign === "right" ? "lg:order-2" : "lg:order-1")}>
-                 {/* Placeholder for Product Image - Using abstract colored block for now */}
-                <div className={cn("absolute inset-0 opacity-20", color)} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-4xl font-serif font-bold opacity-10 uppercase tracking-widest">{title}</span>
-                </div>
-                {/* Decorative Pattern */}
-                <DotPattern className="absolute inset-0 text-foreground/20" width={20} height={20} cx={1} cy={1} cr={1} />
-            </div>
-        </div>
-    )
-}
+import {FeatureRow} from "@/components/FeatureRow";
 
 export default function FoodTradingPage() {
     const {openModal} = useModal();

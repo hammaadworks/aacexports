@@ -82,19 +82,20 @@ export default function CertificatesPage() {
         setNumPages(numPages);
     }
 
-    return (<div className="pt-24 pb-24 relative min-h-screen">
-            {/* Background Grid */}
-            <div
-                className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    return (<div className="relative min-h-screen bg-[#FDFCF8] text-foreground overflow-hidden">
+            {/* Background Texture */}
+            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')" }}></div>
 
-            <section className="container mx-auto px-6 mb-16 text-center">
+            <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-24 px-6 text-center z-10">
                 <motion.div
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.5}}
                 >
                     <PageHeaderBadge icon={ShieldCheck}>Official Documentation</PageHeaderBadge>
-                    <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Legal & Compliance</h1>
+                    <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 tracking-tighter text-[#2D3028]">
+                        Legal & Compliance
+                    </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                         Transparency is the foundation of our business. View our official registrations and
                         certifications below.
@@ -102,11 +103,11 @@ export default function CertificatesPage() {
                 </motion.div>
             </section>
 
-            <section className="container mx-auto px-6 mb-20">
+            <section className="container mx-auto px-6 mb-20 relative z-10">
                 <div className="grid md:grid-cols-2 gap-6">
                     {certificates.map((cert, index) => (<BlurFade key={index} delay={0.1 + index * 0.05} inView>
                             <MagicCard
-                                className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300"
+                                className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/80 backdrop-blur-sm"
                                 gradientColor={cert.gradient}
                             >
                                 <div className="p-8 flex flex-col h-full gap-6">
@@ -131,7 +132,7 @@ export default function CertificatesPage() {
                                         <Button
                                             variant="default"
                                             size="sm"
-                                            className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-primary/90"
+                                            className="w-full rounded-full group bg-[#2D3028] text-white hover:bg-[#3E4236]"
                                             onClick={() => {
                                                 setSelectedCert({title: cert.title, file: cert.file});
                                                 setNumPages(null); // Reset pages on new selection
