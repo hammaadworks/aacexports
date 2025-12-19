@@ -131,8 +131,8 @@ export function AppFooter() {
                 <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-light">
                     <p>© {new Date().getFullYear()} Al Ahmed Continental Exports. All rights reserved.</p>
                     <div className="flex gap-8">
-                        <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+                        <Link href="/legal/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <Link href="/legal/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

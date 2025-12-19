@@ -5,6 +5,7 @@ import { ShieldCheck, FileText, Truck, Headphones } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const trustBadges = [
   { label: "Government-Recognized Exporter", icon: ShieldCheck },
@@ -44,7 +45,7 @@ export function About() {
             {trustBadges.map((badge, index) => (
               <motion.div 
                 key={index} 
-                className={cn("flex flex-col items-start p-6 rounded-xl border border-border bg-secondary/10 transition-colors glass-card-hover")}
+                className={cn("relative flex flex-col items-start p-6 rounded-xl border border-border bg-secondary/5 transition-colors overflow-hidden")}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -53,7 +54,8 @@ export function About() {
                 <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                     <badge.icon size={24} />
                 </div>
-                <h4 className="font-semibold text-foreground">{badge.label}</h4>
+                <h4 className="font-semibold text-foreground relative z-10">{badge.label}</h4>
+                <BorderBeam size={100} duration={8} delay={index * 2} colorFrom="#EAB308" colorTo="#303F2D" />
               </motion.div>
             ))}
           </div>

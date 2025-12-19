@@ -21,8 +21,8 @@ export function MagicCard({
   gradientSize = 200,
   gradientColor = "#262626",
   gradientOpacity = 0.8,
-  gradientFrom = "var(--brand-gold)",
-  gradientTo = "var(--brand-green)",
+  gradientFrom = "#9E7AFF",
+  gradientTo = "#FE8BBB",
 }: MagicCardProps) {
   const mouseX = useMotionValue(-gradientSize)
   const mouseY = useMotionValue(-gradientSize)
@@ -70,7 +70,7 @@ export function MagicCard({
 
   return (
     <div
-      className={cn("group relative rounded-[inherit] overflow-hidden", className)}
+      className={cn("group relative rounded-[inherit]", className)}
       onPointerMove={handlePointerMove}
       onPointerLeave={reset}
       onPointerEnter={reset}

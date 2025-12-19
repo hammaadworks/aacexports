@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/ui/section-title";
 import { motion } from "motion/react";
+import { ConfettiButton } from "@/components/ui/confetti";
 
 const markets = ["Middle East", "Europe", "Africa", "Southeast Asia", "The Americas"];
 
@@ -59,10 +60,10 @@ export function MarketsCTA() {
              </p>
              
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                <Button size="lg" className="w-full sm:w-auto text-lg px-8 shadow-md hover:shadow-lg transition-all" asChild>
-                    <Link href="/#contact">Get A Quote Now</Link>
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 hover:bg-secondary/50" asChild>
+                <Link href="/#contact">
+                    <ConfettiButton options={{ colors: ["#EAB308", "#303F2D", "#FFFFFF"] }}>Get A Quote Now</ConfettiButton>
+                </Link>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 hover:bg-secondary/50 rounded-full h-auto py-2" asChild>
                     <Link href="mailto:info@aacexports.com">Email Us</Link>
                 </Button>
              </div>

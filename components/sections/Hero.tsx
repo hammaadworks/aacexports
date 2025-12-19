@@ -6,8 +6,27 @@ import {Button} from "@/components/ui/button";
 import {ArrowRight, Globe as GlobeIcons} from "lucide-react";
 import {Globe} from "@/components/ui/globe";
 import {PageHeaderBadge} from "@/components/ui/PageHeaderBadge";
+import { Particles } from "@/components/ui/particles";
+import { WordRotate } from "@/components/ui/word-rotate";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import confetti from "canvas-confetti";
+
+const heroParticlesColors = ["#303F2D", "#EAB308"];
 
 export function Hero() {
+    const handleCTAClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { x, y },
+            colors: ["#EAB308", "#303F2D", "#FFFFFF"]
+        });
+    };
+
     return (<section
         className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background pt-30 md:pt-0">
 
@@ -38,6 +57,15 @@ export function Hero() {
         <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[120%] h-[120%] bg-[radial-gradient(circle_closest-side,var(--color-background)_30%,transparent_100%)] opacity-80 pointer-events-none"></div>
 
+        {/* 2.5 Particles Layer */}
+        <Particles
+            className="absolute inset-0 z-0"
+            quantity={100}
+            ease={80}
+            color={heroParticlesColors}
+            refresh
+        />
+
         {/* 3. Content Layer */}
         <div className="container relative z-10 mx-auto px-6 flex flex-col items-center justify-center text-center">
 
@@ -50,7 +78,12 @@ export function Hero() {
             <h1 className="mb-8 max-w-5xl text-5xl font-serif font-bold tracking-tight md:text-7xl lg:text-8xl leading-[1.1] animate-fade-in-up"
                 style={{animationDelay: "0.2s"}}>
                 <span className="text-secondary block">Powered by Experience.</span>
-                <span className="text-primary block mt-2">Driven by Quality.</span>
+                <span className="text-primary block mt-2 flex justify-center">
+                    <WordRotate 
+                        words={["Driven by Quality.", "Built on Trust.", "Global Reach."]} 
+                        className="text-primary"
+                    />
+                </span>
             </h1>
 
             {/* Subtext */}
@@ -66,11 +99,18 @@ export function Hero() {
             <div
                 className="flex flex-col items-center justify-center gap-4 sm:flex-row w-full sm:w-auto animate-fade-in-up"
                 style={{animationDelay: "0.4s"}}>
-                <Button size="lg"
-                        className="h-14 px-8 text-base w-full sm:w-auto font-semibold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all duration-300"
-                        asChild>
-                    <Link href="/#contact">Send Requirement <ArrowRight className="ml-2 h-4 w-4"/></Link>
-                </Button>
+                <ShimmerButton 
+                    className="h-14 px-8 text-base font-semibold shadow-lg"
+                    shimmerColor="#EAB308"
+                    shimmerSize="0.1em"
+                    borderRadius="9999px"
+                    background="var(--brand-green)"
+                    onClick={handleCTAClick}
+                >
+                    <Link href="/#contact" className="flex items-center gap-2">
+                        Send Requirement <ArrowRight className="h-4 w-4"/>
+                    </Link>
+                </ShimmerButton>
                 <Button size="lg" variant="outline"
                         className="h-14 px-8 text-base w-full sm:w-auto font-semibold rounded-full bg-white/60 backdrop-blur-md border-muted hover:bg-white/80 text-secondary transition-all duration-300"
                         asChild>

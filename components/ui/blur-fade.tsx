@@ -63,7 +63,7 @@ export function BlurFade({
       <motion.div
         ref={ref}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate={isInView ? "visible" : "hidden" }
         exit="hidden"
         variants={combinedVariants}
         transition={{

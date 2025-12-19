@@ -336,29 +336,30 @@ const TextAnimateBase = ({
       break
   }
 
-  const finalVariants = variants
-    ? {
-        container: {
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-            transition: {
-              opacity: { duration: 0.01, delay },
-              delayChildren: delay,
-              staggerChildren: duration / segments.length,
+  const finalVariants =
+    variants
+      ? {
+          container: {
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                opacity: { duration: 0.01, delay },
+                delayChildren: delay,
+                staggerChildren: duration / segments.length,
+              },
+            },
+            exit: {
+              opacity: 0,
+              transition: {
+                staggerChildren: duration / segments.length,
+                staggerDirection: -1,
+              },
             },
           },
-          exit: {
-            opacity: 0,
-            transition: {
-              staggerChildren: duration / segments.length,
-              staggerDirection: -1,
-            },
-          },
-        },
-        item: variants,
-      }
-    : animation
+          item: variants,
+        }
+      : animation
       ? {
           container: {
             ...defaultItemAnimationVariants[animation].container,

@@ -2,6 +2,9 @@
 
 import React from "react";
 import { Check, FileCheck } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { TextAnimate } from "@/components/ui/text-animate";
+import { SparklesText } from "@/components/ui/sparkles-text";
 import { motion } from "motion/react";
 
 const features = [
@@ -34,10 +37,16 @@ export function Quality() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
                 <div className="space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
-                        Quality Isn’t an Act — <br />
-                        <span className="text-primary">It’s Our Operating System.</span>
-                    </h2>
+                    <div className="text-3xl md:text-4xl font-serif font-bold leading-tight">
+                        <div className="inline-block">
+                           <SparklesText text="Quality" className="text-3xl md:text-4xl" colors={{first: "#EAB308", second: "#FFFFFF"}} />
+                        </div>
+                        <span className="ml-2">Isn’t an Act —</span>
+                        <br />
+                        <TextAnimate animation="blurInUp" by="word" delay={0.5} className="text-primary inline-block">
+                             It’s Our Operating System.
+                        </TextAnimate>
+                    </div>
                     <p className="text-lg text-background/80 leading-relaxed">
                         We don't just export products; we export trust. Our rigorous quality control processes ensure that every shipment meets international standards.
                     </p>
@@ -46,19 +55,18 @@ export function Quality() {
                         <h4 className="font-semibold text-lg text-primary">Our Standards</h4>
                         <ul className="space-y-2">
                             {features.map((feature, i) => (
-                                <motion.li 
+                                <BlurFade 
                                     key={i} 
-                                    className="flex items-center gap-3"
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.3, delay: 0.2 + (i * 0.1) }}
+                                    delay={0.2 + (i * 0.1)}
+                                    inView
                                 >
-                                    <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                                        <Check size={14} />
-                                    </div>
-                                    <span>{feature}</span>
-                                </motion.li>
+                                    <li className="flex items-center gap-3">
+                                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                                            <Check size={14} />
+                                        </div>
+                                        <span>{feature}</span>
+                                    </li>
+                                </BlurFade>
                             ))}
                         </ul>
                     </div>
@@ -71,17 +79,16 @@ export function Quality() {
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {documents.map((doc, i) => (
-                            <motion.div 
+                            <BlurFade 
                                 key={i} 
-                                className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-background/10 transition-colors border border-transparent hover:border-background/10"
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: 0.4 + (i * 0.1) }}
+                                delay={0.4 + (i * 0.1)}
+                                inView
                             >
-                                <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                                <span className="text-sm font-medium">{doc}</span>
-                            </motion.div>
+                                <div className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-background/10 transition-colors border border-transparent hover:border-background/10">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                                    <span className="text-sm font-medium">{doc}</span>
+                                </div>
+                            </BlurFade>
                         ))}
                     </div>
                 </div>
