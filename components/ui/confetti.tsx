@@ -117,6 +117,7 @@ interface ConfettiButtonProps extends React.ComponentProps<"button"> {
 const ConfettiButtonComponent = ({
   options,
   children,
+  onClick,
   ...props
 }: ConfettiButtonProps) => {
   const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -133,6 +134,10 @@ const ConfettiButtonComponent = ({
       })
     } catch (error) {
       console.error("Confetti button error:", error)
+    }
+
+    if (onClick) {
+      onClick(event)
     }
   }
 

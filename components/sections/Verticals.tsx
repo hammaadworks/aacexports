@@ -11,7 +11,7 @@ const verticals = [{
     description: "Premium granite, marble, sandstone, iron & steel, and electronics.",
     icon: Package,
     href: "/verticals/general",
-    details: ["Stones", "Iron & Steel", "Electrical & Electronics"],
+    details: ["Iron", "Steel", "Stones"],
 }, {
     title: "Food Stuff Trading",
     category: "Agriculture",

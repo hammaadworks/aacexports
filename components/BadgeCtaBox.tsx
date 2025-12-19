@@ -46,7 +46,7 @@ export function BadgeCtaBox({
                                 titleClassName
                             }: Readonly<BadgeCtaBoxProps>) {
     return (<MagicCard
-            className={`flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden ${className}`}
+            className={`flex flex-col h-full rounded-lg border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden ${className}`}
             gradientColor={gradientColor}
         >
             <div className="p-8 flex flex-col h-full relative z-10">
