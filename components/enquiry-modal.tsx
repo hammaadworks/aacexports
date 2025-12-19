@@ -163,7 +163,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
         <Button 
             type="submit" 
-            className="w-full h-12 mt-2 rounded-lg text-primary-foreground font-bold text-sm shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 bg-primary" 
+            className="w-full h-12 mt-2 rounded-full text-primary-foreground font-bold text-sm shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 bg-primary"
             disabled={loading}
         >
             {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <span className="flex items-center">Send Message <ArrowRight className="ml-2 h-4 w-4" /></span>}

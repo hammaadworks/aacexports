@@ -1,16 +1,13 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import {Button} from "@/components/ui/button";
-import {ArrowRight, Package, Wheat, Zap} from "lucide-react";
-import {SectionTitle} from "@/components/ui/section-title";
+import {BadgeCtaBox} from "@/components/BadgeCtaBox";
+import {LucideWavesArrowUp, Package, Wheat} from "lucide-react";
 import {BlurFade} from "@/components/ui/blur-fade";
-import {MagicCard} from "@/components/ui/magic-card";
+import {SectionTitle} from "@/components/ui/section-title";
 
 const verticals = [{
     title: "General Trading",
-    category: "Industrial & Tech",
+    category: "Architectural & Tech",
     description: "Premium granite, marble, sandstone, iron & steel, and electronics.",
     icon: Package,
     href: "/verticals/general",
@@ -26,7 +23,7 @@ const verticals = [{
     title: "Dehydrated Powders",
     category: "Ingredients",
     description: "Clean-label, potent ingredients for industrial and culinary brands.",
-    icon: Zap,
+    icon: LucideWavesArrowUp,
     href: "/verticals/powder",
     details: ["Onion & Garlic", "Chilli & Turmeric", "Banana & Moringa"],
 },];
@@ -52,64 +49,17 @@ export function Verticals() {
                             inView
                             className="h-full"
                         >
-                            <MagicCard
-                                className="flex flex-col h-full border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+                            <BadgeCtaBox
+                                key={index}
+                                title={item.title}
+                                category={item.category}
+                                description={item.description}
+                                icon={item.icon}
+                                href={item.href}
+                                details={item.details}
                                 gradientColor="#EAB30830"
-                            >
-                                <div className="p-8 flex flex-col h-full relative z-10">
-                                    {/* Header */}
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div
-                                            className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 ring-1 ring-inset ring-primary/20">
-                                            <item.icon size={28}/>
-                                        </div>
-                                        <div
-                                            className="px-3 py-1 rounded-full bg-secondary/5 border border-secondary/10 text-[10px] font-bold uppercase tracking-wider text-secondary/80">
-                                            {item.category}
-                                        </div>
-                                    </div>
-
-                                    {/* Enhanced Title & Desc */}
-                                    <div className="mb-8">
-                                        <h3 className="text-3xl font-serif font-bold text-foreground mb-4 leading-tight tracking-tight">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-base text-muted-foreground leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Features List */}
-                                    <div className="space-y-3 mb-10 max-w-md">
-                                        {item.details.map((detail, idx) => (
-                                            <div key={idx}
-                                                 className="flex items-center text-sm font-medium text-muted-foreground/80">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2.5"/>
-                                                {detail}
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    {/* Action Button - Pushed to bottom */}
-                                    <div className="mt-auto pt-4 relative z-20 w-full">
-                                        <Button
-                                            variant="default"
-                                            size="lg"
-                                            className="w-full rounded-full group bg-primary text-primary-foreground hover:bg-secondary/90"
-                                            asChild
-                                        >
-                                            <Link href={item.href}>
-                                                Explore Vertical <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"/>
-                                            </Link>
-                                        </Button>
-                                    </div>
-
-                                    {/* Apt Symbol (Large Icon Watermark) */}
-                                    <div className="absolute -right-12 -bottom-12 opacity-10 text-primary pointer-events-none transform -rotate-12 z-0">
-                                        <item.icon size={300} strokeWidth={1.5} />
-                                    </div>
-                                </div>
-                            </MagicCard>
+                                className="h-full"
+                            />
                         </BlurFade>))}
                 </div>
             </div>
