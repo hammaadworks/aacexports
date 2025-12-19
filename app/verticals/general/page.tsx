@@ -3,7 +3,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Button} from "@/components/ui/button";
 import {Anvil, ArrowRight, Building2, Eye, Maximize2, PackageOpen,} from "lucide-react";
-import {motion} from "motion/react";
 import {useModal} from "@/lib/modal-context";
 import {PageHeaderBadge} from "@/components/ui/PageHeaderBadge";
 import CustomContact from "@/components/CustomContact";
@@ -12,15 +11,15 @@ import {FeatureRow} from "@/components/FeatureRow";
 import {SimpleCarousel} from "@/components/SimpleCarousel";
 import BaseModal from "@/components/ui/base-modal";
 import dynamic from "next/dynamic";
+import {VerticalHero, VerticalPageWrapper} from "@/app/verticals/layout";
 
-const Document = dynamic(() => import("react-pdf").then((mod) => mod.Document), {ssr: false},);
+const Document = dynamic(() => import("react-pdf").then((mod) => mod.Document), {ssr: false});
 const Page = dynamic(() => import("react-pdf").then((mod) => mod.Page), {
     ssr: false,
 });
 
 export default function GeneralTradingPage() {
     const {openModal} = useModal();
-    const targetRef = useRef<HTMLDivElement>(null);
 
     const [selectedDoc, setSelectedDoc] = useState<{
         title: string; file: string;
@@ -60,61 +59,29 @@ export default function GeneralTradingPage() {
 
     const tmtImages = ["/aacexports/verticals/general/ironsteel_1/angle_load.png", "/aacexports/verticals/general/ironsteel_1/fabrications.png",];
 
-    return (<div
-            className="relative min-h-screen bg-[#FDFCF8] text-foreground overflow-hidden"
-            ref={targetRef}
-        >
-            {/* Background Texture */}
-
-            <div
-                className="absolute inset-0 z-0 opacity-75 pointer-events-none"
-                style={{
-                    backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')",
-                }}
-            ></div>
-
-            {/* Hero Section */}
-
-            <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
-                <div className="container mx-auto text-center relative z-10">
-                    <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.6}}
-                    >
-                        <PageHeaderBadge icon={Building2}>
-                            Construction & Materials
-                        </PageHeaderBadge>
-
-                        <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tighter text-[#2D3028]">
-                            Building the World,
-                            <br/>
-                            <span className="text-[#8B9D77] italic">
-                One Block at a Time.
-              </span>
-                        </h1>
-
-                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-                            Since 1996, Al Ahmed Continental has been a pillar of reliability.
-                            We quarry, process, and export premium Indian Natural Stones and
-                            Structural Steel to global infrastructure projects.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Button
-                                size="lg"
-                                className="bg-primary text-white hover:bg-secondary rounded-full px-8 h-12"
-                                onClick={openModal}
-                            >
-                                Partner With Us <ArrowRight className="ml-2 h-4 w-4"/>
-                            </Button>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+    return (<VerticalPageWrapper>
+            <VerticalHero
+                icon={Building2}
+                badgeText="Construction & Materials"
+                title={<>
+                    Building the World,
+                    <br/>
+                    <span className="text-[#8B9D77] italic">One Block at a Time.</span>
+                </>}
+                description="Since 1996, Al Ahmed Continental has been a pillar of reliability. We quarry, process, and export premium Indian Natural Stones and Structural Steel to global infrastructure projects."
+                titleClassName="text-5xl md:text-7xl"
+                descriptionClassName="max-w-3xl"
+            >
+                <Button
+                    size="lg"
+                    className="bg-primary text-white hover:bg-secondary rounded-full px-8 h-12"
+                    onClick={openModal}
+                >
+                    Partner With Us <ArrowRight className="ml-2 h-4 w-4"/>
+                </Button>
+            </VerticalHero>
 
             {/* Stats Section / Trust Indicators */}
-
             <section className="py-12 border-y bg-white/50 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -162,7 +129,6 @@ export default function GeneralTradingPage() {
             </section>
 
             {/* Natural Stones Section */}
-
             <section id="stones" className="py-24 container mx-auto px-6">
                 <div className="mb-16 text-center max-w-3xl mx-auto">
           <span className="text-[#8B9D77] font-bold tracking-wider uppercase text-sm">
@@ -205,7 +171,7 @@ export default function GeneralTradingPage() {
                 <FeatureRow
                     title="Landscaping & Monuments"
                     description="Specialized finishing for global projects including Flamed & Bush hammered paving slabs, Kerbstones, Pollers, Balls, Steps, and Cobblestones. Perfect for city centers, airports, and walkways."
-                    tags={["Monuments", "Cobblestones", "Kerbstones", "Bush Hammered"]}
+                    tags={["Monuments", "Cobblestones", "Kerbstones", "Bush Hammered",]}
                     imageAlign="left"
                     color="bg-stone-700"
                     customVisual={<SimpleCarousel images={landscapeImages}/>}
@@ -226,7 +192,6 @@ export default function GeneralTradingPage() {
             </section>
 
             {/* Iron & Steel Section */}
-
             <section className="py-24 bg-[#E8E6E1] relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-16">
@@ -335,5 +300,5 @@ export default function GeneralTradingPage() {
                         </Document>)}
                 </div>
             </BaseModal>
-        </div>);
+        </VerticalPageWrapper>);
 }

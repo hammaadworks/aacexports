@@ -40,7 +40,7 @@ const CustomContact: React.FC<CustomContactProps> = ({
                             text={headingText || "Get in Touch"} 
                             className="text-3xl font-serif font-bold text-white" 
                             colors={{first: "#EAB308", second: "#FFFFFF"}} 
-                            sparklesCount={5}
+                            sparklesCount={3}
                         />
                     </h3>
                     <p className="text-white/80 mb-8 max-w-2xl mx-auto text-lg">
