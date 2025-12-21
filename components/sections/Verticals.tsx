@@ -57,7 +57,7 @@ export function Verticals() {
                                 icon={item.icon}
                                 href={item.href}
                                 details={item.details}
-                                gradientColor="#EAB30830"
+
                                 className="h-full"
                             />
                         </BlurFade>))}
