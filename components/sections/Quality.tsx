@@ -11,7 +11,7 @@ import { Card } from "@/components/ui/card";
 import { motion } from "motion/react";
 
 const features = [
-  "Multi‑stage inspections",
+  "Multi-stage inspections",
   "Compliance-aligned documentation",
   "Clear communication from inquiry to dispatch",
 ];
@@ -22,9 +22,9 @@ const documents = [
   "Origin Certificate",
   "Bill Lading",
   "Insurance Policy",
+  "Lab Report",
   "Phytosanitary Certificate",
   "Fumigation Certificate",
-  "Lab Report"
 ];
 
 const markets = [

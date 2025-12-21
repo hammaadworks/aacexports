@@ -1,17 +1,16 @@
 "use client";
 
+import { EnquiryModal } from "@/components/enquiry-modal";
 import { Button } from "@/components/ui/button";
 import { Globe } from "@/components/ui/globe";
 import { PageHeaderBadge } from "@/components/ui/PageHeaderBadge";
 import { Particles } from "@/components/ui/particles";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { WordRotate } from "@/components/ui/word-rotate";
-import { BlurFade } from "@/components/ui/blur-fade";
 import confetti from "canvas-confetti";
 import { ArrowRight, Globe as GlobeIcons } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { EnquiryModal } from "@/components/enquiry-modal";
 
 const heroParticlesColors = ["#303F2D", "#EAB308"];
 
@@ -75,7 +74,7 @@ export function Hero() {
 
       {/* 2. Readability Halo */}
       {/* A subtle radial gradient centered behind the text to wash out the globe slightly for contrast */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[120%] h-[120%] bg-[radial-gradient(circle_closest-side,var(--color-background)_30%,transparent_100%)] opacity-80 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[120%] h-[120%] bg-[radial-gradient(circle_closest-side,var(--color-background)_20%,transparent_40%)] opacity-80 pointer-events-none"></div>
 
       {/* 2.5 Particles Layer */}
       <Particles
@@ -161,7 +160,10 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <EnquiryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }
