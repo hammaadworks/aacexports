@@ -22,7 +22,6 @@ const certificates = [{
     description: "Ensures that food products undergo quality checks and curtail food adulteration.",
     icon: ShieldCheck,
     file: "fssai.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "GST Registration",
     category: "Taxation",
@@ -30,7 +29,6 @@ const certificates = [{
     description: "Official tax registration ensuring compliance with Indian tax laws.",
     icon: FileText,
     file: "gst.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "Import Export Code (IEC)",
     category: "Trade License",
@@ -38,7 +36,6 @@ const certificates = [{
     description: "Primary license for undertaking import/export activities in India.",
     icon: FileText,
     file: "iec.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "MSME / Udyam Registration",
     category: "Business",
@@ -46,7 +43,6 @@ const certificates = [{
     description: "Certification for Micro, Small and Medium Enterprises.",
     icon: ShieldCheck,
     file: "udyam.pdf",
-    gradient: "var(--accent)"
 },];
 
 export default function CertificatesPage() {
@@ -105,7 +101,6 @@ export default function CertificatesPage() {
                             category={cert.category}
                             description={cert.description}
                             icon={cert.icon}
-                            gradientColor={cert.gradient}
                             subtitle={cert.issuer}
                             buttonText="View Certificate"
                             buttonIcon={Eye}

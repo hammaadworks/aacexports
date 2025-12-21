@@ -31,11 +31,11 @@ export const FeatureRow = ({
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-8">
                     {tags.map(tag => (<span key={tag}
-                                            className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
+                                            className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium z-10">
                             {tag}
                         </span>))}
                 </div>
-                {action && <div className="mt-4">{action}</div>}
+                {action && <div className="mt-4 z-10">{action}</div>}
             </div>
         {showVisual &&
             <div

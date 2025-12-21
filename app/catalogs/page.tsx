@@ -20,36 +20,30 @@ const catalogs = [{
     description: "Explore our exquisite collection of Granite, Marble, and Quartz. Perfect for timeless architectural projects.",
     icon: Gem,
     file: "natural_stones.pdf",
-    gradient: "var(--accent)"
-
 }, {
     title: "Fresh Produce",
     category: "Agriculture",
     description: "Farm-fresh vegetables and fruits sourced directly from growers. Quality and freshness guaranteed.",
     icon: Leaf,
     file: "fresh_vegetables.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "Premium Spices and Food Products",
     category: "FMCG",
     description: "A curated selection of premium spices, high-quality processed food items, snacks, and culinary essentials.",
     icon: Utensils,
     file: "food.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "Dehydrated Powders",
     category: "Ingredients",
     description: "Premium dehydrated vegetable and fruit powders, and industrial-grade food ingredients for bulk export.",
     icon: PackageOpen,
     file: "powders.pdf",
-    gradient: "var(--accent)"
 }, {
     title: "Iron & Steel",
     category: "Industrial Materials",
     description: "Structural steel, raw materials, and heavy metal products for construction and manufacturing.",
     icon: Anvil,
     file: "ironsteel.pdf",
-    gradient: "var(--accent)"
 },];
 
 export default function CatalogPage() {
@@ -113,7 +107,6 @@ export default function CatalogPage() {
                             category={item.category}
                             description={item.description}
                             icon={item.icon}
-                            gradientColor={item.gradient}
                             buttonText="Explore Catalog"
                             buttonIcon={ArrowRight}
                             onClick={() => {

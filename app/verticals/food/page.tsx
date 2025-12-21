@@ -2,7 +2,7 @@
 
 import React, {useState} from "react";
 import {Button} from "@/components/ui/button";
-import {ArrowRight, CheckCircle2, Eye, Leaf, Microscope, PackageCheck, Truck, Wheat,} from "lucide-react";
+import {ArrowRight, CheckCircle2, Eye, Leaf, Microscope, PackageCheck, Truck, Wheat, PackageCheckIcon} from "lucide-react";
 import {useModal} from "@/lib/modal-context";
 import CustomContact from "@/components/CustomContact";
 import {MagicCard} from "@/components/ui/magic-card";
@@ -81,8 +81,8 @@ export default function FoodTradingPage() {
         <section className="py-24 container mx-auto px-6">
             <VerticalSectionHeader
                 badge="Our Heritage"
-                title="Natural Stones & Granite"
-                description="We are pioneers in the Indian stone industry. From quarrying rough blocks to crafting intricate monuments, our expertise covers the entire value chain."
+                title="Fresh Produce & Spices"
+                description="Selected Indian-origin merchandise and commodities, sourced and supplied as per buyer specifications and international trade standards."
                 align="center"
             />
 
@@ -98,7 +98,7 @@ export default function FoodTradingPage() {
                     className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
                     onClick={() => {
                         setSelectedDoc({
-                            title: "Natural Stones", file: "natural_stones.pdf",
+                            title: "Food & Spices", file: "food.pdf",
                         });
                     }}
                 >
@@ -118,7 +118,7 @@ export default function FoodTradingPage() {
                     className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
                     onClick={() => {
                         setSelectedDoc({
-                            title: "Natural Stones", file: "natural_stones.pdf",
+                            title: "Fresh Vegetables", file: "fresh_vegetables.pdf",
                         });
                     }}
                 >
@@ -138,7 +138,7 @@ export default function FoodTradingPage() {
                     className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
                     onClick={() => {
                         setSelectedDoc({
-                            title: "Natural Stones", file: "natural_stones.pdf",
+                            title: "Food & Spices", file: "food.pdf",
                         });
                     }}
                 >
@@ -148,19 +148,19 @@ export default function FoodTradingPage() {
         </section>
 
         <VerticalInfoSection
+            badgeIcons={PackageCheckIcon}
+            badgeText="Export Quality Packaging"    
             title="Packaging that Preserves."
             description="We understand that packaging is as critical as the product itself. Our export packaging is designed to withstand long transit times while maintaining humidity and temperature levels."
             variant="colored"
             visual={<div className="grid grid-cols-2 gap-4">
                 <MagicCard
-                    gradientColor="#3E4236"
                     className="bg-white/5 border-white/10 p-6 flex flex-col items-center justify-center aspect-square"
                 >
                     <PackageCheck size={40} className="mb-4 text-green-400"/>
                     <span className="font-bold">Custom Labels</span>
                 </MagicCard>
                 <MagicCard
-                    gradientColor="#3E4236"
                     className="bg-white/5 border-white/10 p-6 flex flex-col items-center justify-center aspect-square"
                 >
                     <Truck size={40} className="mb-4 text-green-400"/>
