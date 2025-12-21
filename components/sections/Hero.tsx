@@ -6,18 +6,21 @@ import { PageHeaderBadge } from "@/components/ui/PageHeaderBadge";
 import { Particles } from "@/components/ui/particles";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { WordRotate } from "@/components/ui/word-rotate";
+import { BlurFade } from "@/components/ui/blur-fade";
 import confetti from "canvas-confetti";
 import { ArrowRight, Globe as GlobeIcons } from "lucide-react";
-import Link from "next/link";
-import React from "react";
-import { useModal } from "@/lib/modal-context";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { EnquiryModal } from "@/components/enquiry-modal";
 
 const heroParticlesColors = ["#303F2D", "#EAB308"];
 
 export function Hero() {
-  const { openModal } = useModal();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   const handleCTAClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setIsModalOpen(true);
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (rect.left + rect.width / 2) / window.innerWidth;
     const y = (rect.top + rect.height / 2) / window.innerHeight;
@@ -28,8 +31,14 @@ export function Hero() {
       origin: { x, y },
       colors: ["#EAB308", "#303F2D", "#FFFFFF"],
     });
-    
-    openModal();
+  };
+
+  const handleExploreClick = () => {
+    router.push("#verticals");
+    const element = document.getElementById("verticals");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -86,18 +95,24 @@ export function Hero() {
         </div>
         {/* Headline */}
         <h1
-          className="mb-6 max-w-5xl text-5xl font-serif font-bold tracking-tight md:text-7xl lg:text-8xl leading-[1.1] animate-fade-in-up"
+          className="mb-8 max-w-5xl text-5xl font-serif font-bold tracking-tight md:text-7xl lg:text-8xl leading-[1.1] animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
           <span className="text-secondary block">Powered by Experience.</span>
+          <span className="text-primary block mt-2 flex justify-center">
+            <WordRotate
+              words={["Driven by Quality.", "Built on Trust.", "Global Reach."]}
+              className="text-primary"
+            />
+          </span>
         </h1>
 
         {/* Supporting Headline */}
-        <h2 
-           className="mb-8 text-2xl md:text-3xl font-medium text-foreground/80 animate-fade-in-up"
-           style={{ animationDelay: "0.25s" }}
+        <h2
+          className="mb-8 text-2xl md:text-3xl font-medium text-foreground/80 animate-fade-in-up"
+          style={{ animationDelay: "0.25s" }}
         >
-            Built on Trust. Delivered with Precision.
+          Built on Trust. Delivered with Precision.
         </h2>
 
         {/* Description */}
@@ -105,7 +120,11 @@ export function Hero() {
           className="mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl leading-relaxed animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          For over 30 years, Al Ahmed Continental has supplied <strong className="text-foreground">Stones, Steel, Food Grains, and Dehydrated Powders</strong> to global markets — with one guiding principle:
+          For over 30 years, Al Ahmed Continental has supplied{" "}
+          <strong className="text-foreground">
+            Stones, Steel, Food Grains, and Dehydrated Powders
+          </strong>{" "}
+          to global markets — with one guiding principle:
           <br className="mt-4 block" />
           <span className="font-semibold text-secondary italic">
             "Performance is the promise. Consistency is the proof."
@@ -117,31 +136,32 @@ export function Hero() {
           className="flex flex-col items-center justify-center gap-4 w-full sm:w-auto animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <ShimmerButton
-                    className="h-14 px-8 text-base font-semibold shadow-lg"
-                    shimmerColor="#EAB308"
-                    shimmerSize="0.1em"
-                    borderRadius="9999px"
-                    background="var(--brand-green)"
-                    onClick={handleCTAClick}
-                >
-                    <span className="flex items-center gap-2">
-                    Send Requirement <ArrowRight className="h-4 w-4" />
-                    </span>
-                </ShimmerButton>
-                
-                <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-8 text-base w-full sm:w-auto font-semibold rounded-full bg-white/60 backdrop-blur-md border-muted hover:bg-white/80 text-secondary transition-all duration-300"
-                    asChild
-                >
-                    <Link href="#verticals">Explore Products</Link>
-                </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <ShimmerButton
+              className="h-14 px-8 text-base font-semibold shadow-lg"
+              shimmerColor="#EAB308"
+              shimmerSize="0.1em"
+              borderRadius="9999px"
+              background="var(--brand-green)"
+              onClick={handleCTAClick}
+            >
+              <span className="flex items-center gap-2">
+                Send Requirement <ArrowRight className="h-4 w-4" />
+              </span>
+            </ShimmerButton>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-14 px-8 text-base w-full sm:w-auto font-semibold rounded-full bg-white/60 backdrop-blur-md border-muted hover:bg-white/80 text-secondary transition-all duration-300"
+              onClick={handleExploreClick}
+            >
+              Explore Verticals
+            </Button>
+          </div>
         </div>
       </div>
+      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

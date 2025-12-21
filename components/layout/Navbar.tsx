@@ -6,6 +6,7 @@ import {usePathname} from "next/navigation";
 import {BookOpen, FileText, Home, Info, Layers} from "lucide-react"; // Added Info icon for About
 import {cn} from "@/lib/utils";
 import {motion} from "motion/react";
+import { useRouter } from "next/navigation"; // Import useRouter
 
 const navItems = [
     {name: "Home", href: "/", icon: Home},
@@ -19,6 +20,15 @@ export function Navbar() {
     const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("");
     const [hoveredTab, setHoveredTab] = useState<string | null>(null);
+    const router = useRouter();
+
+    const scrollToSection = (id: string) => {
+        router.push(`/#${id}`); // Update URL hash
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     React.useEffect(() => {
         // Set initial active tab based on window location
@@ -44,39 +54,73 @@ export function Navbar() {
         <div
             className="pointer-events-auto flex items-center gap-1 p-1.5 rounded-full border border-border/20 bg-secondary shadow-2xl ring-1 ring-black/5 mx-4">
             {navItems.map((item) => {
-                const isActive = activeTab === item.href || (item.href === "/" && activeTab === "") || (item.href === "/" && activeTab === "/"); // Fallback for root
+                const isHashLink = item.href.includes("/#");
+                const targetId = isHashLink ? item.href.split("#")[1] : "";
 
-                return (<Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setActiveTab(item.href)}
-                    className={cn("relative flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200", isActive ? "text-foreground" : "text-white hover:text-white/80" // Inactive text is white
-                    )}
-                    onMouseEnter={() => setHoveredTab(item.name)}
-                    onMouseLeave={() => setHoveredTab(null)}
-                >
-                    {/* Active State Background */}
-                    {isActive && (<motion.div
-                        layoutId="navbar-active"
-                        className="absolute inset-0 rounded-full bg-background shadow-sm" // White highlight
-                        transition={{type: "spring", bounce: 0.2, duration: 0.6}}
-                    />)}
+                const isActive =
+                    (isHashLink && pathname === "/" && window.location.hash === `#${targetId}`) ||
+                    (!isHashLink && (activeTab === item.href || (item.href === "/" && activeTab === "") || (item.href === "/" && activeTab === "/")));
 
-                    {/* Hover State Background (lighter) */}
-                    {hoveredTab === item.name && !isActive && (<motion.div
-                        layoutId="navbar-hover"
-                        className="absolute inset-0 rounded-full bg-white/10" // Light overlay for dark bg
-                        transition={{type: "spring", bounce: 0.2, duration: 0.6}}
-                    />)}
+                const commonProps = {
+                    className: cn(
+                        "relative flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200",
+                        isActive ? "text-foreground" : "text-white hover:text-white/80"
+                    ),
+                    onMouseEnter: () => setHoveredTab(item.name),
+                    onMouseLeave: () => setHoveredTab(null),
+                };
 
-                    {/* Content */}
+                const content = (
                     <span className="relative z-10 flex items-center gap-2">
-                <item.icon size={18} className="text-primary"/>
-                <span className={cn("hidden sm:inline", isActive ? "text-foreground" : "text-white")}>
-                    {item.name}
-                </span>
-              </span>
-                </Link>);
+                        <item.icon size={18} className="text-primary"/>
+                        <span className={cn("hidden sm:inline", isActive ? "text-foreground" : "text-white")}>
+                            {item.name}
+                        </span>
+                    </span>
+                );
+
+                return isHashLink ? (
+                    <a
+                        key={item.name}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection(targetId);
+                            setActiveTab(item.href); // Manually set active tab for hash links
+                        }}
+                        {...commonProps}
+                    >
+                        {isActive && (<motion.div
+                            layoutId="navbar-active"
+                            className="absolute inset-0 rounded-full bg-background shadow-sm"
+                            transition={{type: "spring", bounce: 0.2, duration: 0.6}}
+                        />)}
+                        {hoveredTab === item.name && !isActive && (<motion.div
+                            layoutId="navbar-hover"
+                            className="absolute inset-0 rounded-full bg-white/10"
+                            transition={{type: "spring", bounce: 0.2, duration: 0.6}}
+                        />)}
+                        {content}
+                    </a>
+                ) : (
+                    <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setActiveTab(item.href)}
+                        {...commonProps}
+                    >
+                        {isActive && (<motion.div
+                            layoutId="navbar-active"
+                            className="absolute inset-0 rounded-full bg-background shadow-sm"
+                            transition={{type: "spring", bounce: 0.2, duration: 0.6}}
+                        />)}
+                        {hoveredTab === item.name && !isActive && (<motion.div
+                            layoutId="navbar-hover"
+                            className="absolute inset-0 rounded-full bg-white/10"
+                            transition={{type: "spring", bounce: 0.2, duration: 0.6}}
+                        />)}
+                        {content}
+                    </Link>
+                );
             })}
         </div>
     </div>);
