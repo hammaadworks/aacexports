@@ -7,6 +7,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Globe } from "@/components/ui/globe";
+import { Card } from "@/components/ui/card";
 import { motion } from "motion/react";
 
 const features = [
@@ -16,10 +17,14 @@ const features = [
 ];
 
 const documents = [
-  "Certificate of Origin",
-  "Phytosanitary Certificates",
-  "Lab Reports",
-  "Invoice + Packing List",
+  "Commercial Invoice",
+  "Packing List",
+  "Origin Certificate",
+  "Bill Lading",
+  "Insurance Policy",
+  "Phytosanitary Certificate",
+  "Fumigation Certificate",
+  "Lab Report"
 ];
 
 const markets = [
@@ -91,16 +96,18 @@ export function Quality() {
                         Documentation Provided
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {["Certificate of Origin", "Phytosanitary Certificates", "Lab Analysis Reports", "Commercial Invoice & Packing List"].map((doc, i) => (
+                        {documents.map((doc, i) => (
                             <BlurFade 
                                 key={i} 
                                 delay={0.4 + (i * 0.1)}
                                 inView
                             >
-                                <div className="flex items-center gap-3 p-3 rounded-lg bg-background/5 hover:bg-background/10 transition-colors border border-transparent hover:border-background/10">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                                    <span className="text-sm font-medium">{doc}</span>
-                                </div>
+                            <Card 
+                                className="flex items-center gap-4 p-5 rounded-xl bg-white/5 border-transparent hover:bg-white/10 transition-colors shadow-none"
+                            >
+                                <span className="h-2 w-2 rounded-full bg-primary shrink-0" />
+                                <span className="text-base font-medium text-white/90">{doc}</span>
+                            </Card>
                             </BlurFade>
                         ))}
                     </div>

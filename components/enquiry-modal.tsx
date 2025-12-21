@@ -15,8 +15,6 @@ interface EnquiryModalProps {
 }
 
 export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({ contact: "" });
 
   // Form State
@@ -49,17 +47,13 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     e.preventDefault();
     if (!validate()) return;
 
-    setLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setLoading(false);
-    setSuccess(true);
+    window.open(waLink, "_blank");
+    handleClose();
   };
 
   const handleClose = () => {
     onClose();
     setTimeout(() => {
-        setSuccess(false);
         setFormData({ name: "", contact: "", message: "" });
         setErrors({ contact: "" });
     }, 300);
@@ -164,32 +158,10 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
         <Button 
             type="submit" 
             className="w-full h-12 mt-2 rounded-full text-primary-foreground font-bold text-sm shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 bg-primary"
-            disabled={loading}
         >
-            {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <span className="flex items-center">Send Message <ArrowRight className="ml-2 h-4 w-4" /></span>}
+            <span className="flex items-center">Send Message <ArrowRight className="ml-2 h-4 w-4" /></span>
         </Button>
       </form>
-    </div>
-  );
-
-  const renderSuccess = () => (
-    <div className="flex flex-col items-center justify-center py-12 text-center gap-6">
-        <motion.div 
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="h-24 w-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-2"
-        >
-            <CheckCircle2 className="h-12 w-12 text-green-600 dark:text-green-400" />
-        </motion.div>
-        <div className="space-y-2">
-            <h3 className="text-2xl font-serif font-bold text-foreground">Inquiry Received!</h3>
-            <p className="text-muted-foreground text-sm max-w-[280px] mx-auto leading-relaxed">
-                Thank you for reaching out. Our team will review your requirement and get back to you shortly.
-            </p>
-        </div>
-        <Button onClick={handleClose} variant="outline" className="mt-4 px-8 rounded-full border-border/60 hover:bg-secondary/10">
-            Close
-        </Button>
     </div>
   );
 
@@ -202,17 +174,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
       footerContent={null} 
       headerClassName="hidden" // Hiding default header to use custom one for better layout control
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-            key={success ? "success" : "form"}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-        >
-            {success ? renderSuccess() : renderContent()}
-        </motion.div>
-      </AnimatePresence>
+      {renderContent()}
     </BaseModal>
   );
 }
