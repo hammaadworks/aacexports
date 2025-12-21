@@ -1,39 +1,43 @@
 "use client";
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Atom, Eye, Factory, FlaskConical, Leaf, Zap } from "lucide-react";
-import { useModal } from "@/lib/modal-context";
+import React, {useState} from "react";
+import {Button} from "@/components/ui/button";
+import {ArrowRight, Atom, Eye, Factory, FlaskConical, Leaf, Zap} from "lucide-react";
+import {useModal} from "@/lib/modal-context";
 import CustomContact from "@/components/CustomContact";
-import { FeatureRow } from "@/components/FeatureRow";
-import { MagicCard } from "@/components/ui/magic-card";
+import {FeatureRow} from "@/components/FeatureRow";
+import {MagicCard} from "@/components/ui/magic-card";
 import {
+    CatalogDoc,
+    CatalogViewer,
     VerticalHero,
     VerticalInfoSection,
     VerticalPageWrapper,
     VerticalSectionHeader,
-    VerticalStats,
-    CatalogViewer,
-    CatalogDoc
+    VerticalStats
 } from "@/app/verticals/layout";
-import { SimpleCarousel } from "@/components/SimpleCarousel";
+import {SimpleCarousel} from "@/components/SimpleCarousel";
 
 export default function PowderPage() {
-    const { openModal } = useModal();
+    const {openModal} = useModal();
 
 
     const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
+    const powderImageDir = "/aacexports/verticals/powder";
+
+    const xImageDir = `${powderImageDir}/_1`;
+    const xImages = ["x1.png", "x2.png"].map(filename => `${xImageDir}/${filename}`);
+
     const powderImages = ["/aacexports/verticals/general/granite_1/excavate.png", "/aacexports/verticals/general/granite_1/granite_block.png", "/aacexports/verticals/general/granite_1/green_granite.png", "/aacexports/verticals/general/granite_1/multicolor_granite.png", "/aacexports/verticals/general/granite_1/packing.png", "/aacexports/verticals/general/granite_1/white_marble.png",];
 
-    return (
-        <VerticalPageWrapper>
+    return (<VerticalPageWrapper>
             <VerticalHero
                 icon={Atom}
                 badgeText="Clean Label Ingredients"
                 title={<>
                     Concentrated Goodness.
-                    <br />
+                    <br/>
                     <span className="text-[#8B9D77] italic">Industrial Scale.</span>
                 </>}
                 description="Revolutionizing food ingredients with 100% natural dehydrated vegetable and fruit powders. Reliable, Flavor-Rich, and Industry-Ready."
@@ -43,7 +47,7 @@ export default function PowderPage() {
                     className="bg-primary text-white hover:bg-secondary rounded-full px-8 h-12"
                     onClick={openModal}
                 >
-                    Get Spec sheet <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Spec sheet <ArrowRight className="ml-2 h-4 w-4"/>
                 </Button>
             </VerticalHero>
 
@@ -84,7 +88,7 @@ export default function PowderPage() {
                     tags={["Onion Powder", "Garlic Powder", "Red Chilli Powder", "Turmeric",]}
                     imageAlign="right"
                     color="bg-red-500"
-                    customVisual={<SimpleCarousel images={powderImages} />}
+                    customVisual={<SimpleCarousel images={powderImages}/>}
                     action={<Button
                         variant="outline"
                         className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
@@ -94,7 +98,7 @@ export default function PowderPage() {
                             });
                         }}
                     >
-                        <Eye size={16} /> View Catalog
+                        <Eye size={16}/> View Catalog
                     </Button>}
                 />
 
@@ -105,7 +109,7 @@ export default function PowderPage() {
                     tags={["Banana Powder", "Moringa Powder", "Natural Sweetener", "Superfoods",]}
                     imageAlign="left"
                     color="bg-green-600"
-                    customVisual={<SimpleCarousel images={powderImages} />}
+                    customVisual={<SimpleCarousel images={powderImages}/>}
                     action={<Button
                         variant="outline"
                         className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
@@ -115,7 +119,7 @@ export default function PowderPage() {
                             });
                         }}
                     >
-                        <Eye size={16} /> View Catalog
+                        <Eye size={16}/> View Catalog
                     </Button>}
                 />
             </section>
@@ -154,7 +158,7 @@ export default function PowderPage() {
                 <ul className="space-y-6">
                     <li className="flex gap-4">
                         <div className="mt-1 bg-white p-2 rounded-lg text-[#2D3028] h-fit shadow-sm">
-                            <FlaskConical size={20} />
+                            <FlaskConical size={20}/>
                         </div>
                         <div>
                             <h4 className="font-bold text-lg">Food Processing</h4>
@@ -165,7 +169,7 @@ export default function PowderPage() {
                     </li>
                     <li className="flex gap-4">
                         <div className="mt-1 bg-white p-2 rounded-lg text-[#2D3028] h-fit shadow-sm">
-                            <Factory size={20} />
+                            <Factory size={20}/>
                         </div>
                         <div>
                             <h4 className="font-bold text-lg">HoReCa</h4>
@@ -176,7 +180,7 @@ export default function PowderPage() {
                     </li>
                     <li className="flex gap-4">
                         <div className="mt-1 bg-white p-2 rounded-lg text-[#2D3028] h-fit shadow-sm">
-                            <Atom size={20} />
+                            <Atom size={20}/>
                         </div>
                         <div>
                             <h4 className="font-bold text-lg">Nutraceuticals</h4>
@@ -200,6 +204,5 @@ export default function PowderPage() {
                 onClose={() => setSelectedDoc(null)}
                 doc={selectedDoc}
             />
-        </VerticalPageWrapper>
-    );
+        </VerticalPageWrapper>);
 }

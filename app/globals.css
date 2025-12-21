@@ -92,7 +92,7 @@
     --card-foreground: var(--brand-green);
 
     --popover: var(--brand-white);
-    --popover-foreground: var(--brand-green);
+    --popover-foreground: #daeac9;
 
     /* ============================= */
     /* Primary Actions */
@@ -136,7 +136,7 @@
     /* ============================= */
     --chart-1: var(--brand-gold);
     --chart-2: var(--brand-green);
-    --chart-3: #9A7B00;
+    --chart-3: #8B9D77;
     --chart-4: #4B6356;
     --chart-5: #6B4E00;
 
@@ -189,7 +189,7 @@
     --card-foreground: #F4F6F4;
 
     --popover: #151C18;
-    --popover-foreground: #F4F6F4;
+    --popover-foreground: #8B9D77;
 
     --primary: var(--brand-gold);
     --primary-foreground: var(--brand-green);
@@ -212,7 +212,7 @@
 
     --chart-1: var(--brand-gold);
     --chart-2: #A3B8AD;
-    --chart-3: #D6DED9;
+    --chart-3: #8B9D77;
     --chart-4: #4B6356;
     --chart-5: #6B4E00;
 

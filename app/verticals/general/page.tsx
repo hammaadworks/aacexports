@@ -1,167 +1,161 @@
 "use client";
 
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Eye, } from "lucide-react";
-import { useModal } from "@/lib/modal-context";
+import React, {useState} from "react";
+import {Button} from "@/components/ui/button";
+import {ArrowRight, Building2, Eye, LayersIcon} from "lucide-react";
+import {useModal} from "@/lib/modal-context";
 import CustomContact from "@/components/CustomContact";
-import { FeatureRow } from "@/components/FeatureRow";
-import { SimpleCarousel } from "@/components/SimpleCarousel";
+import {FeatureRow} from "@/components/FeatureRow";
+import {SimpleCarousel} from "@/components/SimpleCarousel";
 import {
+    CatalogDoc,
+    CatalogViewer,
     VerticalHero,
     VerticalInfoSection,
     VerticalPageWrapper,
     VerticalSectionHeader,
-    VerticalStats,
-    CatalogViewer,
-    CatalogDoc
+    VerticalStats
 } from "@/app/verticals/layout";
 
 export default function GeneralTradingPage() {
-    const { openModal } = useModal();
+    const {openModal} = useModal();
 
     const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-    const stoneImages = ["/aacexports/verticals/general/granite_1/excavate.png", "/aacexports/verticals/general/granite_1/granite_block.png", "/aacexports/verticals/general/granite_1/green_granite.png", "/aacexports/verticals/general/granite_1/multicolor_granite.png", "/aacexports/verticals/general/granite_1/packing.png", "/aacexports/verticals/general/granite_1/white_marble.png",];
+    const generalImageDir = "/aacexports/verticals/general";
 
-    const landscapeImages = ["/aacexports/verticals/general/granite_2/kerbs.png", "/aacexports/verticals/general/granite_2/landscape_1.png", "/aacexports/verticals/general/granite_2/landscape_kerb.png", "/aacexports/verticals/general/granite_2/sphere.png",];
+    const stoneImageDir = `${generalImageDir}/granite_1`;
+    const stoneImages = ["excavate.png", "granite_block.png", "green_granite.png", "multicolor_granite.png", "packing.png", "white_marble.png",].map(filename => `${stoneImageDir}/${filename}`);
 
-    const tmtImages = ["/aacexports/verticals/general/ironsteel_1/angle_load.png", "/aacexports/verticals/general/ironsteel_1/fabrications.png",];
+    const landscapeImageDir = generalImageDir + "/granite_2";
+    const landscapeImages = ["kerbs.png", "landscape_1.png", "landscape_kerb.png", "sphere.png",].map(filename => `${landscapeImageDir}/${filename}`);
 
-    return (
-        <VerticalPageWrapper>
-            <VerticalHero
-                icon={Building2}
-                badgeText="Construction & Materials"
-                title={<>
-                    Building the World,
-                    <br />
-                    <span className="text-[#8B9D77] italic">One Block at a Time.</span>
-                </>}
-                description="Since 1996, Al Ahmed Continental has been a pillar of reliability. We quarry, process, and export premium Indian Natural Stones and Structural Steel to global infrastructure projects."
-                titleClassName="text-5xl md:text-7xl"
-                descriptionClassName="max-w-3xl"
-            >
-                <Button
-                    size="lg"
-                    className="bg-primary text-white hover:bg-secondary rounded-full px-8 h-12"
-                    onClick={openModal}
-                >
-                    Partner With Us <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-            </VerticalHero>
+    const tmtImageDir = generalImageDir + "/ironsteel_1";
+    const tmtImages = ["angle_load.png", "fabrications.png",].map(filename => `${tmtImageDir}/${filename}`);
 
-            <VerticalStats
-                variant="numbers"
-                items={[{ id: "est", label: "Established", value: 1996, valuePrefix: "" }, {
-                    id: "countries", label: "Countries Served", value: 30, valueSuffix: "+"
-                }, { id: "projects", label: "Projects Completed", value: 500, valueSuffix: "+" }, {
-                    id: "iec", label: "IEC Compliance", valuePrefix: "100", valueSuffix: "%", value: undefined
-                }]}
-            />
-
-            {/* Natural Stones Section */}
-            <section id="stones" className="py-24 container mx-auto px-6">
-                <VerticalSectionHeader
-                    badge="Our Heritage"
-                    title="Natural Stones & Granite"
-                    description="We are pioneers in the Indian stone industry. From quarrying rough blocks to crafting intricate monuments, our expertise covers the entire value chain."
-                    align="center"
-                />
-
-                <FeatureRow
-                    title="Granite & Marble Slabs"
-                    description="We operate quarries for rough dimensional blocks and process them into high-gloss polished slabs and tiles. Our varieties include Kuppam Green, Red Multicolour, Paradiso, Absolute Black, and Black Galaxy."
-                    tags={["Kuppam Green", "Black Galaxy", "Polished Slabs", "Italian Marble",]}
-                    imageAlign="right"
-                    color="bg-stone-500"
-                    customVisual={<SimpleCarousel images={stoneImages} />}
-                    action={<Button
-                        variant="outline"
-                        className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
-                        onClick={() => {
-                            setSelectedDoc({
-                                title: "Natural Stones", file: "natural_stones.pdf",
-                            });
-                        }}
-                    >
-                        <Eye size={16} /> View Catalog
-                    </Button>}
-                />
-
-                <FeatureRow
-                    title="Landscaping & Monuments"
-                    description="Specialized finishing for global projects including Flamed & Bush hammered paving slabs, Kerbstones, Pollers, Balls, Steps, and Cobblestones. Perfect for city centers, airports, and walkways."
-                    tags={["Monuments", "Cobblestones", "Kerbstones", "Bush Hammered",]}
-                    imageAlign="left"
-                    color="bg-stone-700"
-                    customVisual={<SimpleCarousel images={landscapeImages} />}
-                    action={<Button
-                        variant="outline"
-                        className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
-                        onClick={() => {
-                            setSelectedDoc({
-                                title: "Natural Stones", file: "natural_stones.pdf",
-                            });
-                        }}
-                    >
-                        <Eye size={16} /> View Catalog
-                    </Button>}
-                />
-            </section>
-
-            {/* Iron & Steel Section */}
-            <VerticalInfoSection
-                title="Iron & Steel"
-                description="The backbone of infrastructure. We source TMT bars and structural steel from India's most reputed manufacturers, ensuring high ductility and earthquake resistance."
-                variant="colored"
-                visual={<div className="h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
-                    <SimpleCarousel images={tmtImages} /></div>}
-            >
-                <div className="space-y-6">
-                    <div>
-                        <h3 className="text-2xl font-bold font-serif mb-2">TMT Steel Bars</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                            High-quality TMT bars in Fe500 and Fe550 grades. Sourced from verified manufacturers ensuring
-                            compliance with IS standards. Suitable for critical infrastructure like bridges, dams, and
-                            high-rise buildings.
-                        </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                        {["Fe500 / Fe550", "IS Standards", "High Ductility", "Earthquake Resistant"].map(tag => (
-                            <span key={tag}
-                                className="px-3 py-1 rounded-full bg-white text-secondary-foreground text-sm font-medium border border-gray-200">
-                                {tag}
-                            </span>))}
-                    </div>
-
-                    <Button
-                        variant="outline"
-                        className="w-full md:w-auto rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
-                        onClick={() => {
-                            setSelectedDoc({
-                                title: "Iron & Steel", file: "ironsteel.pdf",
-                            });
-                        }}
-                    >
-                        <Eye size={16} /> View Catalog
-                    </Button>
-                </div>
-            </VerticalInfoSection>
-
-            <CustomContact
+    return (<VerticalPageWrapper>
+        <VerticalHero
+            icon={Building2}
+            badgeText="Construction & Materials"
+            title={<>
+                Building the World,
+                <br/>
+                <span className="text-[#8B9D77] italic">One Block at a Time.</span>
+            </>}
+            description="Since 1996, Al Ahmed Continental has been a pillar of reliability. We quarry, process, and export premium Indian Natural Stones and Structural Steel to global infrastructure projects."
+            titleClassName="text-5xl md:text-7xl"
+            descriptionClassName="max-w-3xl"
+        >
+            <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-secondary rounded-full px-8 h-12"
                 onClick={openModal}
-                headingText={"Ready to Source?"}
-                bodyText={"Whether it's a single container of granite or a bulk shipment of TMT bars, we ensure seamless logistics and competitive pricing."}
-                ctaText={"Get a Quote Today"}
+            >
+                Partner With Us <ArrowRight className="ml-2 h-4 w-4"/>
+            </Button>
+        </VerticalHero>
+
+        <VerticalStats
+            variant="numbers"
+            items={[{id: "est", label: "Established", value: 1996, valuePrefix: ""}, {
+                id: "countries", label: "Countries Served", value: 30, valueSuffix: "+"
+            }, {id: "projects", label: "Projects Completed", value: 500, valueSuffix: "+"}, {
+                id: "iec", label: "IEC Compliance", valuePrefix: "100", valueSuffix: "%", value: undefined
+            }]}
+        />
+
+        {/* Natural Stones Section */}
+        <section id="stones" className="py-24 container mx-auto px-6">
+            <VerticalSectionHeader
+                badge="Our Heritage"
+                title="Natural Stones & Granite"
+                description="We are pioneers in the Indian stone industry. From quarrying rough blocks to crafting intricate monuments, our expertise covers the entire value chain."
+                align="center"
             />
 
-            <CatalogViewer
-                isOpen={!!selectedDoc}
-                onClose={() => setSelectedDoc(null)}
-                doc={selectedDoc}
+            <FeatureRow
+                title="Granite & Marble Slabs"
+                description="We operate quarries for rough dimensional blocks and process them into high-gloss polished slabs and tiles. Our varieties include Kuppam Green, Red Multicolour, Paradiso, Absolute Black, and Black Galaxy."
+                tags={["Kuppam Green", "Black Galaxy", "Polished Slabs", "Italian Marble",]}
+                imageAlign="right"
+                color="bg-stone-500"
+                customVisual={<SimpleCarousel images={stoneImages}/>}
+                action={<Button
+                    variant="outline"
+                    className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
+                    onClick={() => {
+                        setSelectedDoc({
+                            title: "Natural Stones", file: "natural_stones.pdf",
+                        });
+                    }}
+                >
+                    <Eye size={16}/> View Catalog
+                </Button>}
             />
-        </VerticalPageWrapper>
-    );
+
+            <FeatureRow
+                title="Landscaping & Monuments"
+                description="Specialized finishing for global projects including Flamed & Bush hammered paving slabs, Kerbstones, Pollers, Balls, Steps, and Cobblestones. Perfect for city centers, airports, and walkways."
+                tags={["Monuments", "Cobblestones", "Kerbstones", "Bush Hammered",]}
+                imageAlign="left"
+                color="bg-stone-700"
+                customVisual={<SimpleCarousel images={landscapeImages}/>}
+                action={<Button
+                    variant="outline"
+                    className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
+                    onClick={() => {
+                        setSelectedDoc({
+                            title: "Natural Stones", file: "natural_stones.pdf",
+                        });
+                    }}
+                >
+                    <Eye size={16}/> View Catalog
+                </Button>}
+            />
+        </section>
+
+        {/* Iron & Steel Section */}
+        <VerticalInfoSection
+            title="Iron & Steel"
+            badgeIcons={LayersIcon}
+            badgeText="Construction Materials"
+            description="The backbone of infrastructure. We source TMT bars and structural steel from India's most reputed manufacturers, ensuring high ductility and earthquake resistance."
+            variant="colored"
+            visual={<div className="h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
+                <SimpleCarousel images={tmtImages}/></div>}
+        >
+            <FeatureRow
+                title="TMT Steel Bars"
+                description="High-quality TMT bars in Fe500 and Fe550 grades. Sourced from verified manufacturers ensuring compliance with IS standards. Suitable for critical infrastructure like bridges, dams, and high-rise buildings."
+                tags={["Fe500 / Fe550", "IS Standards", "High Ductility", "Earthquake Resistant"]}
+                showVisual={false}
+                color="bg-stone-500"
+                action={<Button
+                    variant="outline"
+                    className="w-full rounded-full gap-2 border-primary text-primary hover:bg-primary hover:text-white"
+                    onClick={() => {
+                        setSelectedDoc({
+                            title: "Iron & Steel", file: "ironsteel.pdf",
+
+                        });
+                    }}
+                >
+                    <Eye size={16}/> View Catalog
+                </Button>}
+            />
+
+        </VerticalInfoSection>
+        <CustomContact
+            onClick={openModal}
+            headingText={"Ready to Source?"}
+            bodyText={"Whether it's a single container of granite or a bulk shipment of TMT bars, we ensure seamless logistics and competitive pricing."}
+            ctaText={"Get a Quote Today"}
+        />
+
+        <CatalogViewer
+            isOpen={!!selectedDoc}
+            onClose={() => setSelectedDoc(null)}
+            doc={selectedDoc}
+        />
+    </VerticalPageWrapper>);
 }

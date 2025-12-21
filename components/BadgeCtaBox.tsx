@@ -57,7 +57,7 @@ export function BadgeCtaBox({
                         <Icon size={28}/>
                     </div>
                     <div
-                        className="px-3 py-1 rounded-full bg-secondary/90 border border-secondary/10 text-[10px] font-bold uppercase tracking-wider text-white">
+                        className="px-3 py-1 rounded-full bg-secondary/80 text-[10px] font-bold uppercase tracking-wider text-white">
                         {category}
                     </div>
                 </div>

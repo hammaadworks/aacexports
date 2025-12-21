@@ -7,7 +7,7 @@ interface PageHeaderBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export function PageHeaderBadge({ icon: Icon, children, className, ...props }: PageHeaderBadgeProps) {
+export function PageHeaderBadge({ icon: Icon, children, className, ...props }: Readonly<PageHeaderBadgeProps>) {
   return (
     <div 
       className={cn(
