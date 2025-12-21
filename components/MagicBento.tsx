@@ -46,12 +46,6 @@ const cardData: BentoCardProps[] = [
   },
   {
     color: '#1a1a1a',
-    title: 'Electrical & Electronics',
-    description: 'Export‑ready electrical systems, components, and electronics curated for global distribution.',
-    label: 'Electronics'
-  },
-  {
-    color: '#1a1a1a',
     title: 'Rice',
     description: 'Basmati & Non‑Basmati varieties — graded, sorted, and export‑ready.',
     label: 'Rice'

@@ -8,7 +8,7 @@ Minimal, punchy, modern tone (Option 4)
 
 ### Hero Section
 **Global Exports. Zero Compromise.**  
-Delivering Stones, Steel, Electronics, Food Grains, and Dehydrated Powders for 30+ years.
+Delivering Stones, Steel, Food Grains, and Dehydrated Powders for 30+ years.
 
 Consistency. Compliance. Scale.
 
@@ -50,9 +50,6 @@ Premium granite, marble, and sandstone — processed with precision.
 
 #### Iron & Steel  
 High‑tensile TMT bars, billets, wire rods, and structural steel from India’s top mills.
-
-#### Electrical & Electronics  
-Export‑ready electrical systems, components, and electronics curated for global distribution.
 
 ---
 

@@ -36,7 +36,7 @@ export function AppFooter() {
 
                         {/* Tagline */}
                         <p className="text-sm text-white/80 leading-relaxed max-w-xs font-light">
-                            Performance is the promise. Consistency is the proof. A legacy of precision since 1996.
+                            Reliable sourcing. Professional execution. Long‑term partnerships.
                         </p>
 
                         {/* Address */}

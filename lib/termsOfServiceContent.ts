@@ -1,96 +1,73 @@
 export const termsOfServiceContent = `
-# Terms of Service for Al Ahmed Continental Exports
+# Terms of Service
 
-**Effective Date:** December 18, 2025
+**Effective Date:** December 21, 2025
 
-Please read these Terms of Service ("Terms," "Terms of Service") carefully before using the Al Ahmed Continental Exports website (the "Service") operated by Al Ahmed Continental Exports ("us," "we," or "our").
-
-Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.
-
-**Important Disclaimer:** This document is a generic template and is provided for illustrative purposes only. It does not constitute legal advice. Al Ahmed Continental Exports strongly recommends consulting with a legal professional to draft a comprehensive and legally compliant Terms of Service tailored to its specific business practices, product offerings, and applicable Indian and international laws.
+Welcome to **Al Ahmed Continental Exports**. By accessing our website and engaging with our services, you agree to comply with the following terms and conditions.
 
 ---
 
-## 1. Acceptance of Terms
+## 1. General Provisions
 
-By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
+**Al Ahmed Continental Exports** ("we", "us", "our") operates this website to provide information about our export products (Natural Stones, Agriculture, General Trading) and services.
+
+*   **Acceptance:** By using this site, you signify your acceptance of these terms.
+*   **Modification:** We reserve the right to update these terms at any time. Continued use of the site implies acceptance of changes.
 
 ---
 
-## 2. Privacy Policy
+## 2. Product Information & Disclaimers
 
-Your use of the Service is also governed by our Privacy Policy, which explains how we collect, use, and disclose information about you. Please read our Privacy Policy carefully.
+While we strive for precision, international trade involves dynamic variables.
+
+*   **Product Specifications:** Descriptions, grades, and specifications of products (e.g., Granite slabs, Rice varieties) on this website are for informational purposes. Final specifications will be defined in the specific **Sales Contract** or **Proforma Invoice**.
+*   **Pricing:** We do not display live pricing due to market fluctuations. Quotes provided via email or formal invoices are valid only for the duration specified in those documents.
+*   **Availability:** All products are subject to availability and export regulations at the time of order.
 
 ---
 
 ## 3. Intellectual Property
 
-The Service and its original content, features, and functionality are and will remain the exclusive property of Al Ahmed Continental Exports and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Al Ahmed Continental Exports.
+All content on this website—including text, product photography, logos, and downloadable catalogs—is the property of **Al Ahmed Continental Exports** unless otherwise noted.
+
+*   **Authorized Use:** You may view, download, and print catalogs for personal or commercial sourcing purposes.
+*   **Prohibited Use:** You may not modify, copy, distribute, or use our content for competing commercial purposes without prior written consent.
 
 ---
 
-## 4. User Obligations
+## 4. Liability Limitation
 
-By using the Service, you agree not to:
--   Use the Service for any unlawful purpose or in any way that could harm us or any third party.
--   Transmit any harmful or disruptive code or data.
--   Interfere with the security or integrity of the Service.
--   Attempt to gain unauthorized access to any portion of the Service.
+To the fullest extent permitted by law:
+*   We shall not be liable for any direct, indirect, or consequential damages arising from the use or inability to use this website.
+*   We do not warrant that this website will be uninterrupted or error-free, though we strive for 99.9% uptime.
 
 ---
 
-## 5. Product Information
+## 5. Trade & Export Compliance
 
-We strive to ensure that information on our website regarding products, specifications, and pricing is accurate. However, we do not warrant that product descriptions or other content of this Service is accurate, complete, reliable, current, or error-free. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update information at any time without prior notice.
-
----
-
-## 6. Links to Other Websites
-
-Our Service may contain links to third-party websites or services that are not owned or controlled by Al Ahmed Continental Exports.
-
-Al Ahmed Continental Exports has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that Al Ahmed Continental Exports shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such websites or services.
-
-We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.
+All transactions initiated through inquiries on this site are subject to:
+*   **Indian Export Laws:** Including regulations by DGFT (Directorate General of Foreign Trade) and Customs.
+*   **International Incoterms:** All sales are governed by Incoterms® 2020 (e.g., FOB, CIF) as agreed in specific contracts.
 
 ---
 
-## 7. Termination
+## 6. Governing Law
 
-We may terminate or suspend your access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+Any claim relating to Al Ahmed Continental Exports' website shall be governed by the laws of the State of **Karnataka, India** without regard to its conflict of law provisions.
 
-All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
-
----
-
-## 8. Disclaimer of Warranties; Limitation of Liability
-
-Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.
-
-In no event shall Al Ahmed Continental Exports, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
+**Dispute Resolution:**
+Any disputes arising shall be subject to the exclusive jurisdiction of the courts located in **Bangalore, Karnataka**.
 
 ---
 
-## 9. Governing Law
+## 7. Contact Information
 
-These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka, India.
+For legal inquiries or questions regarding these terms:
 
----
+**Al Ahmed Continental Exports**
+#579, 32nd 'D' cross, 10th main road, 4th Block
+Jayanagar, Bangalore - 560011
+Karnataka, India.
 
-## 10. Changes to Terms
-
-We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
-
-By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-
----
-
-## 11. Contact Us
-
-If you have any questions about these Terms, please contact us at:
-
-**Al Ahmed Continental Exports**<br>
-Email: sales@aacexports.com<br>
-Phone: +91 6363372655<br>
-Address: #123, Export Zone, Bangalore, Karnataka 560001, India
+**Email:** [info@aacexports.in](mailto:info@aacexports.in)
 `;

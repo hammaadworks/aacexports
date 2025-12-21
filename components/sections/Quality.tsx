@@ -22,7 +22,10 @@ const documents = [
 
 export function Quality() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+
       <div className="container mx-auto px-6">
         <motion.div 
             className="rounded-3xl bg-foreground text-background p-8 md:p-16 overflow-hidden relative shadow-2xl"
@@ -48,7 +51,7 @@ export function Quality() {
                         </TextAnimate>
                     </div>
                     <p className="text-lg text-background/80 leading-relaxed">
-                        We don't just export products; we export trust. Our rigorous quality control processes ensure that every shipment meets international standards.
+                        We don’t just export products — <strong className="text-primary">we export trust</strong>. Our quality control processes are designed to eliminate risk, reduce delays, and ensure full compliance at every stage.
                     </p>
                     
                     <div className="space-y-3 pt-4">
@@ -78,7 +81,7 @@ export function Quality() {
                         Documentation Provided
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {documents.map((doc, i) => (
+                        {["Certificate of Origin", "Phytosanitary Certificates", "Lab Analysis Reports", "Commercial Invoice & Packing List"].map((doc, i) => (
                             <BlurFade 
                                 key={i} 
                                 delay={0.4 + (i * 0.1)}

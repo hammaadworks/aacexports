@@ -19,7 +19,7 @@ export function HeroActions({ text = "Send Requirement" }: { text?: string }) {
         onClick={() => document.getElementById('verticals')?.scrollIntoView({ behavior: 'smooth' })}
         className="h-12 px-8 rounded-full border border-input bg-background hover:bg-muted text-foreground transition-colors font-medium"
       >
-        Explore Products
+        Explore Verticals
       </button>
     </div>
   )

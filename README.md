@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![Motion](https://img.shields.io/badge/Motion-12.0-ff0055?style=for-the-badge&logo=framer)
 
-> **Global Merchandise Exports.** Delivering Stones, Steel, Electronics, and Food Grains with a promise of performance and consistency.
+> **Global Merchandise Exports.** Delivering Stones, Steel, and Food Grains with a promise of performance and consistency.
 
 ---
 

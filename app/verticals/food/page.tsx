@@ -51,6 +51,7 @@ export default function FoodTradingPage() {
     "cinnamon.jpeg",
     "clove.jpeg",
     "pepper.jpeg",
+    "cardamom.png",
   ].map((filename) => `${food3ImageDir}/${filename}`);
 
   return (
@@ -228,7 +229,7 @@ export default function FoodTradingPage() {
               <img
                 src="/aacexports/verticals/food/food_4/packaging.png"
                 alt="Export Quality Packaging"
-                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-90"
+                className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-90"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
@@ -236,7 +237,7 @@ export default function FoodTradingPage() {
               <img
                 src="/aacexports/verticals/food/food_4/brand_daaraab.png"
                 alt="DAARAAB Branding"
-                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-90"
+                className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-90"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
