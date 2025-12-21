@@ -4,7 +4,6 @@ import { About } from "@/components/sections/About";
 import { VisionMission } from "@/components/sections/VisionMission";
 import { Verticals } from "@/components/sections/Verticals";
 import { Quality } from "@/components/sections/Quality";
-import { GlobalMarkets } from "@/components/sections/GlobalMarkets";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export default function Home() {
@@ -28,8 +27,7 @@ export default function Home() {
             {/* Section 6: Quality & Compliance */}
             <Quality />
             
-            {/* Section 7: Global Markets */}
-            <GlobalMarkets />
+            {/* Section 7: Global Markets - Removed as it is merged into Quality */}
             
             {/* Section 8: Lead Conversion CTA */}
             <ContactCTA />
