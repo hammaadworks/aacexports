@@ -22,7 +22,7 @@ export default function GeneralTradingPage() {
 
   const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-  const generalImageDir = "/aacexports/verticals/general";
+  const generalImageDir = "/verticals/general";
 
   const stoneImageDir = `${generalImageDir}/granite_1`;
   const stoneImages = [

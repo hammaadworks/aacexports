@@ -13,7 +13,6 @@ import CustomContact from "@/components/CustomContact";
 import { FeatureRow } from "@/components/FeatureRow";
 import { SimpleCarousel } from "@/components/SimpleCarousel";
 import { Button } from "@/components/ui/button";
-import { MagicCard } from "@/components/ui/magic-card";
 import { useModal } from "@/lib/modal-context";
 import {
   ArrowRight,
@@ -21,7 +20,6 @@ import {
   Eye,
   Leaf,
   Microscope,
-  PackageCheck,
   PackageCheckIcon,
   Truck,
   Wheat,
@@ -33,7 +31,7 @@ export default function FoodTradingPage() {
 
   const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-  const foodImageDir = "/aacexports/verticals/food";
+  const foodImageDir = "/verticals/food";
 
   const food2ImageDir = `${foodImageDir}/food_2`;
   const food2Images = [
@@ -143,7 +141,7 @@ export default function FoodTradingPage() {
               preload="auto"
             >
               <source
-                src="/aacexports/verticals/food/food_1/rice_demo.mp4"
+                src="/verticals/food/food_1/rice_demo.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -227,7 +225,7 @@ export default function FoodTradingPage() {
           <div className="grid grid-cols-2 gap-4 h-full">
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
               <img
-                src="/aacexports/verticals/food/food_4/packaging.png"
+                src="/verticals/food/food_4/packaging.png"
                 alt="Export Quality Packaging"
                 className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-90"
               />
@@ -235,7 +233,7 @@ export default function FoodTradingPage() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
               <img
-                src="/aacexports/verticals/food/food_4/brand_daaraab.png"
+                src="/verticals/food/food_4/brand_daaraab.png"
                 alt="DAARAAB Branding"
                 className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-90"
               />

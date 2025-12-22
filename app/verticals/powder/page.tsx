@@ -31,7 +31,7 @@ export default function PowderPage() {
 
   const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-  const powderImageDir = "/aacexports/verticals/powder";
+  const powderImageDir = "/verticals/powder";
 
   const powder1ImageDir = `${powderImageDir}/powder_1`;
   const powder1Images = [

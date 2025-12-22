@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
 import { EnquiryModal } from "@/components/enquiry-modal";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import confetti from "canvas-confetti";
+import { motion } from "motion/react";
+import Link from "next/link";
+import React, { useState } from "react";
 
 export function AppHeader() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -20,7 +20,7 @@ export function AppHeader() {
       particleCount: 100,
       spread: 70,
       origin: { x, y },
-      colors: ["#EAB308", "#303F2D", "#FFFFFF"]
+      colors: ["#EAB308", "#303F2D", "#FFFFFF"],
     });
     setIsContactOpen(true);
   };
@@ -39,28 +39,28 @@ export function AppHeader() {
         <div className="flex items-center gap-2 md:gap-4">
           {/* Logo Icon */}
           <Link href="/" className="flex items-center shrink-0">
-            <img 
-              src="/aacexports/logo/logo_bg.png" 
-              alt="AAC Logo" 
+            <img
+              src="/logo/logo_bg.png"
+              alt="AAC Logo"
               className="h-8 md:h-10 w-auto object-contain"
             />
           </Link>
-          
+
           {/* Vertical Divider */}
           <div className="h-6 md:h-8 w-[1px] bg-border/60" />
 
           {/* Wordmark Logo */}
           <Link href="/" className="flex items-center">
-            <img 
-               src="/aacexports/logo/wordmark_bg.png"
-               alt="Al Ahmed Continental Exports"
-               className="h-8 md:h-10 w-auto object-contain"
+            <img
+              src="/logo/wordmark_bg.png"
+              alt="Al Ahmed Continental Exports"
+              className="h-8 md:h-10 w-auto object-contain"
             />
           </Link>
         </div>
 
         <div className="flex items-center">
-          <Button 
+          <Button
             variant="default"
             className="font-bold rounded-full h-8 px-4 text-xs md:h-10 md:px-6 md:text-sm shadow-md hover:shadow-lg transition-all duration-300 text-primary-foreground bg-primary"
             onClick={handleContactClick}
@@ -70,7 +70,10 @@ export function AppHeader() {
         </div>
       </motion.header>
 
-      <EnquiryModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <EnquiryModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </>
   );
 }
