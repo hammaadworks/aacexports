@@ -1,0 +1,1 @@
+export const verticalsCDN = "https://cdn.statically.io/gh/hammaadworks/aacexports@master/public/verticals";
