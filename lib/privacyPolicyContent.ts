@@ -5,7 +5,7 @@ export const privacyPolicyContent = `
 
 ## 1. Our Commitment to Privacy
 
-At **Al Ahmed Continental Exports**, we operate with a simple principle: **Business relies on trust, not surveillance.**
+At **Al Ahmad Continental Exports**, we operate with a simple principle: **Business relies on trust, not surveillance.**
 
 We respect your privacy and are committed to protecting the personal information you share with us. This policy outlines our straightforward approach to data handling. We do not track your browsing behavior, we do not sell your data, and we do not use cookies for advertising purposes.
 
@@ -69,7 +69,7 @@ To exercise these rights, please contact our compliance team directly.
 
 If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:
 
-**Al Ahmed Continental Exports**
+**Al Ahmad Continental Exports**
 #579, 32nd 'D' cross, 10th main road, 4th Block
 Jayanagar, Bangalore - 560011
 Karnataka, India.

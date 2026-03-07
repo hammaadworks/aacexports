@@ -40,7 +40,7 @@ export function AppHeader() {
           {/* Logo Icon */}
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src="/logo/logo_bg.png"
+              src="/brandkit/logo/logo_rounded.png"
               alt="AAC Logo"
               className="h-8 md:h-10 w-auto object-contain"
             />
@@ -52,8 +52,8 @@ export function AppHeader() {
           {/* Wordmark Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/logo/wordmark_bg.png"
-              alt="Al Ahmed Continental Exports"
+              src="/brandkit/logo/wordmark_bg.png"
+              alt="Al Ahmad Continental Exports"
               className="h-8 md:h-10 w-auto object-contain"
             />
           </Link>

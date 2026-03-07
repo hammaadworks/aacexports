@@ -12,14 +12,14 @@
 
 ## 🚀 Project Overview
 
-**AAC Exports** is a high-performance, visually immersive web platform designed to showcase the global export capabilities of Al Ahmed Continental. Built with modern web technologies, it offers a seamless experience for international clients to explore verticals and connect with the business.
+**AAC Exports** is a high-performance, visually immersive web platform designed to showcase the global export capabilities of Al Ahmad Continental. Built with modern web technologies, it offers a seamless experience for international clients to explore verticals and connect with the business.
 
 ## ✨ Key Features
 
 ### 🎨 **Brand Identity**
 *   **Custom Theme Engine:** Bespoke `aac.css` theme system utilizing brand-specific **Gold** (`#EAB308`) and **Navy Blue** (`#0F172A`).
 *   **Dynamic Hero:** Immersive hero section with `img_bg.png` background and adaptive overlay for superior readability in Light & Dark modes.
-*   **Signature Header:** Custom-engineered logo and HTML/CSS wordmark ("Al Ahmed Continental EXPORTS") ensuring pixel-perfect brand representation.
+*   **Signature Header:** Custom-engineered logo and HTML/CSS wordmark ("Al Ahmad Continental EXPORTS") ensuring pixel-perfect brand representation.
 
 ### 🛠 **Interactive UX**
 *   **"Get in Touch" Hub:** A powerful, centralized modal for client communication.

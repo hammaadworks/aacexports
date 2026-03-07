@@ -1,4 +1,4 @@
-# Website Copy - Al Ahmed Continental Exports
+# Website Copy - Al Ahmad Continental Exports
 
 Minimal, punchy, modern tone (Option 4)
 

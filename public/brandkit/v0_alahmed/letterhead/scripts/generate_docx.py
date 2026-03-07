@@ -152,7 +152,7 @@ def create_docx():
     r_c.font.color.rgb = hex_to_rgb(GOLD_HEX)
     
     # --- Address Line ---
-    # "Al Ahmed Continental" text is in PDF footer? No, just address.
+    # "Al Ahmad Continental" text is in PDF footer? No, just address.
     # Reconstructing address
     address_text_pre = "#579, 32nd 'D' Cross, 10th Main Road, 4th Block, Jayanagar, Bangalore - 560011, Karnataka, "
     
@@ -185,7 +185,7 @@ def create_docx():
     doc.add_paragraph("We are pleased to submit our proposal...")
 
     # Output
-    output_filename = "Al_Ahmed_Continental_Letterhead.docx"
+    output_filename = "Al_Ahmad_Continental_Letterhead.docx"
     doc.save(output_filename)
     print(f"✅ Generated DOCX: {output_filename}")
 

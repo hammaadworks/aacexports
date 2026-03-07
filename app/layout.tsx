@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Al Ahmed Continental | Global Merchandise Exports",
+  title: "Al Ahmad Continental | Global Merchandise Exports",
   description:
     "Established in 1996. Premier exporter of Natural Stones, Fresh Produce, Food Ingredients, and Iron & Steel. Delivering trust and quality globally.",
 };
@@ -33,22 +33,22 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
+          href="/brandkit/favicons/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicons/favicon-32x32.png"
+          href="/brandkit/favicons/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicons/favicon-16x16.png"
+          href="/brandkit/favicons/favicon-16x16.png"
         />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="manifest" href="/brandkit/favicons/site.webmanifest" />
+        <link rel="shortcut icon" href="/brandkit/favicons/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary`}

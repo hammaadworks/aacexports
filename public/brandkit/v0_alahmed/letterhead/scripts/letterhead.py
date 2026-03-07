@@ -16,7 +16,7 @@ from reportlab.lib.units import mm
 # --------------------------------------------------
 # Configuration
 # --------------------------------------------------
-OUTPUT = "Al_Ahmed_Continental_Letterhead.pdf"
+OUTPUT = "Al_Ahmad_Continental_Letterhead.pdf"
 LOGO = "logo_bg.png"
 WORDMARK = "wordmark_bg.png"
 
@@ -185,10 +185,10 @@ def on_continuation_page(canvas, doc):
     small_logo_s = 15 * mm
     canvas.drawImage(LOGO, margin_x, header_y - small_logo_s, width=small_logo_s, height=small_logo_s, mask='auto', preserveAspectRatio=True)
     
-    # Text "Al Ahmed Continental"
+    # Text "Al Ahmad Continental"
     canvas.setFont("Helvetica-Bold", 12)
     canvas.setFillColor(GREEN)
-    canvas.drawString(margin_x + small_logo_s + 5*mm, header_y - 10*mm, "Al Ahmed Continental")
+    canvas.drawString(margin_x + small_logo_s + 5*mm, header_y - 10*mm, "Al Ahmad Continental")
     
     # Page Number (Optional)
     # page_num = doc.page # Note: doc.page is not reliable in flowables context sometimes, but works in callbacks usually.

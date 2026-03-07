@@ -60,7 +60,7 @@ export default function GeneralTradingPage() {
             <span className="text-[#8B9D77] italic">One Block at a Time.</span>
           </>
         }
-        description="Since 1996, Al Ahmed Continental has been a pillar of reliability. We quarry, process, and export premium Indian Natural Stones and Structural Steel to global infrastructure projects."
+        description="Since 1996, Al Ahmad Continental has been a pillar of reliability. We quarry, process, and export premium Indian Natural Stones and Structural Steel to global infrastructure projects."
         titleClassName="text-5xl md:text-7xl"
         descriptionClassName="max-w-3xl"
       >

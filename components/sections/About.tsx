@@ -36,7 +36,7 @@ export function About() {
               className="mb-6"
             />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Since 1996, <strong className="text-foreground">Al Ahmed Continental</strong> has operated with the discipline of a global enterprise. 
+              Since 1996, <strong className="text-foreground">Al Ahmad Continental</strong> has operated with the discipline of a global enterprise. 
               Every shipment. Every document. Every deadline — executed with clarity and control.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">

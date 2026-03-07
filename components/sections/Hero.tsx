@@ -119,7 +119,7 @@ export function Hero() {
           className="mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl leading-relaxed animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          For over 30 years, Al Ahmed Continental has supplied{" "}
+          For over 30 years, Al Ahmad Continental has supplied{" "}
           <strong className="text-foreground">
             Stones, Steel, Food Grains, and Dehydrated Powders
           </strong>{" "}

@@ -15,7 +15,7 @@ export function AppFooter() {
                             <div className="flex flex-col items-center">
                                 {/* Main Title */}
                                 <h2 className="text-2xl font-serif text-primary tracking-tight text-center leading-none font-medium">
-                                    Al Ahmed Continental
+                                    Al Ahmad Continental
                                 </h2>
                                 
                                 {/* Subtitle Container with Lines */}
@@ -129,9 +129,10 @@ export function AppFooter() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-light">
-                    <p>© {new Date().getFullYear()} Al Ahmed Continental Exports. All rights reserved.</p>
-                    <div className="flex gap-8">
+                    <p>© {new Date().getFullYear()} Al Ahmad Continental Exports. All rights reserved.</p>
+                    <div className="flex gap-8 items-center">
                         <Link href="/legal/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <Link href="/brandkit" className="hover:text-primary transition-colors">Brand Kit</Link>
                         <Link href="/legal/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
                     </div>
                 </div>

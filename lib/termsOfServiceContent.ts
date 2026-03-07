@@ -3,13 +3,13 @@ export const termsOfServiceContent = `
 
 **Effective Date:** December 21, 2025
 
-Welcome to **Al Ahmed Continental Exports**. By accessing our website and engaging with our services, you agree to comply with the following terms and conditions.
+Welcome to **Al Ahmad Continental Exports**. By accessing our website and engaging with our services, you agree to comply with the following terms and conditions.
 
 ---
 
 ## 1. General Provisions
 
-**Al Ahmed Continental Exports** ("we", "us", "our") operates this website to provide information about our export products (Natural Stones, Agriculture, General Trading) and services.
+**Al Ahmad Continental Exports** ("we", "us", "our") operates this website to provide information about our export products (Natural Stones, Agriculture, General Trading) and services.
 
 *   **Acceptance:** By using this site, you signify your acceptance of these terms.
 *   **Modification:** We reserve the right to update these terms at any time. Continued use of the site implies acceptance of changes.
@@ -28,7 +28,7 @@ While we strive for precision, international trade involves dynamic variables.
 
 ## 3. Intellectual Property
 
-All content on this website—including text, product photography, logos, and downloadable catalogs—is the property of **Al Ahmed Continental Exports** unless otherwise noted.
+All content on this website—including text, product photography, logos, and downloadable catalogs—is the property of **Al Ahmad Continental Exports** unless otherwise noted.
 
 *   **Authorized Use:** You may view, download, and print catalogs for personal or commercial sourcing purposes.
 *   **Prohibited Use:** You may not modify, copy, distribute, or use our content for competing commercial purposes without prior written consent.
@@ -53,7 +53,7 @@ All transactions initiated through inquiries on this site are subject to:
 
 ## 6. Governing Law
 
-Any claim relating to Al Ahmed Continental Exports' website shall be governed by the laws of the State of **Karnataka, India** without regard to its conflict of law provisions.
+Any claim relating to Al Ahmad Continental Exports' website shall be governed by the laws of the State of **Karnataka, India** without regard to its conflict of law provisions.
 
 **Dispute Resolution:**
 Any disputes arising shall be subject to the exclusive jurisdiction of the courts located in **Bangalore, Karnataka**.
@@ -64,7 +64,7 @@ Any disputes arising shall be subject to the exclusive jurisdiction of the court
 
 For legal inquiries or questions regarding these terms:
 
-**Al Ahmed Continental Exports**
+**Al Ahmad Continental Exports**
 #579, 32nd 'D' cross, 10th main road, 4th Block
 Jayanagar, Bangalore - 560011
 Karnataka, India.
