@@ -72,6 +72,8 @@ const ARCHIVED_ASSETS = [
             { name: "V0 Full Logo (PNG)", path: "/brandkit/v0_alahmed/logo/logo_full.png", category: "Legacy Logo" },
             { name: "V0 Logo Icon (PNG)", path: "/brandkit/v0_alahmed/logo/logo.png", category: "Legacy Logo" },
             { name: "V0 Wordmark (PNG)", path: "/brandkit/v0_alahmed/logo/wordmark.png", category: "Legacy Logo" },
+            { name: "V0 Wordmark BG (PNG)", path: "/brandkit/v0_alahmed/logo/wordmark_bg.png", category: "Legacy Logo" },
+            { name: "V0 Logo BG (PNG)", path: "/brandkit/v0_alahmed/logo/logo_bg.png", category: "Legacy Logo" },
             { name: "V0 Letterhead (PDF)", path: "/brandkit/v0_alahmed/letterhead/letterhead.pdf", category: "Legacy Doc" },
             { name: "V0 Page Header (PNG)", path: "/brandkit/v0_alahmed/letterhead/page_header.png", category: "Legacy Doc" },
             { name: "V0 Header (PNG)", path: "/brandkit/v0_alahmed/letterhead/header.png", category: "Legacy Doc" },
