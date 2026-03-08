@@ -68,6 +68,7 @@ export function AppFooter() {
                             <li><Link href="/#verticals" className="hover:text-primary transition-colors">Verticals</Link></li>
                             <li><Link href="/catalogs" className="hover:text-primary transition-colors">Catalogs</Link></li>
                             <li><Link href="/certificates" className="hover:text-primary transition-colors">Certificates</Link></li>
+                            <li><Link href="/brandkit" className="hover:text-primary transition-colors">Brand Kit</Link></li>
                         </ul>
                     </div>
 
@@ -78,10 +79,10 @@ export function AppFooter() {
                             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary/40 rounded-full"></span>
                         </h4>
                         <ul className="space-y-3 text-sm text-white/80 font-light">
-                            <li><Link href="/steel" className="hover:text-primary transition-colors">Iron & Steel</Link></li>
-                            <li><Link href="/produce" className="hover:text-primary transition-colors">Fresh Produce</Link></li>
-                            <li><Link href="/powders" className="hover:text-primary transition-colors">Dehydrated Powders</Link></li>
-                            <li><Link href="/stones" className="hover:text-primary transition-colors">Natural Stones</Link></li>
+                            <li><Link href="/verticals/general" className="hover:text-primary transition-colors">Natural Stones</Link></li>
+                            <li><Link href="/verticals/general" className="hover:text-primary transition-colors">Granite Quarry</Link></li>
+                            <li><Link href="/verticals/food" className="hover:text-primary transition-colors">Fresh Produce</Link></li>
+                            <li><Link href="/verticals/powder" className="hover:text-primary transition-colors">Dehydrated Powders</Link></li>
                         </ul>
                     </div>
 

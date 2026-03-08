@@ -14,7 +14,7 @@ import { FeatureRow } from "@/components/FeatureRow";
 import { SimpleCarousel } from "@/components/SimpleCarousel";
 import { Button } from "@/components/ui/button";
 import { MagicCard } from "@/components/ui/magic-card";
-import { verticalsCDN } from "@/lib/constants";
+import { staticallyCDN } from "@/lib/constants";
 import { useModal } from "@/lib/modal-context";
 import {
   ArrowRight,
@@ -32,7 +32,7 @@ export default function PowderPage() {
 
   const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-  const powderImageDir = `${verticalsCDN}/powder`;
+  const powderImageDir = `${staticallyCDN}/verticals/powder`;
 
   const powder1ImageDir = `${powderImageDir}/powder_1`;
   const powder1Images = [

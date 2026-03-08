@@ -9,8 +9,11 @@ import { MagicCard } from "@/components/ui/magic-card"
 import { Badge } from "@/components/ui/badge"
 import { Meteors } from "@/components/ui/meteors"
 import { cn } from "@/lib/utils"
+import {staticallyCDN} from "@/lib/constants";
 
 const CODE = "YWFjZTEyMzQ="; // base64
+
+const brandkitDir = `${staticallyCDN}/brandkit`;
 
 const BRAND_ASSETS = [
     {
@@ -18,12 +21,12 @@ const BRAND_ASSETS = [
         description: "Primary brand identity markers",
         icon: <ImageIcon className="w-5 h-5" />,
         items: [
-            { name: "Full Logo (PNG)", path: "/brandkit/logo/logo_full.png", category: "Logo", description: "Logo with wordmark" },
-            { name: "Logo Icon (PNG)", path: "/brandkit/logo/logo.png", category: "Icon", description: "Symbol only" },
-            { name: "Logo on Green (PNG)", path: "/brandkit/logo/logo_bg.png", category: "Icon", description: "White symbol on brand green" },
-            { name: "Rounded Logo (PNG)", path: "/brandkit/logo/logo_rounded.png", category: "Icon", description: "Logo in circular container" },
-            { name: "Wordmark (PNG)", path: "/brandkit/logo/wordmark.png", category: "Typography", description: "Text only brand mark" },
-            { name: "Wordmark on Green (PNG)", path: "/brandkit/logo/wordmark_bg.png", category: "Typography", description: "White text on brand green" },
+            { name: "Full Logo (PNG)", path: `${brandkitDir}/logo/logo_full.png`, category: "Logo", description: "Logo with wordmark" },
+            { name: "Logo Icon (PNG)", path: `${brandkitDir}/logo/logo.png`, category: "Icon", description: "Symbol only" },
+            { name: "Logo on Green (PNG)", path: `${brandkitDir}/logo/logo_bg.png`, category: "Icon", description: "White symbol on brand green" },
+            { name: "Rounded Logo (PNG)", path: `${brandkitDir}/logo/logo_rounded.png`, category: "Icon", description: "Logo in circular container" },
+            { name: "Wordmark (PNG)", path: `${brandkitDir}/logo/wordmark.png`, category: "Typography", description: "Text only brand mark" },
+            { name: "Wordmark on Green (PNG)", path: `${brandkitDir}/logo/wordmark_bg.png`, category: "Typography", description: "White text on brand green" },
         ]
     },
     {
@@ -31,11 +34,11 @@ const BRAND_ASSETS = [
         description: "Marketing and social media identity",
         icon: <Layout className="w-5 h-5" />,
         items: [
-            { name: "Showcase Card", path: "/brandkit/cards/card_showcase.png", category: "Marketing", description: "Card presentation" },
-            { name: "Business Card", path: "/brandkit/cards/card.png", category: "Identity", description: "Standard business card design" },
-            { name: "Profile Card", path: "/brandkit/cards/profile_card.png", category: "Identity", description: "Digital business card" },
-            { name: "Profile Banner", path: "/brandkit/cards/profile_banner.png", category: "Social", description: "LinkedIn/Twitter banner" },
-            { name: "Catalog Cover", path: "/brandkit/cards/catalog.png", category: "Sales", description: "Official catalog styling" },
+            { name: "Showcase Card", path: `${brandkitDir}/cards/card_showcase.png`, category: "Marketing", description: "Card presentation" },
+            { name: "Business Card", path: `${brandkitDir}/cards/card.png`, category: "Identity", description: "Standard business card design" },
+            { name: "Profile Card", path: `${brandkitDir}/cards/profile_card.png`, category: "Identity", description: "Digital business card" },
+            { name: "Profile Banner", path: `${brandkitDir}/cards/profile_banner.png`, category: "Social", description: "LinkedIn/Twitter banner" },
+            { name: "Catalog Cover", path: `${brandkitDir}/cards/catalog.png`, category: "Sales", description: "Official catalog styling" },
         ]
     },
     {
@@ -43,10 +46,10 @@ const BRAND_ASSETS = [
         description: "Official documentation templates",
         icon: <FileText className="w-5 h-5" />,
         items: [
-            { name: "Standard Letterhead", path: "/brandkit/letterhead/letterhead.png", category: "Document", description: "Main stationery" },
-            { name: "Quotation Form", path: "/brandkit/letterhead/quotation.png", category: "Sales", description: "Official quote format" },
-            { name: "Performa Invoice", path: "/brandkit/letterhead/performa_invoice.png", category: "Finance", description: "Pre-payment doc" },
-            { name: "Commercial Invoice", path: "/brandkit/letterhead/commercial_invoice.png", category: "Finance", description: "Final shipping doc" },
+            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, category: "Document", description: "Main stationery" },
+            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, category: "Sales", description: "Official quote format" },
+            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, category: "Finance", description: "Pre-payment doc" },
+            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, category: "Finance", description: "Final shipping doc" },
         ]
     },
     {
@@ -54,12 +57,12 @@ const BRAND_ASSETS = [
         description: "Web and app application icons",
         icon: <Info className="w-5 h-5" />,
         items: [
-            { name: "Apple Touch Icon", path: "/brandkit/favicons/apple-touch-icon.png", category: "Web", description: "iOS home screen" },
-            { name: "Android Chrome 512x512", path: "/brandkit/favicons/android-chrome-512x512.png", category: "Android", description: "Large app icon" },
-            { name: "Android Chrome 192x192", path: "/brandkit/favicons/android-chrome-192x192.png", category: "Android", description: "Standard app icon" },
-            { name: "Favicon 32x32", path: "/brandkit/favicons/favicon-32x32.png", category: "Web", description: "Browser tab icon" },
-            { name: "Favicon 16x16", path: "/brandkit/favicons/favicon-16x16.png", category: "Web", description: "Small browser icon" },
-            { name: "Favicon (ICO)", path: "/brandkit/favicons/favicon.ico", category: "Legacy Web", description: "Standard ICO format" },
+            { name: "Apple Touch Icon", path: `${brandkitDir}/favicons/apple-touch-icon.png`, category: "Web", description: "iOS home screen" },
+            { name: "Android Chrome 512x512", path: `${brandkitDir}/favicons/android-chrome-512x512.png`, category: "Android", description: "Large app icon" },
+            { name: "Android Chrome 192x192", path: `${brandkitDir}/favicons/android-chrome-192x192.png`, category: "Android", description: "Standard app icon" },
+            { name: "Favicon 32x32", path: `${brandkitDir}/favicons/favicon-32x32.png`, category: "Web", description: "Browser tab icon" },
+            { name: "Favicon 16x16", path: `${brandkitDir}/favicons/favicon-16x16.png`, category: "Web", description: "Small browser icon" },
+            { name: "Favicon (ICO)", path: `${brandkitDir}/favicons/favicon.ico`, category: "Legacy Web", description: "Standard ICO format" },
         ]
     }
 ]
@@ -69,15 +72,15 @@ const ARCHIVED_ASSETS = [
         title: "Al Ahmad (V0) Assets",
         description: "Legacy branding and development materials",
         items: [
-            { name: "V0 Full Logo (PNG)", path: "/brandkit/v0_alahmed/logo/logo_full.png", category: "Legacy Logo" },
-            { name: "V0 Logo Icon (PNG)", path: "/brandkit/v0_alahmed/logo/logo.png", category: "Legacy Logo" },
-            { name: "V0 Wordmark (PNG)", path: "/brandkit/v0_alahmed/logo/wordmark.png", category: "Legacy Logo" },
-            { name: "V0 Wordmark BG (PNG)", path: "/brandkit/v0_alahmed/logo/wordmark_bg.png", category: "Legacy Logo" },
-            { name: "V0 Logo BG (PNG)", path: "/brandkit/v0_alahmed/logo/logo_bg.png", category: "Legacy Logo" },
-            { name: "V0 Letterhead (PDF)", path: "/brandkit/v0_alahmed/letterhead/letterhead.pdf", category: "Legacy Doc" },
-            { name: "V0 Page Header (PNG)", path: "/brandkit/v0_alahmed/letterhead/page_header.png", category: "Legacy Doc" },
-            { name: "V0 Header (PNG)", path: "/brandkit/v0_alahmed/letterhead/header.png", category: "Legacy Doc" },
-            { name: "V0 Footer (PNG)", path: "/brandkit/v0_alahmed/letterhead/footer.png", category: "Legacy Doc" },
+            { name: "V0 Full Logo (PNG)", path: `${brandkitDir}/v0_alahmed/logo/logo_full.png`, category: "Legacy Logo" },
+            { name: "V0 Logo Icon (PNG)", path: `${brandkitDir}/v0_alahmed/logo/logo.png`, category: "Legacy Logo" },
+            { name: "V0 Wordmark (PNG)", path: `${brandkitDir}/v0_alahmed/logo/wordmark.png`, category: "Legacy Logo" },
+            { name: "V0 Wordmark BG (PNG)", path: `${brandkitDir}/v0_alahmed/logo/wordmark_bg.png`, category: "Legacy Logo" },
+            { name: "V0 Logo BG (PNG)", path: `${brandkitDir}/v0_alahmed/logo/logo_bg.png`, category: "Legacy Logo" },
+            { name: "V0 Letterhead (PDF)", path: `${brandkitDir}/v0_alahmed/letterhead/letterhead.pdf`, category: "Legacy Doc" },
+            { name: "V0 Page Header (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/page_header.png`, category: "Legacy Doc" },
+            { name: "V0 Header (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/header.png`, category: "Legacy Doc" },
+            { name: "V0 Footer (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/footer.png`, category: "Legacy Doc" },
         ]
     }
 ]

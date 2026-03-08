@@ -13,7 +13,7 @@ import CustomContact from "@/components/CustomContact";
 import { FeatureRow } from "@/components/FeatureRow";
 import { SimpleCarousel } from "@/components/SimpleCarousel";
 import { Button } from "@/components/ui/button";
-import { verticalsCDN } from "@/lib/constants";
+import { staticallyCDN } from "@/lib/constants";
 import { useModal } from "@/lib/modal-context";
 import { ArrowRight, Building2, Eye, LayersIcon } from "lucide-react";
 import { useState } from "react";
@@ -23,7 +23,7 @@ export default function GeneralTradingPage() {
 
   const [selectedDoc, setSelectedDoc] = useState<CatalogDoc | null>(null);
 
-  const generalImageDir = `${verticalsCDN}/general`;
+  const generalImageDir = `${staticallyCDN}/verticals/general`;
 
   const stoneImageDir = `${generalImageDir}/granite_1`;
   const stoneImages = [
