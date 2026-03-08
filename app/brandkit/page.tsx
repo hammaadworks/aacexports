@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { Download, Lock, ShieldCheck, Image as ImageIcon, FileText, Layout, Info, Archive, ArrowRight } from "lucide-react"
+import { Download, Lock, ShieldCheck, Image as ImageIcon, FileText, Layout, Info, Archive, ArrowRight, ExternalLink, Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MagicCard } from "@/components/ui/magic-card"
@@ -15,16 +15,31 @@ const CODE = "YWFjZTEyMzQ="; // base64
 
 const brandkitDir = `${staticallyCDN}/brandkit`;
 
+const EDIT_LINKS = [
+    {
+        name: "Letterhead Template",
+        url: "https://docs.google.com/document/d/10v15a21zE0elmyc_nNeeM66tSjoM5pV68ftsREL9080/edit",
+        description: "Google Docs template for official letters",
+        icon: <Pencil className="w-4 h-4" />
+    },
+    {
+        name: "PDFGear Editor",
+        url: "https://www.pdfgear.com/edit-pdf/",
+        description: "Free online PDF editor for finalizing documents",
+        icon: <ExternalLink className="w-4 h-4" />
+    }
+]
+
 const BRAND_ASSETS = [
     {
         title: "Letterhead & Docs",
         description: "Official documentation templates",
         icon: <FileText className="w-5 h-5" />,
         items: [
-            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, category: "Document", description: "Main stationery" },
-            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, category: "Sales", description: "Official quote format" },
-            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, category: "Finance", description: "Pre-payment doc" },
-            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, category: "Finance", description: "Final shipping doc" },
+            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, pdfPath: `${brandkitDir}/letterhead/letterhead.pdf`, category: "Document", description: "Main stationery" },
+            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, pdfPath: `${brandkitDir}/letterhead/quotation.pdf`, category: "Sales", description: "Official quote format" },
+            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, pdfPath: `${brandkitDir}/letterhead/performa_invoice.pdf`, category: "Finance", description: "Pre-payment doc" },
+            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, pdfPath: `${brandkitDir}/letterhead/commercial_invoice.pdf`, category: "Finance", description: "Final shipping doc" },
         ]
     },
     {
@@ -185,6 +200,45 @@ export default function BrandKitPage() {
                             </p>
                         </div>
 
+                        {/* Edit Links Section */}
+                        <section className="space-y-8">
+                            <div className="flex items-center gap-4 border-b border-primary/10 pb-4">
+                                <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+                                    <Pencil className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <h2 className="text-2xl font-serif font-bold text-secondary">Edit Links</h2>
+                                    <p className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-medium">Quick access to document modification tools</p>
+                                </div>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {EDIT_LINKS.map((link, idx) => (
+                                    <MagicCard key={idx} className="p-6 border-primary/10 overflow-hidden group rounded-2xl shadow-none">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-4">
+                                                <div className="p-3 rounded-xl bg-primary/5 text-primary border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                                    {link.icon}
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-secondary">{link.name}</h4>
+                                                    <p className="text-xs text-muted-foreground font-light">{link.description}</p>
+                                                </div>
+                                            </div>
+                                            <a 
+                                                href={link.url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="p-3 rounded-full hover:bg-primary/10 text-primary transition-colors"
+                                            >
+                                                <ArrowRight className="w-5 h-5" />
+                                            </a>
+                                        </div>
+                                    </MagicCard>
+                                ))}
+                            </div>
+                        </section>
+
                         {/* Assets Grid */}
                         <div className="space-y-24">
                             {BRAND_ASSETS.map((section, sIdx) => (
@@ -226,14 +280,26 @@ export default function BrandKitPage() {
                                                         <h4 className="font-bold text-sm text-secondary truncate">{item.name}</h4>
                                                         <p className="text-[11px] text-muted-foreground line-clamp-1 font-light">{item.description}</p>
                                                     </div>
-                                                    <a 
-                                                        href={item.path} 
-                                                        download 
-                                                        className="flex items-center justify-center gap-2 w-full py-2.5 bg-primary/5 hover:bg-primary text-primary hover:text-white rounded-xl text-xs font-bold transition-all border border-primary/20"
-                                                    >
-                                                        <Download className="w-3.5 h-3.5" />
-                                                        Download Asset
-                                                    </a>
+                                                    <div className="flex gap-2">
+                                                        <a 
+                                                            href={item.path} 
+                                                            download 
+                                                            className="flex items-center justify-center gap-2 flex-1 py-2.5 bg-primary/5 hover:bg-primary text-primary hover:text-white rounded-xl text-xs font-bold transition-all border border-primary/20"
+                                                        >
+                                                            <Download className="w-3.5 h-3.5" />
+                                                            {item.path.endsWith('.png') ? 'PNG' : 'Download'}
+                                                        </a>
+                                                        {(item as any).pdfPath && (
+                                                            <a 
+                                                                href={(item as any).pdfPath} 
+                                                                download 
+                                                                className="flex items-center justify-center gap-2 flex-1 py-2.5 bg-primary/5 hover:bg-primary text-primary hover:text-white rounded-xl text-xs font-bold transition-all border border-primary/20"
+                                                            >
+                                                                <FileText className="w-3.5 h-3.5" />
+                                                                PDF
+                                                            </a>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </MagicCard>
                                         ))}

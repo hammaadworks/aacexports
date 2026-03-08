@@ -218,21 +218,21 @@ export default function GeneralTradingPage() {
               </div>
               
               <h3 className="text-4xl md:text-6xl font-serif font-bold leading-tight">
-                Own a Piece of the <span className="text-amber-500 italic">Earth's Legacy.</span>
+                Acquire a Profitable <span className="text-amber-500 italic">Jet Black Quarry.</span>
               </h3>
               
               <p className="text-stone-300 text-xl leading-relaxed font-light">
-                A rare opportunity to acquire a <span className="text-white font-semibold">premium operational Granite Quarry.</span> This isn't just land; it's a high-yield, turn-key industrial asset with proven mineral richness and established global logistics paths.
+                A rare opportunity to acquire a <span className="text-white font-semibold">4.5-acre operational Jet Black Granite Quarry</span> in M.M. Hills. This is a high-yield, turn-key industrial asset with proven mineral richness and immediate ROI potential. <span className="text-amber-500 font-medium italic">Serious inquiries only.</span>
               </p>
               
               <div className="grid grid-cols-2 gap-6 py-4">
                 <div className="border-l-2 border-amber-500/50 pl-4">
-                  <div className="text-2xl font-bold text-white">Verified</div>
-                  <div className="text-stone-400 text-sm">Mineral Deposits</div>
+                  <div className="text-2xl font-bold text-white">4.5 Acres</div>
+                  <div className="text-stone-400 text-sm">Jet Black Material</div>
                 </div>
                 <div className="border-l-2 border-amber-500/50 pl-4">
-                  <div className="text-2xl font-bold text-white">Turn-Key</div>
-                  <div className="text-stone-400 text-sm">Infrastructure</div>
+                  <div className="text-2xl font-bold text-white">M.M. Hills</div>
+                  <div className="text-stone-400 text-sm">Prime Location</div>
                 </div>
               </div>
 
