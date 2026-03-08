@@ -6,6 +6,29 @@ export function AppFooter() {
     return (
         <footer className="bg-secondary text-white border-t border-primary/20 pt-12 pb-8">
             <div className="container mx-auto px-6">
+                {/* Special Opportunity Banner - Top of Footer */}
+                <div className="mb-16 relative overflow-hidden rounded-2xl bg-amber-500/5 border border-amber-500/20 p-8 group">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                        <div className="flex items-center gap-6">
+                            <div className="h-12 w-12 rounded-full bg-amber-500/10 flex items-center justify-center border border-amber-500/20 group-hover:scale-110 transition-transform">
+                                <span className="text-amber-500 text-lg font-bold">!</span>
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-serif font-bold text-white mb-1 tracking-wide uppercase">Investment: Granite Quarry for Sale</h4>
+                                <p className="text-stone-400 text-sm font-light">Direct acquisition of a high-yield natural stone asset. Inquire today.</p>
+                            </div>
+                        </div>
+                        <Link 
+                            href="/verticals/general" 
+                            className="bg-amber-500 hover:bg-amber-400 text-stone-900 font-black px-8 py-3 rounded-full text-xs uppercase tracking-widest transition-all shadow-[0_5px_15px_rgba(245,158,11,0.2)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.3)]"
+                        >
+                            View Opportunity
+                        </Link>
+                    </div>
+                    {/* Background Glow */}
+                    <div className="absolute top-0 right-0 w-64 h-full bg-amber-500/5 blur-3xl rounded-full -mr-32 -mt-32"></div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
 
                     {/* Brand Section */}
@@ -80,7 +103,10 @@ export function AppFooter() {
                         </h4>
                         <ul className="space-y-3 text-sm text-white/80 font-light">
                             <li><Link href="/verticals/general" className="hover:text-primary transition-colors">Natural Stones</Link></li>
-                            <li><Link href="/verticals/general" className="hover:text-primary transition-colors">Granite Quarry</Link></li>
+                            <li><Link href="/verticals/general" className="text-amber-500 font-semibold flex items-center gap-2 group/quarry hover:text-amber-400 transition-colors">
+                                Granite Quarry Sale
+                                <span className="bg-amber-500/10 text-[8px] px-1.5 py-0.5 rounded-full border border-amber-500/20 group-hover/quarry:bg-amber-500/20">SPECIAL</span>
+                            </Link></li>
                             <li><Link href="/verticals/food" className="hover:text-primary transition-colors">Fresh Produce</Link></li>
                             <li><Link href="/verticals/powder" className="hover:text-primary transition-colors">Dehydrated Powders</Link></li>
                         </ul>

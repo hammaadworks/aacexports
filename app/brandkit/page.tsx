@@ -17,20 +17,18 @@ const brandkitDir = `${staticallyCDN}/brandkit`;
 
 const BRAND_ASSETS = [
     {
-        title: "Logos",
-        description: "Primary brand identity markers",
-        icon: <ImageIcon className="w-5 h-5" />,
+        title: "Letterhead & Docs",
+        description: "Official documentation templates",
+        icon: <FileText className="w-5 h-5" />,
         items: [
-            { name: "Full Logo (PNG)", path: `${brandkitDir}/logo/logo_full.png`, category: "Logo", description: "Logo with wordmark" },
-            { name: "Logo Icon (PNG)", path: `${brandkitDir}/logo/logo.png`, category: "Icon", description: "Symbol only" },
-            { name: "Logo on Green (PNG)", path: `${brandkitDir}/logo/logo_bg.png`, category: "Icon", description: "White symbol on brand green" },
-            { name: "Rounded Logo (PNG)", path: `${brandkitDir}/logo/logo_rounded.png`, category: "Icon", description: "Logo in circular container" },
-            { name: "Wordmark (PNG)", path: `${brandkitDir}/logo/wordmark.png`, category: "Typography", description: "Text only brand mark" },
-            { name: "Wordmark on Green (PNG)", path: `${brandkitDir}/logo/wordmark_bg.png`, category: "Typography", description: "White text on brand green" },
+            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, category: "Document", description: "Main stationery" },
+            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, category: "Sales", description: "Official quote format" },
+            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, category: "Finance", description: "Pre-payment doc" },
+            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, category: "Finance", description: "Final shipping doc" },
         ]
     },
     {
-        title: "Business Assets",
+        title: "Marketing Assets",
         description: "Marketing and social media identity",
         icon: <Layout className="w-5 h-5" />,
         items: [
@@ -42,14 +40,16 @@ const BRAND_ASSETS = [
         ]
     },
     {
-        title: "Letterhead & Docs",
-        description: "Official documentation templates",
-        icon: <FileText className="w-5 h-5" />,
+        title: "Logos",
+        description: "Primary brand identity markers",
+        icon: <ImageIcon className="w-5 h-5" />,
         items: [
-            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, category: "Document", description: "Main stationery" },
-            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, category: "Sales", description: "Official quote format" },
-            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, category: "Finance", description: "Pre-payment doc" },
-            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, category: "Finance", description: "Final shipping doc" },
+            { name: "Full Logo (PNG)", path: `${brandkitDir}/logo/logo_full.png`, category: "Logo", description: "Logo with wordmark" },
+            { name: "Logo Icon (PNG)", path: `${brandkitDir}/logo/logo.png`, category: "Icon", description: "Symbol only" },
+            { name: "Logo on Green (PNG)", path: `${brandkitDir}/logo/logo_bg.png`, category: "Icon", description: "White symbol on brand green" },
+            { name: "Rounded Logo (PNG)", path: `${brandkitDir}/logo/logo_rounded.png`, category: "Icon", description: "Logo in circular container" },
+            { name: "Wordmark (PNG)", path: `${brandkitDir}/logo/wordmark.png`, category: "Typography", description: "Text only brand mark" },
+            { name: "Wordmark on Green (PNG)", path: `${brandkitDir}/logo/wordmark_bg.png`, category: "Typography", description: "White text on brand green" },
         ]
     },
     {

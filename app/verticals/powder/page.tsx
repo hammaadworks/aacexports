@@ -232,6 +232,50 @@ export default function PowderPage() {
         </ul>
       </VerticalInfoSection>
 
+      {/* Industrial Opportunity: Dehydration Technology & Expertise */}
+      <section className="py-12 container mx-auto px-6">
+        <div className="relative overflow-hidden rounded-3xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30 p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-12 group transition-all duration-500 hover:shadow-2xl">
+          <div className="md:w-3/5">
+            <div className="inline-flex items-center gap-2 mb-6 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-200 dark:border-blue-800">
+              <Zap className="h-3.5 w-3.5 fill-current" /> Technical Advisory
+            </div>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              Scale Your Production: Advanced Dehydration Technology
+            </h3>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-2xl">
+              Establish or upgrade your facility with industrial-grade dehydration machinery. 
+              Beyond supplying ingredients, we offer end-to-end consultancy and machinery 
+              sourcing to help you optimize production efficiency, moisture control, and 
+              nutrient retention.
+            </p>
+            <Button 
+              onClick={openModal}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full px-10 h-12 shadow-md hover:shadow-lg transition-all"
+            >
+              Get Expert Assistance
+            </Button>
+          </div>
+          <div className="md:w-2/5 flex items-center justify-center">
+            <div className="relative w-full aspect-square max-w-sm rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50 dark:border-blue-900/20 rotate-3 transition-transform duration-500 group-hover:rotate-0">
+               <div className="absolute inset-0 bg-blue-600/5 dark:bg-blue-400/5 flex items-center justify-center">
+                  <Factory className="h-32 w-32 text-blue-200 dark:text-blue-900 opacity-50 group-hover:scale-110 transition-transform duration-700" />
+               </div>
+               {/* Decorative floating labels */}
+               <div className="absolute top-4 left-4 bg-white/90 dark:bg-blue-950/90 p-3 rounded-lg shadow-sm border border-blue-100 dark:border-blue-800 animate-pulse">
+                  <div className="text-[10px] font-bold text-blue-600 dark:text-blue-400">High-Efficiency</div>
+                  <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Industrial Dryers</div>
+               </div>
+               <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-blue-950/90 p-3 rounded-lg shadow-sm border border-blue-100 dark:border-blue-800">
+                  <div className="text-[10px] font-bold text-blue-600 dark:text-blue-400">30+ Years</div>
+                  <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Operational Excellence</div>
+               </div>
+            </div>
+          </div>
+          {/* Subtle background glow */}
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-200 dark:bg-blue-900 opacity-20 rounded-full blur-3xl pointer-events-none" />
+        </div>
+      </section>
+
       <CustomContact
         onClick={openModal}
         headingText={"Private Label Services"}

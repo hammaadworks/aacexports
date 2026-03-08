@@ -7,9 +7,11 @@ import confetti from "canvas-confetti";
 import { motion } from "motion/react";
 import Link from "next/link";
 import React, { useState } from "react";
+import {staticallyCDN} from "@/lib/constants";
 
 export function AppHeader() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const brandkitDir = `${staticallyCDN}/brandkit`;
 
   const handleContactClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -40,7 +42,7 @@ export function AppHeader() {
           {/* Logo Icon */}
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src="/brandkit/logo/logo_rounded.png"
+              src={`${brandkitDir}/logo/logo_rounded.png`}
               alt="AAC Logo"
               className="h-8 md:h-10 w-auto object-contain"
             />
@@ -52,7 +54,7 @@ export function AppHeader() {
           {/* Wordmark Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/brandkit/logo/wordmark_bg.png"
+              src={`${brandkitDir}/logo/wordmark_bg.png`}
               alt="Al Ahmad Continental Exports"
               className="h-8 md:h-10 w-auto object-contain"
             />
