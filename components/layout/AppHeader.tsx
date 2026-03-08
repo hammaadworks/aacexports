@@ -1,31 +1,16 @@
 "use client";
 
-import { EnquiryModal } from "@/components/enquiry-modal";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import confetti from "canvas-confetti";
 import { motion } from "motion/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import {staticallyCDN} from "@/lib/constants";
+import { useModal } from "@/lib/modal-context";
 
 export function AppHeader() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const { openModal } = useModal();
   const brandkitDir = `${staticallyCDN}/brandkit`;
-
-  const handleContactClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (rect.left + rect.width / 2) / window.innerWidth;
-    const y = (rect.top + rect.height / 2) / window.innerHeight;
-
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { x, y },
-      colors: ["#EAB308", "#303F2D", "#FFFFFF"],
-    });
-    setIsContactOpen(true);
-  };
 
   return (
     <>
@@ -65,17 +50,12 @@ export function AppHeader() {
           <Button
             variant="default"
             className="font-bold rounded-full h-8 px-4 text-xs md:h-10 md:px-6 md:text-sm shadow-md hover:shadow-lg transition-all duration-300 text-primary-foreground bg-primary"
-            onClick={handleContactClick}
+            onClick={openModal}
           >
             Get in Touch
           </Button>
         </div>
       </motion.header>
-
-      <EnquiryModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-      />
     </>
   );
 }
