@@ -36,10 +36,10 @@ const BRAND_ASSETS = [
         description: "Official documentation templates",
         icon: <FileText className="w-5 h-5" />,
         items: [
-            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, pdfPath: `${brandkitDir}/letterhead/letterhead.pdf`, category: "Document", description: "Main stationery" },
-            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, pdfPath: `${brandkitDir}/letterhead/quotation.pdf`, category: "Sales", description: "Official quote format" },
-            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, pdfPath: `${brandkitDir}/letterhead/performa_invoice.pdf`, category: "Finance", description: "Pre-payment doc" },
-            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, pdfPath: `${brandkitDir}/letterhead/commercial_invoice.pdf`, category: "Finance", description: "Final shipping doc" },
+            { name: "Standard Letterhead", path: `${brandkitDir}/letterhead/letterhead.png`, pdfPath: `/brandkit/letterhead/letterhead.pdf`, category: "Document", description: "Main stationery" },
+            { name: "Quotation Form", path: `${brandkitDir}/letterhead/quotation.png`, pdfPath: `/brandkit/letterhead/quotation.pdf`, category: "Sales", description: "Official quote format" },
+            { name: "Performa Invoice", path: `${brandkitDir}/letterhead/performa_invoice.png`, pdfPath: `/brandkit/letterhead/performa_invoice.pdf`, category: "Finance", description: "Pre-payment doc" },
+            { name: "Commercial Invoice", path: `${brandkitDir}/letterhead/commercial_invoice.png`, pdfPath: `/brandkit/letterhead/commercial_invoice.pdf`, category: "Finance", description: "Final shipping doc" },
         ]
     },
     {
@@ -92,7 +92,7 @@ const ARCHIVED_ASSETS = [
             { name: "V0 Wordmark (PNG)", path: `${brandkitDir}/v0_alahmed/logo/wordmark.png`, category: "Legacy Logo" },
             { name: "V0 Wordmark BG (PNG)", path: `${brandkitDir}/v0_alahmed/logo/wordmark_bg.png`, category: "Legacy Logo" },
             { name: "V0 Logo BG (PNG)", path: `${brandkitDir}/v0_alahmed/logo/logo_bg.png`, category: "Legacy Logo" },
-            { name: "V0 Letterhead (PDF)", path: `${brandkitDir}/v0_alahmed/letterhead/letterhead.pdf`, category: "Legacy Doc" },
+            { name: "V0 Letterhead (PDF)", path: `/brandkit/v0_alahmed/letterhead/letterhead.pdf`, category: "Legacy Doc" },
             { name: "V0 Page Header (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/page_header.png`, category: "Legacy Doc" },
             { name: "V0 Header (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/header.png`, category: "Legacy Doc" },
             { name: "V0 Footer (PNG)", path: `${brandkitDir}/v0_alahmed/letterhead/footer.png`, category: "Legacy Doc" },

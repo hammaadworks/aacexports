@@ -5,7 +5,7 @@ import { Providers } from "@/components/providers";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { staticallyCDN } from "@/lib/constants";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,10 +16,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-
-const faviconsDir = `${staticallyCDN}/brandkit/favicons`;
-
 
 export const metadata: Metadata = {
   title: "Al Ahmad Continental | Global Merchandise Exports",
@@ -40,22 +36,23 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${faviconsDir}/apple-touch-icon.png`}
+          href="/brandkit/favicons/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={`${faviconsDir}/favicon-32x32.png`}
+          href="/brandkit/favicons/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`${faviconsDir}/favicon-16x16.png`}
+          href="/brandkit/favicons/favicon-16x16.png"
         />
-        <link rel="manifest" href={`${faviconsDir}/site.webmanifest`} />
-        <link rel="shortcut icon" href={`${faviconsDir}/favicon.ico`} />
+        <link rel="manifest" href="/brandkit/favicons/site.webmanifest" />
+        <link rel="shortcut icon" href="/brandkit/favicons/favicon.ico" />
+          <title></title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary`}
