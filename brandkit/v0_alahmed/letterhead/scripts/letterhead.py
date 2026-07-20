@@ -35,7 +35,7 @@ ADDRESS_LINE = (
     560011, Karnataka, <link href="{MAPS_URL}" color="{GOLD.hexval()}"><b>India</b></link>.'''
 )
 
-CONTACT_LINE = "+91 63633 72655  |  sales@aacexports.in  |  www.aacexports.in"
+CONTACT_LINE = "+91 9986217867  |  sales@aacexports.in  |  www.aacexports.in"
 TAGLINE = "Global Exports. Built on Standards."
 
 # --------------------------------------------------
