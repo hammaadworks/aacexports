@@ -60,7 +60,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
   };
 
   // Dynamic Content for Links
-  const baseWa = "https://wa.me/916363372655";
+  const baseWa = "https://wa.me/919986217867";
   const baseMail = "mailto:sales@aacexports.in";
   
   const contactText = formData.name || formData.contact || formData.message 
@@ -90,7 +90,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                         <span className="text-sm font-semibold text-foreground">WhatsApp</span>
                         <span className="text-[10px] text-green-600 dark:text-green-400 font-medium bg-green-100/50 dark:bg-green-900/20 px-1.5 rounded-full">Fastest</span>
                     </div>
-                    <span className="text-xs text-muted-foreground truncate w-full">+91 63633 72655</span>
+                    <span className="text-xs text-muted-foreground truncate w-full">+91 9986217867</span>
                 </div>
             </Link>
         </Button>

@@ -176,7 +176,7 @@ export function AppFooter() {
                                 <div className="p-2.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
                                     <Phone size={18} className="text-primary" strokeWidth={1.5} />
                                 </div>
-                                <a href="tel:+916363372655" className="group-hover:text-primary transition-colors font-light">+91 6363372655</a>
+                                <a href="tel:+919986217867" className="group-hover:text-primary transition-colors font-light">+91 9986217867</a>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="p-2.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
@@ -194,7 +194,7 @@ export function AppFooter() {
                                 <div className="p-2.5 rounded-full bg-white/5 border border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
                                     <MessageCircle size={18} className="text-primary" strokeWidth={1.5} />
                                 </div>
-                                <a href="https://wa.me/916363372655" target="_blank" rel="noopener noreferrer" className="group-hover:text-primary transition-colors font-light">WhatsApp</a>
+                                <a href="https://wa.me/919986217867" target="_blank" rel="noopener noreferrer" className="group-hover:text-primary transition-colors font-light">WhatsApp</a>
                             </li>
                         </ul>
                     </div>
